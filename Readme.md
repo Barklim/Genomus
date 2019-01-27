@@ -65,6 +65,16 @@ npm run dev
 	delete user and anketa
 	problema s vvodom mutations
 
+	1 ==  ecдь
+	главная сдраница 0 нас
+	главную не д0сдупн0й с анкедами
+	кардинку убрадь в пр0филе
+	убрадь анкеду п0сле с0здания
+	в с0сд0яние 0жидания
+	в анкедах ссылка на edit
+	gemId на Strimg
+	0 в edit gem0v
+
 #comments for dev
 
 	## problems
