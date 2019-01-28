@@ -62,9 +62,6 @@ class User extends Component {
 
     return (
         <div className="user_container">
-            <div className="avatar">
-                <img alt="avatar" src="/images/avatar.png"/>
-            </div>
             <div className="nfo">
                 <div className="formattext">
                     <div><span>Name:</span> {user2.name}</div>

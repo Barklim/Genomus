@@ -59,7 +59,6 @@ class UserGens extends Component {
         return (
             <div className="user_posts">
                 <h4>Все мутации (кликните на genId):</h4>
-                Дар0ва :)
                 <table>
                     <thead>
                         <tr>

@@ -1,47 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getBooks } from '../actions';
+//import { getBooks } from '../actions';
 
-import BookItem from '../widgetsUI/book_item';
+//import BookItem from '../widgetsUI/book_item';
 
 class HomeContainer extends Component {
-
-    componentWillMount(){
-        this.props.dispatch(getBooks(5,0,'desc'))
-    }
-
-    renderItems = (books) => (
-        books.list ?  
-            books.list.map( item => (
-                <BookItem {...item} key={item._id}/>
-            ))
-        :null
-    )
-
-    loadmore = () => {
-        let count = this.props.books.list.length;
-        this.props.dispatch(getBooks(1,count,'desc',this.props.books.list))
-    }
-
     render() {
-        console.log(this.props);
+    
         return (
-            <div>
-               {this.renderItems(this.props.books)}
-               <div 
-                    className="loadmore"
-                    onClick={this.loadmore}
-                >Загрузить еще</div>
+            <div className="rl_container">
+                <div className="format_about">
+                    <h2>Информация о нас</h2>
+                    <h4>Мы в социальных сетях: <a href="https://vk.com/genomusApp">https://vk.com/genomusApp</a></h4>
+                    <h4>Обратная связь: example@gmail.com</h4>
+                    <h4>Выкладывая свою анкету, её автоматически будут видить все люди</h4>
+                    <h4>Здесь можно будет скачать файл apk. для Android  </h4>
+                    <h2>F.A.Q.</h2>
+                    <p>Что это?</p> 
+                    <p>Веб-приложение для "мониторинга" здоровья</p> 
+                    <p>Как пользоваться?</p> 
+                    <p>Зарегиструйтесь и залогинтись</p> 
+                    <p>Как рассчитывается рейтинг?</p> 
+                    <p>Вручную администратором. Оценка зависит от "полноты" данных анкеты</p>
+                </div>
             </div>
         );
     }
 }
 
-function mapStateToProps(state){
+function mapStateProps(state) {
     return {
-        books:state.books,
         user:state.user
     }
 }
 
-export default connect(mapStateToProps)(HomeContainer)
+export default connect(mapStateProps)(HomeContainer)

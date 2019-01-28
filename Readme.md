@@ -32,7 +32,6 @@ npm run dev
 	
 	footer
 	adminka
-	footer
 	add register
 	prop types
 	памятку засунуть
@@ -66,14 +65,15 @@ npm run dev
 	problema s vvodom mutations
 
 	1 ==  ecдь
-	главная сдраница 0 нас
-	главную не д0сдупн0й с анкедами
-	кардинку убрадь в пр0филе
 	убрадь анкеду п0сле с0здания
 	в с0сд0яние 0жидания
 	в анкедах ссылка на edit
 	gemId на Strimg
 	0 в edit gem0v
+	курс0р
+	акк0рди0н
+
+	register , gem mutati0ms v2
 
 #comments for dev
 
