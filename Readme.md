@@ -119,3 +119,10 @@ npm run dev
 	вы сами можете удалить анкету в любой момент
 
 	https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
+
+#workflow
+
+ git add .
+ git commit -m 'simple test'
+ git push 
+ git push heroku
