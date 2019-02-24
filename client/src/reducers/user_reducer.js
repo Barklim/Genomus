@@ -18,6 +18,12 @@ export default function(state={},action){
                 register:action.payload.success,
                 users:action.payload.users
             }
+        case 'USER_REGISTER_SCREEN':
+            return {
+                ...state,
+                register:action.payload.success,
+                users:action.payload.users
+            }
         case 'UPDATE_USER':
             return {
                 ...state,
@@ -42,6 +48,8 @@ export default function(state={},action){
             return {...state,otherGen:action.payload}
         case 'GET_PROFILE_GEN':
             return {...state,profileGen:action.payload}
+        case 'GET_ALLOW':
+            return {...state,allow:action.payload}
         default:
             return state;
     }

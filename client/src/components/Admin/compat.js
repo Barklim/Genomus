@@ -1,78 +1,60 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { getUserGen, getOtherGen } from '../../actions';
+import { getUserGen, getOtherGen, getBook, getAllow } from '../../actions';
+import QrReader from "react-qr-reader";
+
+// getBook f0r get imf0 ab0ut all0ws
 
 class Compat extends PureComponent {
-
-    state = {
-            otherGenId:'',
-            ownerId:this.props.user.login.genId,
-            message:''
+    constructor(props) {
+    super(props);
+    this.state = {
+        otherGenId:'',
+        ownerId:this.props.user.login.genId,
+        message:'',
+        showFlaw:'',
+        delay: 300,
+        result: "No result"
+    };
+        this.handleScan = this.handleScan.bind(this);
     }
+      handleScan(data) {
+        if (data) {
+          this.setState({
+            result: data, 
+            otherGenId: data
+          });
+            this.props.dispatch(getOtherGen(this.state.otherGenId)) // для д0г0 чд0бы прих0дили пр0псы
+            this.setState({showFlaw:''});
+            if (this.state.otherGenId.length !== 6 ) { 
+                this.setState({showFlaw:true});
+            }
+        }
+      }
+      handleError(err) {
+        console.error(err);
+      }
 
     componentWillMount(){
         this.props.dispatch(getUserGen(this.props.user.login.genId))
+        this.props.dispatch(getBook(this.props.user.login.id))
     }
 
- /*   // shieeeeeeeeeet
-    componentWillReceiveProps(nextProps){
-        if(nextProps.user.otherGen === undefined){
-            this.setState({message:'Введите значение genId'})
-        } else {
-            if (nextProps.user.otherGen.rule_0 === nextProps.user.userGen.rule_0 === 1 )
-
-                this.setState({message:'test2'})
-             else {
-                this.setState({message:'test3'})
-
-            }
-            //this.setState({message:'test2'})
-            //console.log('!')
-            //console.log(nextProps.user.otherGen)
-        }
-
-    }
-    */
-
-   /* componentWillReceiveProps(nextProps){
-        if(nextProps.user.otherGen === undefined){
-            this.setState({message:'Введите значение genId'})
-        } else {
-
-            for (var i = 0; i < 3 ; i++) {
-                //var variable = ; 
-                var re = /0/gi;
-                var ruleOne = 'rule_0';
-                var ruleSecond = 'rule_0';
-
-                var ruleOne = ruleOne.replace(re, i);
-                var ruleSecond = ruleSecond.replace(re, i);
-
-                console.log(ruleOne, ruleSecond);
-
-                //nextProps.user.otherGen.[rule_0] == 
-
-                var test_1 = 'nextProps.user.otherGen.' + ruleOne;
-                var test_2 = 'nextProps.user.userGen.' + ruleSecond;
-
-                if (test_1 === test_2 === 1 ) {
-                    console.log('!');
-                }
-
-                this.setState({message:'trouble'})
-            }       
-                //this.setState({message:'test2'})
-            //this.setState({message:'test2'})
-            //console.log('!')
-            //console.log(nextProps.user.otherGen)
-        }
-
+/*    componentDidMount(){
+        this.props.dispatch(getAllow(this.state.otherGenId))
     }*/
 
-    // ищем здрововье, отметая больные варианты
-     componentWillReceiveProps(nextProps){
-        if(nextProps.user.otherGen === undefined){
-            this.setState({message:'Ожидание'})
+    componentWillReceiveProps(nextProps){
+
+/*        if( this.state.result !== 'No result'){
+            this.setState({otherGen: this.state.result })
+            this.setState({message:'ожидание'})
+        } else*/
+
+        if(nextProps.user.otherGen === undefined || this.state.showFlaw === true ){
+            this.setState({message:'ожидание'})
+            /*this.setState({result:'No result'})*/
+
         } else {
 
             if (
@@ -107,19 +89,12 @@ class Compat extends PureComponent {
                 ((nextProps.user.otherGen.rule_28 === 1 ) && (nextProps.user.userGen.rule_28 === 1 )) ||
                 ((nextProps.user.otherGen.rule_29 === 1 ) && (nextProps.user.userGen.rule_29 === 1 )) 
                 ) {
-                this.setState({message:'trouble'})
+                this.setState({message:'проблема'})
             } else {
-                this.setState({message:'it s okay'})
-                  
+                this.setState({message:'все хорошо!'})  
             }
-                //this.setState({message:'test2'})
-            //this.setState({message:'test2'})
-            //console.log('!')
-            //console.log(nextProps.user.otherGen)
         }
-
     }
-
 
     handleInputId = (event) => {
         this.setState({otherGenId:event.target.value})
@@ -128,24 +103,29 @@ class Compat extends PureComponent {
     handleCheckup(e) {
         e.preventDefault();
         this.props.dispatch(getOtherGen(this.state.otherGenId))
+        this.props.dispatch(getAllow(this.state.otherGenId))
+        this.setState({showFlaw:''}); 
+        this.setState({result: 'No result' })
+        if (this.state.otherGenId.length !== 6 ) { 
+            this.setState({showFlaw:true});
+        }
+
+        /*console.log(this.state);
+        console.log(this.props.user);
+        console.log(this.props.user.login.genId);*/
     }
-
-
+    btnError(err) {
+        console.error(err);
+    }
 
     submitForm = (e) => {
         e.prevetDefault();
-
-        //this.setState({message:''});
     }
-    //let user = props.user.login;
-    //console.log(user);
+
     render() {
         //let genId = this.props.genId;
+        console.log(this.props);
 
-        //console.log(this.props);
-        console.log(this.state);
-        console.log(this.props.user);
-        console.log(this.props.user.login.genId);
         return (
             <div className="user_container">
                 <div className="nfo">
@@ -157,25 +137,41 @@ class Compat extends PureComponent {
 
                             <div className="form_element">
                                 <input 
-                                    type='number' 
-                                    placeholder='Введите Qr-code'
+                                    type='string' 
+                                    placeholder='Введите Genid'
                                     value={this.state.otherGenId}
                                     onChange={this.handleInputId}
                                 />
                             </div>
 
-                            <button type="submit"
-                            onClick={(e) => this.handleCheckup(e)}
-                            >Проверить</button>
+                            <button     
+                                type="submit"
+                                onClick={(e) => this.handleCheckup(e)}
+                                onError={this.btnError}
+                                >Проверка
+                            </button>
 
-                            <h6>Введите чужой genId в поле</h6>
-
-                            <div className={this.state.message === 'trouble' ? 'trouble':'okey'}>
+                            <div className={this.state.message === 'проблема' ? 'trouble':'okey'}>
                                 {this.state.message}
                             </div>
-                            
-                            <h6>Здесь вы можете посмотреть совместимость генетического кода с противоположным полом</h6>
-                            <h6>Убедитесь, что в вашем профиле в полях проставлены значения</h6>
+
+                            <QrReader
+                              delay={this.state.delay}
+                              onError={this.handleError}
+                              onScan={this.handleScan}
+                              style={{ width: "95%" }}
+                              className="qrReader"
+                            />
+                            <p>{this.state.result}</p>
+
+                            {
+                                this.state.showFlaw === true ? 
+                                    <div className="">
+                                        Genid должен быть шестизначным!
+                                    </div>
+                                :null
+                            }
+
                         </form>
                     </div>
                 </div>

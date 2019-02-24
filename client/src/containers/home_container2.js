@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+//import { getBooks } from '../actions';
 
-class About extends Component {
+//import BookItem from '../widgetsUI/book_item';
+
+class HomeContainer extends Component {
     render() {
     
         return (
@@ -12,19 +15,11 @@ class About extends Component {
                     <h4>Обратная связь: example@gmail.com</h4>
                     <h4>Выкладывая свою анкету, её автоматически будут видить все люди</h4>
                     <h4>Здесь можно будет скачать файл apk. для Android  </h4>
-                    <p> Ваш QR-code: </p>
-                    <img 
-                        alt='robots' 
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${this.props.user.login.genId}`} 
-                        className="qr"
-                    />
                     <h2>F.A.Q.</h2>
                     <p>Что это?</p> 
                     <p>Веб-приложение для "мониторинга" здоровья</p> 
                     <p>Как пользоваться?</p> 
                     <p>Зарегиструйтесь и залогинтись</p> 
-                    <p>Что делает вкладка совместимость?</p> 
-                    <p>Проверяет вашу совместимость с партнёром. Ввести Genid вы можете вручную либо сканировав qr-code </p>
                     <p>Как рассчитывается рейтинг?</p> 
                     <p>Вручную администратором. Оценка зависит от "полноты" данных анкеты</p>
                 </div>
@@ -39,4 +34,4 @@ function mapStateProps(state) {
     }
 }
 
-export default connect(mapStateProps)(About)
+export default connect(mapStateProps)(HomeContainer)

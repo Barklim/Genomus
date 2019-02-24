@@ -43,7 +43,14 @@ const bookSchema = mongoose.Schema({
     },
     ownerId:{
         type:String,
-        required:true
+    },
+    allowCheck:{
+        type:Boolean,
+        default:false,
+    },
+    allowCompat:{
+        type:Boolean,
+        default:false
     }
 },{timestamps:true})
 

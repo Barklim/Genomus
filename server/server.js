@@ -50,6 +50,28 @@ app.get('/api/getBook',(req,res)=>{
     })
 })
 
+app.get('/api/allow',(req,res)=>{
+    Book.findOne({genId:req.query.user}).exec((err,doc)=>{
+        if(err) return res.status(400).send(err);
+        res.send({
+            allowCheck: doc.allowCheck,
+            allowCompat: doc.allowCompat
+        })
+    })
+})
+
+/*
+res.json({
+            allowCheck:req.book.allowCheck,
+            allowCompat:req.book.allowCompat
+        })
+app.get('/api/user_other_gen',(req,res)=>{
+    Gen.findOne({genId:req.query.user}).exec((err,docs)=>{
+        if(err) return res.status(400).send(err);
+        res.send(docs)
+    })
+})*/
+
 app.get('/api/getGen',(req,res)=>{
     let id = req.query.id;
 
@@ -241,14 +263,26 @@ app.post('/api/register',(req,res)=>{
     })
 })
 
+app.post('/api/registerScreen',(req,res)=>{
+    const user = new User(req.body);
+
+    user.save((err,doc)=>{
+        if(err) return res.json({success:false});
+        res.status(200).json({
+            success:true,
+            user:doc
+        })
+    })
+})
+
 app.post('/api/login',(req,res)=>{
     User.findOne({'email':req.body.email},(err,user)=>{
-        if(!user) return res.json({isAuth:false,message:'Auth failed, email not found'})
+        if(!user) return res.json({isAuth:false,message:'Не удалось войти, email не найден'})
 
         user.comparePassword(req.body.password,(err,isMatch)=>{
             if(!isMatch) return res.json({
                 isAuth:false,
-                message:'Wrong password'
+                message:'Неверный пароль'
             });
 
             user.generateToken((err,user)=>{
@@ -341,6 +375,12 @@ if(process.env.NODE_ENV === 'production'){
     })
 }
 
+
+// const HOST = process.env.HOST || '0.0.0.0';
+// const port = process.env.PORT|| 80;
+// app.listen(port,()=>{
+//     console.log(`SERVER RUNNNING`)
+// })
 
 const port = process.env.PORT || 3001;
 app.listen(port,()=>{

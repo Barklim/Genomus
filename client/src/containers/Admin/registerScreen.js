@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { userRegister } from '../../actions';
+import { userRegisterScreen } from '../../actions';
 
 class RegisterScreen extends PureComponent {
 
@@ -32,7 +32,9 @@ class RegisterScreen extends PureComponent {
 
     componentWillReceiveProps(nextProps){
         if(nextProps.user.register === false){
-            this.setState({error:'Ошибка,попробуйте еще. Возможно ваш GenID занят'})
+            this.setState({
+                error:'Ошибка,попробуйте еще.'
+            })
         } else{
             this.setState({
                 name:'',
@@ -40,16 +42,18 @@ class RegisterScreen extends PureComponent {
                 email:'',
                 password:'',
                 genId:'',
-                role: 1
+                role: 1,
             })
+            this.props.history.push('/login')
         }
+
     }
 
     submitForm = (e) => {
         e.preventDefault();
         this.setState({error:''});
 
-        this.props.dispatch(userRegister({
+        this.props.dispatch(userRegisterScreen({
             email:this.state.email,
             password:this.state.password,
             name:this.state.name,
@@ -67,7 +71,7 @@ class RegisterScreen extends PureComponent {
             <div className="rl_container">
                 <form onSubmit={this.submitForm}>
                     <h2> Регистрация</h2>
-                    <h5>надеемся вы ввели ваши настоящие данные</h5>
+                    <h5>Введите настоящие данные</h5>
                     
                     <div className="form_element">
                         <input
@@ -118,6 +122,9 @@ class RegisterScreen extends PureComponent {
                     <div className="error">
                         {this.state.error}
                     </div>
+
+                    <h5>Пароль должен сордержать цифры и буквы!</h5>
+                    <h5>Запишите ваш пароль и email!</h5>
 
                 </form>
             </div>

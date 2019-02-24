@@ -9,41 +9,34 @@ class User extends Component {
         visible: ''
     }
 
-    componentWillMount(){
-        this.props.dispatch(getUserPosts(this.props.user.login.id));
-        //this.setState({visible: this.props.user.userPosts});
-
-        //this.setState({visible: this.props.user.userPosts});
-    }
-
     componentDidMount(){
-        //this.setState({visible: this.props.user.userPosts});
-
-        //this.setState({visible: this.props.user.userPosts});
-        console.log(this.props);
+        this.props.dispatch(getUserPosts(this.props.user.login.id));
     }
 
-    /*showButton = () => (
-        this.state.visible  ? 
+    componentDidUpdate(){
 
-        <Link to={`/user/compat`}>  
-            <button type="submit">Редактировать анкету</button>
-        </Link>            
-        : <Link to={`/user/compat`}>        
-            <button type="submit">Создать анкету</button>
-        </Link>
-    )*/
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log('nextProps');
+        console.log( nextProps.user.userPosts.length );
+        if ( nextProps.user.userPosts.length === 0 ) {
+            this.setState({visible: ''}); 
+        }  else {
+            this.setState({visible: 'none'});  
+        }
+    }
 
     showUserConfig = (user) => (
         user.userPosts ? 
-                        
+            
             user.userPosts.map(item => (
                 <div key={item._id}>
                     <Link to={
                         `/user/edit-post/${item._id}`
                     }>
                     <button type="submit">
-                        Настройки 
+                        Настройки и редактирование анкеты
                     </button>
 
                     </Link>
@@ -52,13 +45,16 @@ class User extends Component {
         :null
     )
 
-    render() {
-    let user = this.props.user;
-    let user2 = this.props.user.login;
 
-    //console.log(this.props);
-    //console.log(this.props.user.userPosts);
-    //console.log(this.state);
+    render() {
+        let user = this.props.user;
+        let user2 = this.props.user.login;
+
+        console.log(this.props);
+        console.log(this.props.user.userPosts);
+        console.log(this.state);
+
+        console.log(user.userPosts === true );
 
     return (
         <div className="user_container">
@@ -70,14 +66,19 @@ class User extends Component {
                     <div><span>GenId:</span> {user2.genId}</div>
                 </div>
                     <div className="rl_container article">
+
                 <Link to={`/user/profile`}>
+                    <div>
                     <button type="submit">Профиль</button>
+                    </div>
                 </Link>
 
                 {this.showUserConfig(user)}
-         
+
                 <Link to={`/user/add`}>        
-                    <button type="submit">Создать анкету</button>
+                    <div className={this.state.visible}>
+                        <button type="submit">Создать анкету</button>
+                    </div>
                 </Link>
     
                 </div>

@@ -215,6 +215,24 @@ export function getUsers(){
     }
 }
 
+export function userRegisterScreen(user,userList){
+    const request = axios.post(`/api/registerScreen`,user)
+
+    return (dispatch) =>{
+        request.then(({data})=>{
+            let user = data.success ? [data.user]: null;
+            let response = {
+                success:data.success,
+                user
+            }
+
+            dispatch({
+                type:'USER_REGISTER_SCREEN',
+                payload:response
+            })
+        })
+    }
+}
 
 export function userRegister(user,userList){
     const request = axios.post(`/api/register`,user)
@@ -343,6 +361,16 @@ export function getOtherGen(genId){
 
     return {
         type:'GET_OTHER_GEN',
+        payload:request
+    }
+}
+
+export function getAllow(genId){
+    const request = axios.get(`/api/allow?user=${genId}`)
+                    .then(response => response.data)
+
+    return {
+        type:'GET_ALLOW',
         payload:request
     }
 }

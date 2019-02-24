@@ -14,16 +14,53 @@ class EditBook extends PureComponent {
             pages:'',
             rating:'',
             price:'',
-            img_url:''
+            img_url:'',
+            allowCheck: false,
+            allowCompat: false
         }
     }
-
 
     handleInput = (event,name) => {
         const newFormdata = {
             ...this.state.formdata
         }
         newFormdata[name] = event.target.value
+
+/*        if ( name === 'allowCheck' ) {
+            if ( this.state.formdata.allowCheck === true ) {
+                newFormdata[name] = false
+            } else {
+                newFormdata[name] = true
+            }
+        } 
+
+        if ( name === 'allowCompat' ) {
+            if ( this.state.formdata.allowCompat === true ) {
+                newFormdata[name] = false
+            } else {
+                newFormdata[name] = true
+            }
+        } */
+
+        if ( name === 'allowCheck' ) {
+            newFormdata[name] = event.target.checked
+
+            if ( this.state.formdata.allowCheck === true ) {
+                //newFormdata[name] = false
+            } else {
+                //newFormdata[name] = true
+            }
+        } 
+
+        if ( name === 'allowCompat' ) {
+            newFormdata[name] = event.target.checked
+
+            if ( this.state.formdata.allowCompat === true ) {
+                //newFormdata[name] = false
+            } else {
+                //newFormdata[name] = true
+            }
+        } 
 
         this.setState({
             formdata:newFormdata
@@ -45,7 +82,6 @@ class EditBook extends PureComponent {
         },1000)
     }
 
-
     componentWillMount(){
         this.props.dispatch(getBook(this.props.match.params.id))
     }
@@ -61,7 +97,9 @@ class EditBook extends PureComponent {
                 pages:book.pages,
                 rating:book.rating,
                 price:book.price,
-                img_url:book.img_url
+                img_url:book.img_url,
+                allowCheck:book.allowCheck,
+                allowCompat:book.allowCompat
             }
         })
     }
@@ -73,6 +111,8 @@ class EditBook extends PureComponent {
     render() {
         let books = this.props.books;
         console.log(this.props);
+        console.log("this.state");
+        console.log(this.state);
         return (
             <div className="rl_container article">
                 {
@@ -129,10 +169,45 @@ class EditBook extends PureComponent {
                             value={this.state.formdata.price}
                             onChange={(event)=>this.handleInput(event,'price')}
                         >   
+                            <option val='Неизвестно'>Неизвестно</option>
                             <option val='Муж'>Муж</option>
                             <option val='Жен'>Жен</option>
-                            <option val='Неизвестно'>Неизвестно</option>
                         </select>
+                    </div>
+
+                    <div className="profile_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Разрешать проверять совместимость</td>
+                                <th>
+                                    <div>
+                                        <input
+                                            className="profile_checkbox"
+                                            type="checkbox"
+                                            checked={this.state.formdata.allowCheck}
+                                            onChange={(event)=>this.handleInput(event,'allowCheck')}
+                                        />
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Отображать мою анкету при проверке совместимости</td>
+                                <td>
+                                    <div>
+                                        <input
+                                            className="profile_checkbox"
+                                            type="checkbox"
+                                            checked={this.state.formdata.allowCompat}
+                                            onChange={(event)=>this.handleInput(event,'allowCompat')}
+                                        />
+                                    </div>                        
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                     </div>
                     
                     <p>Информация о вас:</p>
