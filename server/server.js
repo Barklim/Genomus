@@ -52,7 +52,11 @@ app.get('/api/getBook',(req,res)=>{
 
 app.get('/api/allow',(req,res)=>{
     Book.findOne({genId:req.query.user}).exec((err,doc)=>{
-        if(err) return res.status(400).send(err);
+        //if(err) return res.status(400).send(err); :(((
+        if(err) return res.send({
+            allowCheck: false,
+            allowCompat: false
+        });
         res.send({
             allowCheck: doc.allowCheck,
             allowCompat: doc.allowCompat

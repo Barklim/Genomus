@@ -102,8 +102,12 @@ class Compat extends PureComponent {
 
     handleCheckup(e) {
         e.preventDefault();
-        this.props.dispatch(getOtherGen(this.state.otherGenId))
-        this.props.dispatch(getAllow(this.state.otherGenId))
+        if ( this.state.otherGenId.length === 6 ) {
+            console.log('HERE!');
+            this.props.dispatch(getOtherGen(this.state.otherGenId))
+            this.props.dispatch(getAllow(this.state.otherGenId))
+        } 
+        console.log('HERE2!');
         this.setState({showFlaw:''}); 
         this.setState({result: 'No result' })
         if (this.state.otherGenId.length !== 6 ) { 
