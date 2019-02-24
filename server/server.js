@@ -110,7 +110,7 @@ app.get('/api/books',(req,res)=>{
     let order = req.query.order;
 
     // ORDER = asc || desc
-    Book.find().skip(skip).sort({_id:order}).limit(limit).exec((err,doc)=>{
+    Book.find({allowCompat:true}).skip(skip).sort({_id:order}).limit(limit).exec((err,doc)=>{
         if(err) return res.status(400).send(err);
         res.send(doc);
     })
