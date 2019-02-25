@@ -6,7 +6,8 @@ import { getUserPosts } from '../../actions';
 class User extends Component {
 
     state = {
-        visible: ''
+        visible: '', 
+        img_url: ''
     }
 
     componentDidMount(){
@@ -19,12 +20,24 @@ class User extends Component {
 
     componentWillReceiveProps(nextProps){
         console.log('nextProps');
-        console.log( nextProps.user.userPosts.length );
+        /*console.log(nextProps.user.userPosts[0].img_url);*/
+
+        /*fetch('https://st2.depositphotos.com/2001755/5408/i/450/depositphotos_54081723-stock-photo-beautiful-nature-landscape.jpg');*/
+        /*console.log('nextProps');
+        console.log( nextProps.user.userPosts.length );*/
+
         if ( nextProps.user.userPosts.length === 0 ) {
             this.setState({visible: ''}); 
+            this.setState({
+                img_url: 'https://robohash.org/set_set1/bgset_bg1/${this.props.user.login.id}?200x200?3`'
+            })
         }  else {
             this.setState({visible: 'none'});  
+            this.setState({
+                img_url: nextProps.user.userPosts[0].img_url
+            })
         }
+
     }
 
     showUserConfig = (user) => (
@@ -49,17 +62,21 @@ class User extends Component {
     render() {
         let user = this.props.user;
         let user2 = this.props.user.login;
-
+        
         console.log(this.props);
+        console.log(this.state);
+/*       
         console.log(this.props.user.userPosts);
         console.log(this.state);
-
-        console.log(user.userPosts === true );
+        console.log(user.userPosts === true );*/
 
     return (
         <div className="user_container">
             <div className="nfo">
                 <div className="formattext">
+                    <div className="formatImg">
+                        <img src={this.state.img_url} />
+                    </div>
                     <div><span>Name:</span> {user2.name}</div>
                     <div><span>Lastname:</span> {user2.lastname}</div>
                     <div><span>Email:</span> {user2.email}</div>

@@ -11,6 +11,13 @@ class UserPosts extends Component {
     componentWillMount(){
         this.props.dispatch(getAllUserPosts(this.props.user.login.id));
     }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.user.login.role === 1){
+            this.props.history.push('/about')
+        }
+    }
+
     showUserPosts = (user) => (
         user.userPosts ? 
                         

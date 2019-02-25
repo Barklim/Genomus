@@ -14,10 +14,16 @@ class AddBook extends Component {
             rating:9,
             price:'Муж',
             allowCheck: false,
-            allowCompat: false
+            allowCompat: false,
+            img_url: 'https://designdroide.com/images/abstract-user-icon-4.svg'
         }
     }
 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.user.login.role === 1){
+            this.props.history.push('/about')
+        }
+    }
 
     handleInput = (event,name) => {
         const newFormdata = {
@@ -122,6 +128,15 @@ class AddBook extends Component {
                             <option val='Жен'>Жен</option>
                             <option val='Неизвестно'>Неизвестно</option>
                         </select>
+                    </div>
+
+                    <div className="form_element">
+                        <input
+                            type="text"
+                            placeholder="Введите url... http://vk.c0m/aasdfk/asdf.png"
+                            value={this.state.formdata.img_url}
+                            onChange={(event)=>this.handleInput(event,'img_url')}
+                        />
                     </div>
                     
                     <div className="profile_table">

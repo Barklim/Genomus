@@ -3,7 +3,8 @@ import { auth } from '../actions'
 import {connect} from 'react-redux';
 
 export default function(ComposedClass,reload){
-    class AuthenticationCheck extends Component {
+    // console.log('warmimR0le!')
+    class RoleCheck extends Component {
 
         state = {
             loading:true
@@ -11,6 +12,7 @@ export default function(ComposedClass,reload){
 
         componentWillMount(){
             this.props.dispatch(auth())
+            console.log('warmimR0le!')
         }
 
         componentWillReceiveProps(nextProps){
@@ -22,7 +24,7 @@ export default function(ComposedClass,reload){
                 }
             } else {
                 if(reload === false) {
-                    this.props.history.push('/user/user')
+                    this.props.history.push('/user')
                 }
             }
         }
@@ -42,6 +44,6 @@ export default function(ComposedClass,reload){
             user:state.user
         }
     }
-    return connect(mapStateToProps)(AuthenticationCheck)
+    return connect(mapStateToProps)(RoleCheck)
 
 }

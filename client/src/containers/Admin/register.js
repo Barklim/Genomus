@@ -40,6 +40,10 @@ class Register extends PureComponent {
     } 
 
     componentWillReceiveProps(nextProps){
+        if(nextProps.user.login.role === 1){
+            this.props.history.push('/about')
+        }
+
         if(nextProps.user.register === false){
             this.setState({error:'Error,try again'})
         } else{

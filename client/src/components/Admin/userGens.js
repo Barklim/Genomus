@@ -9,6 +9,12 @@ class UserGens extends Component {
         this.props.dispatch(getUserGens(this.props.user.login.id))
     }
 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.user.login.role === 1){
+            this.props.history.push('/about')
+        }
+    }
+
     showUserGens = (user) => (
         user.userGens ? 
             user.userGens.map(item => (

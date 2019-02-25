@@ -76,6 +76,10 @@ class AddGen extends Component {
 
     render() {
         console.log(this.props);
+        if (this.props.user.login.role === 1){
+            this.props.history.push('/about')
+        }
+
         return (
             <div className="rl_container article">
                 <form onSubmit={this.submitForm}>

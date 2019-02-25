@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from './components/Home/home';
 import BookView from './components/Books'
-import Main from './containers/Admin/Main'
+/*import Main from './containers/Admin/Main'*/
 import Login from './containers/Admin/login'
 import User from './components/Admin'
 import AddReview from './containers/Admin/add'
@@ -20,7 +20,6 @@ import Logout from './components/Admin/logout';
 import About from './components/About/about';
 import Genom from './containers/Genom/add';
 
-import Unauthorized from './components/Unauthorized/unauthorized';
 //import AdminWrapper from './components/Admin/AdminWrapper';
 import Test from './components/Test/test';
 import Test1 from './components/Test/test1';
@@ -31,12 +30,16 @@ import Compat from './components/Admin/compat';
 
 import Layout from './hoc/layout'
 import Auth from './hoc/auth'
+/*import Role from './hoc/role'
+onEnter={Role(AddReview,true)}*/
 
 const Routes = () => {
-    //var a = false; // true
-    //var b = <Route path="/user/add" exact component={Auth(AddReview,true)}/>;
-    //console.log(user.login);
-    // <Route path="/" exact component={Auth(Home,null)}/>
+
+/*    function checkLogin() {
+      const login = window.localStorage.getItem('rr_login')
+      if (login === 'admin') {
+      }
+    }*/
 
     return (
         <Layout>
@@ -45,7 +48,7 @@ const Routes = () => {
                 <Route path="/login" exact component={Auth(Login,false)}/>
                 <Route path="/user/logout" exact component={Auth(Logout,true)}/>
                 <Route path="/user-ankets" exact component={Auth(Home,null)}/>
-                <Route path="/user" exact component={Auth(User,true)}/>
+                <Route path="/user/user" exact component={Auth(User,true)}/>
                 <Route path="/user/add" exact component={Auth(AddReview,true)}/>
                 <Route path="/user/register" exact component={Auth(Register,true)}/>
                 <Route path="/user/registerScreen" exact component={Auth(RegisterScreen,false)}/>
@@ -61,7 +64,7 @@ const Routes = () => {
                 <Route path="/about" exact component={Auth(About,null)}/>
                 <Route path="/user/compat" exact component={Auth(Compat,true)}/>
                 <Route path="/user/profile" exact component={Auth(Profile,true)}/>
-                <Route path='/unauthorized' component={Auth(Unauthorized,null)}/>
+                <Route path='*' component={Login} />
                 <Route path='/test' component={Auth(Test,null)}>
                     <Route path='/test1' component={Auth(Test1,null)}/>
                     <Route path='/test2' component={Auth(Test2,null)}/>

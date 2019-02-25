@@ -2,9 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BookItem = (item) => {
+
+/*    if (item.img_url === 'n/a') {
+        item.img_url = 'https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png'
+    }*/
+
     return (
         <Link to={`/books/${item._id}`} className="book_item">
 
+            <div className="formatImg2">
+                <img src={item.img_url}/>
+            </div>
+            
+            <div>
             <div className="book_header">
                 <h2>{item.name}</h2>
             </div>
@@ -21,6 +31,7 @@ const BookItem = (item) => {
 
                 <div className="book_bubble rating">
                     <strong>Rating</strong>☆  {item.rating}
+                </div>
                 </div>
 
             </div>

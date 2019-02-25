@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
 
@@ -32,7 +32,7 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
             type:'navItem',
             icon:'user-circle',
             text:'Мой профиль',
-            link:'/user',
+            link:'/user/user',
             restricted:true
         },
         {
@@ -112,16 +112,16 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
             icon:'question-circle',
             text:'О нас',
             link:'/about',
-            restricted:false
+            restricted:false,
         }
     ]
 
     const element = (item,i) => (
         <div key={i} className={item.type}>
-            <Link to={item.link}>
+            <NavLink to={item.link}>
                 <FontAwesome name={item.icon}/>
                 {item.text}
-            </Link>
+            </NavLink>
         </div>
     )
 

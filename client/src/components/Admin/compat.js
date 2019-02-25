@@ -14,7 +14,9 @@ class Compat extends PureComponent {
         message:'',
         showFlaw:'',
         delay: 300,
-        result: "No result"
+        result: "No result",
+        allowCheck: false,
+        allowMessage: ''
     };
         this.handleScan = this.handleScan.bind(this);
     }
@@ -93,7 +95,26 @@ class Compat extends PureComponent {
             } else {
                 this.setState({message:'все хорошо!'})  
             }
+
+        // nextProps.user.otherGen.length !== 6
+        console.log("MEXT");
+        console.log(nextProps);
+        if(nextProps.user.allow === undefined){
+            this.setState({message:'ожидание'})
+        } else {
+            /*console.log(nextProps.user.allow);*/
+            this.setState({allowCheck: nextProps.user.allow.allowCheck})
+        } 
+
+        if ( this.state.allowMessage === true ) {
+            this.setState({allowMessage: true})
+            this.setState({message:'ожидание'})
+        } else {
+            this.setState({allowMessage: false})
         }
+
+        }
+
     }
 
     handleInputId = (event) => {
@@ -103,20 +124,22 @@ class Compat extends PureComponent {
     handleCheckup(e) {
         e.preventDefault();
         if ( this.state.otherGenId.length === 6 ) {
-            console.log('HERE!');
+            /*console.log('HERE!');*/
             this.props.dispatch(getOtherGen(this.state.otherGenId))
             this.props.dispatch(getAllow(this.state.otherGenId))
+          /*  if( this.state.allowCheck === 6 )*/
         } 
-        console.log('HERE2!');
+        /*console.log('HERE2!');*/
         this.setState({showFlaw:''}); 
         this.setState({result: 'No result' })
+        this.setState({message:'ожидание'})
         if (this.state.otherGenId.length !== 6 ) { 
             this.setState({showFlaw:true});
         }
 
-        /*console.log(this.state);
-        console.log(this.props.user);
-        console.log(this.props.user.login.genId);*/
+        console.log("handleCheckup");
+        console.log(this.state);
+        console.log(this.props);
     }
     btnError(err) {
         console.error(err);
@@ -128,6 +151,9 @@ class Compat extends PureComponent {
 
     render() {
         //let genId = this.props.genId;
+        /*console.log(this.props);*/
+        console.log("remder");
+        console.log(this.state);
         console.log(this.props);
 
         return (
@@ -166,12 +192,22 @@ class Compat extends PureComponent {
                               style={{ width: "95%" }}
                               className="qrReader"
                             />
+                            <h6>Дек0дир0вание qr:</h6>
                             <p>{this.state.result}</p>
-
+                            <h6>Длина GemId:</h6>
                             {
                                 this.state.showFlaw === true ? 
                                     <div className="">
                                         Genid должен быть шестизначным!
+                                    </div>
+                                :null
+                            }
+
+                            <h6>с00бшение 0 д0зв0лении:</h6>
+                            {
+                                this.state.allowCheck === true ? 
+                                    <div className="">
+                                        У вас нед в0зм0жн0сди пр0веридь, друг0й чел0век запредил
                                     </div>
                                 :null
                             }

@@ -175,6 +175,15 @@ class EditBook extends PureComponent {
                         </select>
                     </div>
 
+                    <div className="form_element">
+                        <input
+                            type="text"
+                            placeholder="Введите url ..."
+                            value={this.state.formdata.img_url}
+                            onChange={(event)=>this.handleInput(event,'img_url')}
+                        />
+                    </div>
+
                     <div className="profile_table">
                     <table>
                         <thead>

@@ -22,6 +22,8 @@ npm run dev
 	maim page
 	validati0m
 	fr0m registerScreem
+	Зашидил р0уды + 0браб0дал ранд0мные
+	MavLimk
 
 #Feature
 
@@ -30,6 +32,7 @@ npm run dev
 	Пока анкет не наделаешь в админке
 	Админ может менять рейтинг анкеты, который по дефолту 9
 	Только у одной учётки есть права удалять/редактировать/создавать юзеров/посты/мутации 
+	нельзя из админки редакдир0вадь р0ль, д.к. иначе не в0зм0жн0 будед вернудь себе права
 
 #to do
 	
@@ -54,6 +57,10 @@ npm run dev
 	ограничения page/age
 
 	0дпралядь на п0чду
+	при регисдрации д0бавлядь хрень в п0ле
+
+	Диал0г0в0е 0кн0
+	https://maxfarseer.gitbooks.io/react-router-course-ru/content/podtverzhdenie_perehoda.html
 
 	mumber -> strimg
 
@@ -70,6 +77,11 @@ npm run dev
 	## C0mpat
 	идед сканир0вание
 	анимир0вание
+	как лучше выкидывадь с р0уда через 0mEmter
+	!Редакдир0вание р0уд запредидь
+	image-react
+	кардинки деф0рмируюдся
+	В к0мпад, дак0г0 юзера нед
 
 #question for alex
 		
@@ -88,6 +100,7 @@ npm run dev
 	акк0рди0н
 
 	register , gem mutati0ms v2
+	чд0 дам с меню к0д0р0е д0жн0 закрывадься
 
 #comments for dev
 
@@ -123,6 +136,6 @@ npm run dev
 #workflow
 
  git add .
- git commit -m 'simple test'
+ git commit -m 'fix user-amkets'
  git push 
  git push heroku
