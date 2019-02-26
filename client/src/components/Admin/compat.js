@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { getUserGen, getOtherGen, getBook, getAllow } from '../../actions';
+import { getUserGen, getOtherGen, getAllow } from '../../actions';
 import QrReader from "react-qr-reader";
 
 // getBook f0r get imf0 ab0ut all0ws
@@ -15,8 +15,8 @@ class Compat extends PureComponent {
         showFlaw:'',
         delay: 300,
         result: "No result",
-        allowCheck: false,
-        allowMessage: ''
+        allowCheck: true,
+        allowMessage: '',
     };
         this.handleScan = this.handleScan.bind(this);
     }
@@ -39,7 +39,7 @@ class Compat extends PureComponent {
 
     componentWillMount(){
         this.props.dispatch(getUserGen(this.props.user.login.genId))
-        this.props.dispatch(getBook(this.props.user.login.id))
+        /*this.props.dispatch(getBook(this.props.user.login.id))*/
     }
 
 /*    componentDidMount(){
@@ -48,13 +48,27 @@ class Compat extends PureComponent {
 
     componentWillReceiveProps(nextProps){
 
+        if(nextProps.user.allow === undefined){
+        } else {
+            this.setState({allowCheck: nextProps.user.allow.allowCheck})
+        } 
+
+        if ( this.state.allowCheck === true ) {
+            this.setState({allowMessage: true})
+        } else {
+            this.setState({allowMessage: false})
+            this.setState({message:'ожидание ⏰'})
+        }
+
 /*        if( this.state.result !== 'No result'){
             this.setState({otherGen: this.state.result })
             this.setState({message:'ожидание'})
         } else*/
 
-        if(nextProps.user.otherGen === undefined || this.state.showFlaw === true ){
-            this.setState({message:'ожидание'})
+        // if(nextProps.user.otherGen === undefined || this.state.showFlaw === true ){
+
+        if(nextProps.user.otherGen === undefined || nextProps.user.allow === undefined ){
+            this.setState({message:'ожидание ⏰'})
             /*this.setState({result:'No result'})*/
 
         } else {
@@ -91,27 +105,18 @@ class Compat extends PureComponent {
                 ((nextProps.user.otherGen.rule_28 === 1 ) && (nextProps.user.userGen.rule_28 === 1 )) ||
                 ((nextProps.user.otherGen.rule_29 === 1 ) && (nextProps.user.userGen.rule_29 === 1 )) 
                 ) {
-                this.setState({message:'проблема'})
+                if (this.state.allowCheck === true) {
+                    this.setState({message:'проблема ✘'})
+                }
             } else {
-                this.setState({message:'все хорошо!'})  
+                if (this.state.allowCheck === true) {
+                    this.setState({message:'все хорошо ✔'})  
+                }
             }
 
         // nextProps.user.otherGen.length !== 6
         console.log("MEXT");
         console.log(nextProps);
-        if(nextProps.user.allow === undefined){
-            this.setState({message:'ожидание'})
-        } else {
-            /*console.log(nextProps.user.allow);*/
-            this.setState({allowCheck: nextProps.user.allow.allowCheck})
-        } 
-
-        if ( this.state.allowMessage === true ) {
-            this.setState({allowMessage: true})
-            this.setState({message:'ожидание'})
-        } else {
-            this.setState({allowMessage: false})
-        }
 
         }
 
@@ -123,19 +128,19 @@ class Compat extends PureComponent {
 
     handleCheckup(e) {
         e.preventDefault();
-        if ( this.state.otherGenId.length === 6 ) {
-            /*console.log('HERE!');*/
-            this.props.dispatch(getOtherGen(this.state.otherGenId))
-            this.props.dispatch(getAllow(this.state.otherGenId))
-          /*  if( this.state.allowCheck === 6 )*/
-        } 
-        /*console.log('HERE2!');*/
-        this.setState({showFlaw:''}); 
+
+        /*this.setState({allowCheck: true})*/
         this.setState({result: 'No result' })
-        this.setState({message:'ожидание'})
+        this.setState({message:'ожидание ⏰'})
+        this.setState({showFlaw:''}); 
         if (this.state.otherGenId.length !== 6 ) { 
             this.setState({showFlaw:true});
         }
+
+        if ( this.state.otherGenId.length === 6 ) {
+            this.props.dispatch(getAllow(this.state.otherGenId))
+            this.props.dispatch(getOtherGen(this.state.otherGenId))
+        } 
 
         console.log("handleCheckup");
         console.log(this.state);
@@ -181,17 +186,10 @@ class Compat extends PureComponent {
                                 >Проверка
                             </button>
 
-                            <div className={this.state.message === 'проблема' ? 'trouble':'okey'}>
+                            <div className={this.state.message === 'проблема ✘' ? 'trouble':'okey'}>
                                 {this.state.message}
                             </div>
 
-                            <QrReader
-                              delay={this.state.delay}
-                              onError={this.handleError}
-                              onScan={this.handleScan}
-                              style={{ width: "95%" }}
-                              className="qrReader"
-                            />
                             <h6>Дек0дир0вание qr:</h6>
                             <p>{this.state.result}</p>
                             <h6>Длина GemId:</h6>
@@ -205,12 +203,20 @@ class Compat extends PureComponent {
 
                             <h6>с00бшение 0 д0зв0лении:</h6>
                             {
-                                this.state.allowCheck === true ? 
+                                this.state.allowCheck === false ? 
                                     <div className="">
-                                        У вас нед в0зм0жн0сди пр0веридь, друг0й чел0век запредил
+                                        У вас нед в0зм0жн0сди пр0веридь, друг0й чел0век запредил!
                                     </div>
                                 :null
                             }
+
+                            <QrReader
+                              delay={this.state.delay}
+                              onError={this.handleError}
+                              onScan={this.handleScan}
+                              style={{ width: "95%" }}
+                              className="qrReader"
+                            />
 
                         </form>
                     </div>

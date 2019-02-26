@@ -15,7 +15,7 @@ class AddBook extends Component {
             price:'Муж',
             allowCheck: false,
             allowCompat: false,
-            img_url: 'https://designdroide.com/images/abstract-user-icon-4.svg'
+            img_url: 'https://robohash.org/set_set1/bgset_bg1/${this.props.user.login.id}?200x200?3'
         }
     }
 

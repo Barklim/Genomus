@@ -7,7 +7,7 @@ class User extends Component {
 
     state = {
         visible: '', 
-        img_url: ''
+        img_url: 'https://robohash.org/set_set1/bgset_bg1/${this.props.user.login.id}?200x200?3`'
     }
 
     componentDidMount(){
@@ -19,12 +19,6 @@ class User extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        console.log('nextProps');
-        /*console.log(nextProps.user.userPosts[0].img_url);*/
-
-        /*fetch('https://st2.depositphotos.com/2001755/5408/i/450/depositphotos_54081723-stock-photo-beautiful-nature-landscape.jpg');*/
-        /*console.log('nextProps');
-        console.log( nextProps.user.userPosts.length );*/
 
         if ( nextProps.user.userPosts.length === 0 ) {
             this.setState({visible: ''}); 
@@ -33,9 +27,20 @@ class User extends Component {
             })
         }  else {
             this.setState({visible: 'none'});  
+
             this.setState({
-                img_url: nextProps.user.userPosts[0].img_url
-            })
+                    img_url: nextProps.user.userPosts[0].img_url
+                })
+
+/*            fetch(nextProps.user.userPosts[0].img_url).then(function(response) {
+                if(response.ok) {
+                    console.log('Fack Yeah!');
+                  } 
+                  throw new Error('Network response was not ok.');
+                }).catch(function(error) {
+                  console.log('There has been a problem with your fetch operation: ' + error.message);
+                });*/
+                // https://st2.depositphotos.com/2001755/5408/i/450/depositphotos_54081723-stock-photo-beautiful-nature-landscap.jpg
         }
 
     }

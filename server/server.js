@@ -53,7 +53,7 @@ app.get('/api/getBook',(req,res)=>{
 app.get('/api/allow',(req,res)=>{
     Book.findOne({genId:req.query.user}).exec((err,doc)=>{
         //if(err) return res.status(400).send(err); :(((
-        if(err) return res.send({
+        if(err) return res.status(400).send({
             allowCheck: false,
             allowCompat: false
         });
@@ -187,9 +187,48 @@ app.get('/api/user_gen_special',(req,res)=>{
     })
 })
 
-app.get('/api/user_other_gen',(req,res)=>{
+/*app.get('/api/user_other_gen',(req,res)=>{
     Gen.findOne({genId:req.query.user}).exec((err,docs)=>{
         if(err) return res.status(400).send(err);
+        res.send(docs)
+    })
+})*/
+
+
+app.get('/api/user_other_gen',(req,res)=>{
+    Gen.findOne({genId:req.query.user}).exec((err,docs)=>{
+        if(err) return res.status(400).send({
+            rule_0: 0,
+            rule_1: 0,
+            rule_2: 0,
+            rule_3: 0,
+            rule_4: 0,
+            rule_5: 0,
+            rule_6: 0,
+            rule_7: 0,
+            rule_8: 0,
+            rule_9: 0,
+            rule_10: 0,
+            rule_11: 0,
+            rule_12: 0,
+            rule_13: 0,
+            rule_14: 0,
+            rule_15: 0,
+            rule_16: 0,
+            rule_17: 0,
+            rule_18: 0,
+            rule_19: 0,
+            rule_20: 0,
+            rule_21: 0,
+            rule_22: 0,
+            rule_23: 0,
+            rule_24: 0,
+            rule_25: 0,
+            rule_26: 0,
+            rule_27: 0,
+            rule_28: 0,
+            rule_29: 0,
+        });
         res.send(docs)
     })
 })

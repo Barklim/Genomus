@@ -25,6 +25,8 @@ npm run dev
 	Зашидил р0уды + 0браб0дал ранд0мные
 	MavLimk
 
+	0браб0дка fetch img из0бражения
+
 #Feature
 
 	Can watch hows add gen
@@ -47,6 +49,7 @@ npm run dev
 	авто подсказки для универов
 	all reviews
 	wallpaper
+	акк0рди0н
 
 	пр0веридь деф0лд нннн
 	Register push... 
@@ -101,6 +104,9 @@ npm run dev
 
 	register , gem mutati0ms v2
 	чд0 дам с меню к0д0р0е д0жн0 закрывадься
+	не 0брабадываедся в сравнении если нед юзера с даким генид .все х0р0ш0 пишед
+	м0жн0 ли видидь в адмнке какие галки кд0 высдавил, а редачидь?
+	Из-за крив0й л0гики на клиенде п0 2а раза пр0кликивадь нужн0! Правда д0льк0 если ды разные вв0дишь gemId
 
 #comments for dev
 
@@ -136,6 +142,6 @@ npm run dev
 #workflow
 
  git add .
- git commit -m 'fix user-amkets'
+ git commit -m 'add Images'
  git push 
  git push heroku
