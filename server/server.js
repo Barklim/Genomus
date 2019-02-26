@@ -50,18 +50,26 @@ app.get('/api/getBook',(req,res)=>{
     })
 })
 
+
 app.get('/api/allow',(req,res)=>{
-    Book.findOne({genId:req.query.user}).exec((err,doc)=>{
-        //if(err) return res.status(400).send(err); :(((
-        if(err) return res.status(400).send({
-            allowCheck: false,
-            allowCompat: false
-        });
-        res.send({
-            allowCheck: doc.allowCheck,
-            allowCompat: doc.allowCompat
+        Book.findOne({genId:req.query.user}).exec((err,doc)=>{
+
+            //if(err) return res.status(400).send(err); :(((
+            if(err) return res.send({
+                allowCheck: false,
+                allowCompat: false
+            });
+            if(doc) return res.send({
+                allowCheck: doc.allowCheck,
+                allowCompat: doc.allowCompat
+            }); 
+/*            else {
+                    res.send({
+                    allowCheck: doc.allowCheck,
+                    allowCompat: doc.allowCompat
+                })
+            };*/
         })
-    })
 })
 
 /*
@@ -197,7 +205,7 @@ app.get('/api/user_gen_special',(req,res)=>{
 
 app.get('/api/user_other_gen',(req,res)=>{
     Gen.findOne({genId:req.query.user}).exec((err,docs)=>{
-        if(err) return res.status(400).send({
+        if(err) return res.send({
             rule_0: 0,
             rule_1: 0,
             rule_2: 0,
@@ -228,6 +236,38 @@ app.get('/api/user_other_gen',(req,res)=>{
             rule_27: 0,
             rule_28: 0,
             rule_29: 0,
+        });
+        if(docs) return res.send({
+            rule_0: docs.rule_0,
+            rule_1: docs.rule_1,
+            rule_2: docs.rule_2,
+            rule_3: docs.rule_3,
+            rule_4: docs.rule_4,
+            rule_5: docs.rule_5,
+            rule_6: docs.rule_6,
+            rule_7: docs.rule_7,
+            rule_8: docs.rule_8,
+            rule_9: docs.rule_9,
+            rule_10: docs.rule_10,
+            rule_11: docs.rule_11,
+            rule_12: docs.rule_12,
+            rule_13: docs.rule_13,
+            rule_14: docs.rule_14,
+            rule_15: docs.rule_15,
+            rule_16: docs.rule_16,
+            rule_17: docs.rule_17,
+            rule_18: docs.rule_18,
+            rule_19: docs.rule_19,
+            rule_20: docs.rule_20,
+            rule_21: docs.rule_21,
+            rule_22: docs.rule_22,
+            rule_23: docs.rule_23,
+            rule_24: docs.rule_24,
+            rule_25: docs.rule_25,
+            rule_26: docs.rule_26,
+            rule_27: docs.rule_27,
+            rule_28: docs.rule_28,
+            rule_29: docs.rule_29,
         });
         res.send(docs)
     })

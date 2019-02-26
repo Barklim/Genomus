@@ -142,6 +142,6 @@ npm run dev
 #workflow
 
  git add .
- git commit -m 'add Images'
+ git commit -m 'fix c0mpat'
  git push 
  git push heroku
