@@ -124,6 +124,14 @@ class Profile extends Component {
                     <td>№ 16</td>
                     <td>16: 3944delGT: {item.rule_0}</td>
                 </tr>
+                <tr>
+                    <td>№ 26</td>
+                    <td>16: 3944delGT: {item.rule_0}</td>
+                </tr>
+                <tr>
+                    <td>№ 36</td>
+                    <td>16: 3944delGT: {item.rule_0}</td>
+                </tr>
                 </div>
             ))
         :null
@@ -160,11 +168,6 @@ class Profile extends Component {
                 <h4>Таблица мутаций:</h4>
                 <table>
                     <tbody>
-                        {this.showUserPosts(user)}
-                        {this.showUserPosts2(user)}
-                        {this.showUserPosts3(user)}
-                        {this.showUserPosts4(user)}
-                        {this.showUserPosts5(user)}
                         {this.showUserPosts6(user)}
                     </tbody>
                 </table>
