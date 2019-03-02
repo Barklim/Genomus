@@ -115,22 +115,30 @@ class Profile extends Component {
         user.profileGen ? 
                         
             user.profileGen.map(item => (
-                <div key={item._id}>
+                <div key={item._id} className='table_profile'>
                 <tr>
-                    <td>№ 6</td>
+                    <td>№ 1</td>
                     <td>CFTR: 3944delGT: {item.rule_0}</td>
                 </tr>
                 <tr>
-                    <td>№ 16</td>
-                    <td>16: 3944delGT: {item.rule_0}</td>
+                    <td>№ 2</td>
+                    <td>3944delGT: {item.rule_1}</td>
                 </tr>
                 <tr>
-                    <td>№ 26</td>
-                    <td>16: 3944delGT: {item.rule_0}</td>
+                    <td>№ 3</td>
+                    <td>3944delGT: {item.rule_2}</td>
                 </tr>
                 <tr>
-                    <td>№ 36</td>
-                    <td>16: 3944delGT: {item.rule_0}</td>
+                    <td>№ 4</td>
+                    <td>3944delGT: {item.rule_3}</td>
+                </tr>
+                <tr>
+                    <td>№ 5</td>
+                    <td>3944delGT: {item.rule_4}</td>
+                </tr>
+                                <tr>
+                    <td>№ 6</td>
+                    <td>3944delGT: {item.rule_5}</td>
                 </tr>
                 </div>
             ))
