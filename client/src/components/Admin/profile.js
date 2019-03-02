@@ -167,9 +167,11 @@ class Profile extends Component {
                     </tbody>
                     <tbody>
                         {this.showUserPosts5(user)}
+                        {this.showUserPosts6(user)}
+                        {this.showUserPosts6(user)}
                     </tbody>
                     <tbody>
-                        {this.showUserPosts6(user)}
+                        <p></p>
                     </tbody>
                 </table>
             </div>
