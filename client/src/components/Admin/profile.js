@@ -67,48 +67,46 @@ class Profile extends Component {
         user.profileGen ? 
                         
             user.profileGen.map(item => (
-                <div key={item._id} className='table_profile'>
-                <tbody>
-                <tr>
-                    <td>№ 1</td>
-                    <td>{item.rule_0}: </td>
-                    <td> CFTR: 3944delGT </td>
-                </tr>
+                <tbody key={item._id} className='table_profile'>
+
+                    <tr>
+                        <td>№ 1</td>
+                        <td>{item.rule_0}: </td>
+                        <td> CFTR: 3944delGT </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>№ 2</td>
+                        <td>{item.rule_1}: </td>
+                        <td> CFTR: 3944delGT </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 3</td>
+                        <td>{item.rule_2}: </td>
+                        <td> CFTR: 3944delGT </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 4</td>
+                        <td>{item.rule_3}: </td>
+                        <td> CFTR: 3944delGT </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 5</td>
+                        <td>{item.rule_4}</td>
+                        <td> CFTR: 3944delGT </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 6</td>
+                        <td>{item.rule_5}</td>
+                        <td> CFTR: 3944delGT </td>
+                    </tr>
+
                 </tbody>
-                <tbody>
-                <tr>
-                    <td>№ 2</td>
-                    <td>{item.rule_1}: </td>
-                    <td> CFTR: 3944delGT </td>
-                </tr>
-                </tbody>
-                <tr>
-                    <td>№ 3</td>
-                    <td>{item.rule_2}: </td>
-                    <td> CFTR: 3944delGT </td>
-                </tr>
-                <tbody>
-                <tr>
-                    <td>№ 4</td>
-                    <td>{item.rule_3}: </td>
-                    <td> CFTR: 3944delGT </td>
-                </tr>
-                </tbody>
-                <tbody>
-                <tr>
-                    <td>№ 5</td>
-                    <td>3944delGT: {item.rule_4}</td>
-                    <td> CFTR: 3944delGT </td>
-                </tr>
-                </tbody>
-                <tbody>
-                <tr>
-                    <td>№ 6</td>
-                    <td>3944delGT: {item.rule_5}</td>
-                    <td> CFTR: 3944delGT </td>
-                </tr>
-                </tbody>
-                </div>
             ))
         :null
     )
