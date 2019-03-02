@@ -56,7 +56,7 @@ class Profile extends Component {
                         
             user.profileGen.map(item => (
                 <tr key={item._id}>
-                    <td>№ 1:</td>
+                    <td>№ 1</td>
                     <td>CFTR: 3944delGT: {item.rule_0}</td>
                 </tr>
             ))
@@ -68,7 +68,7 @@ class Profile extends Component {
                         
             user.profileGen.map(item => (
                 <tr key={item._id}>
-                    <td>№ 2:</td>
+                    <td>№ 2</td>
                     <td>CFTR: 3944delGT: {item.rule_1}</td>
                 </tr>
             ))
@@ -80,7 +80,7 @@ class Profile extends Component {
                         
             user.profileGen.map(item => (
                 <tr key={item._id}>
-                    <td>№ 3:</td>
+                    <td>№ 3</td>
                     <td>CFTR: 3944delGT: {item.rule_0}</td>
                 </tr>
             ))
@@ -92,7 +92,7 @@ class Profile extends Component {
                         
             user.profileGen.map(item => (
                 <tr key={item._id}>
-                    <td>№ 4:</td>
+                    <td>№ 4</td>
                     <td>CFTR: 3944delGT: {item.rule_0}</td>
                 </tr>
             ))
@@ -104,7 +104,7 @@ class Profile extends Component {
                         
             user.profileGen.map(item => (
                 <tr key={item._id}>
-                    <td>№ 5:</td>
+                    <td>№ 5</td>
                     <td>CFTR: 3944delGT: {item.rule_0}</td>
                 </tr>
             ))
@@ -116,8 +116,10 @@ class Profile extends Component {
                         
             user.profileGen.map(item => (
                 <tr key={item._id}>
-                    <td>№ 6:</td>
+                    <td>№ 6</td>
                     <td>CFTR: 3944delGT: {item.rule_0}</td>
+                    <td>№ 16</td>
+                    <td>16: 3944delGT: {item.rule_0}</td>
                 </tr>
             ))
         :null
@@ -155,23 +157,11 @@ class Profile extends Component {
                 <table>
                     <tbody>
                         {this.showUserPosts(user)}
-                    </tbody>
-                    <tbody>
                         {this.showUserPosts2(user)}
-                    </tbody>
-                    <tbody>
                         {this.showUserPosts3(user)}
-                    </tbody>
-                    <tbody>
                         {this.showUserPosts4(user)}
-                    </tbody>
-                    <tbody>
                         {this.showUserPosts5(user)}
                         {this.showUserPosts6(user)}
-                        {this.showUserPosts6(user)}
-                    </tbody>
-                    <tbody>
-                        <p></p>
                     </tbody>
                 </table>
             </div>
