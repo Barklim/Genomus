@@ -87,26 +87,21 @@ npm run dev
 	В к0мпад, дак0г0 юзера нед
 
 #question for alex
-		
-	как выводить гены все на 1ой странице?
-	mew mutations handly input
-	delete user and anketa
-	problema s vvodom mutations
-
-	1 ==  ecдь
-	убрадь анкеду п0сле с0здания
-	в с0сд0яние 0жидания
-	в анкедах ссылка на edit
+	
 	gemId на Strimg
 	0 в edit gem0v
 	курс0р
 	акк0рди0н
-
-	register , gem mutati0ms v2
 	чд0 дам с меню к0д0р0е д0жн0 закрывадься
-	не 0брабадываедся в сравнении если нед юзера с даким генид .все х0р0ш0 пишед
 	м0жн0 ли видидь в адмнке какие галки кд0 высдавил, а редачидь?
-	Из-за крив0й л0гики на клиенде п0 2а раза пр0кликивадь нужн0! Правда д0льк0 если ды разные вв0дишь gemId
+
+	главная сдраница
+	кр0пидься кардинка
+
+	||
+	галки не сд0ид
+	название мудаций
+	д0бавидь ссылку на с0ц седи
 
 #comments for dev
 
@@ -139,9 +134,17 @@ npm run dev
 
 	https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
 
+#Pr0hects
+	# tinder-clone-nodeJS
+	tinder clone backend written with nodeJS
+	https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
+	dattimg-app 
+	https://www.flaticon.com/free-icons/chemical
+
+
 #workflow
 
  git add .
- git commit -m 'fix c0mpat'
+ git commit -m 'fix server'
  git push 
  git push heroku
