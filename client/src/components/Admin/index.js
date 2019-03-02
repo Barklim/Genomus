@@ -20,7 +20,8 @@ class User extends Component {
 
     componentWillReceiveProps(nextProps){
 
-        if ( nextProps.user.userPosts.length === 0 ) {
+        /*if ( nextProps.user.userPosts.length === 0 ) {*/
+        if ( nextProps.user.userPosts === undefined ) {
             this.setState({visible: ''}); 
             this.setState({
                 img_url: 'https://robohash.org/set_set1/bgset_bg1/${this.props.user.login.id}?200x200?3`'
@@ -69,7 +70,7 @@ class User extends Component {
         let user2 = this.props.user.login;
         
         console.log(this.props);
-        console.log(this.state);
+        /*console.log(this.state);*/
 /*       
         console.log(this.props.user.userPosts);
         console.log(this.state);

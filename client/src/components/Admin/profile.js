@@ -10,7 +10,7 @@ class Profile extends Component {
 
     componentWillReceiveProps(nextProps){
 
-        if(nextProps.user.profileGen === undefined ){
+        if( nextProps.user.profileGen[0] === undefined ){
             
            console.log('Herere!!!');
 
@@ -48,7 +48,6 @@ class Profile extends Component {
             nextProps.user.profileGen[0].rule_27 === null ? nextProps.user.profileGen[0].rule_27 = 'н' : null
             nextProps.user.profileGen[0].rule_28 === null ? nextProps.user.profileGen[0].rule_28 = 'н' : null
             nextProps.user.profileGen[0].rule_29 === null ? nextProps.user.profileGen[0].rule_29 = 'н' : null
-
         }
     }
 
@@ -57,11 +56,8 @@ class Profile extends Component {
                         
             user.profileGen.map(item => (
                 <tr key={item._id}>
-                    <td>{item.rule_0}</td>
-                    <td>{item.rule_1}</td>
-                    <td>{item.rule_2}</td>
-                    <td>{item.rule_3}</td>
-                    <td>{item.rule_4}</td>
+                    <td>№ 1:</td>
+                    <td>CFTR: 3944delGT: {item.rule_0}</td>
                 </tr>
             ))
         :null
@@ -172,16 +168,6 @@ class Profile extends Component {
 
                 <h4>Таблица мутаций:</h4>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>№ 1</th>
-                            <th>№ 2</th>
-                            <th>№ 3</th>
-                            <th>№ 4</th>
-                            <th>№ 5</th>
-                            
-                        </tr>
-                    </thead>
                     <tbody>
                         {this.showUserPosts(user)}
                     </tbody>

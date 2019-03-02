@@ -13,6 +13,7 @@ npm run dev
 	node 8.0.0
 	mongo
 	359 x 689
+	https://reactjsexample.com/a-very-lightweight-accordion-component-in-react/
 
 	<br/>
 
@@ -67,6 +68,9 @@ npm run dev
 
 	mumber -> strimg
 
+	чекнудь депл0й п0сддепл0й
+	atemti0m
+
 #question for dev
 
 	igen = inf abut mutatins
@@ -97,6 +101,9 @@ npm run dev
 
 	главная сдраница
 	кр0пидься кардинка
+	п0сле удаления ссылку деладь куда?
+	Отображать мою анкету при проверке совместимости
+	Если ГенИд нет в базе - отказ в регистрации
 
 	||
 	галки не сд0ид
@@ -145,6 +152,6 @@ npm run dev
 #workflow
 
  git add .
- git commit -m 'fix server'
+ git commit -m 'fix profile'
  git push 
  git push heroku

@@ -129,15 +129,6 @@ class AddBook extends Component {
                             <option val='Неизвестно'>Неизвестно</option>
                         </select>
                     </div>
-
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Введите url... http://vk.c0m/aasdfk/asdf.png"
-                            value={this.state.formdata.img_url}
-                            onChange={(event)=>this.handleInput(event,'img_url')}
-                        />
-                    </div>
                     
                     <div className="profile_table">
                     <table>
@@ -172,6 +163,16 @@ class AddBook extends Component {
                             </tr>
                         </tbody>
                     </table>
+                    </div>
+
+                    <p>Адрес картинки:</p>
+                    <div className="form_element">
+                        <input
+                            type="text"
+                            placeholder="Введите url ..."
+                            value={this.state.formdata.img_url}
+                            onChange={(event)=>this.handleInput(event,'img_url')}
+                        />
                     </div>
 
                     <p>Информация о вас:</p>

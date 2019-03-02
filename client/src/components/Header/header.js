@@ -32,7 +32,7 @@ class Header extends Component {
                     onHideNav={()=>this.onHideNav()}
                 />
 
-                <Link to="/user/profile" className="logo">
+                <Link to="/user/user" className="logo">
                         Genomus  ⚤
                 </Link>
        

@@ -127,7 +127,7 @@ class EditBook extends PureComponent {
                 {
                     books.postDeleted ? 
                         <div className="red_tag">
-                            Пост Удалён
+                            Анкета удалена
                             {this.redirectUser()}
                         </div>
                     :null
@@ -175,15 +175,6 @@ class EditBook extends PureComponent {
                         </select>
                     </div>
 
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Введите url ..."
-                            value={this.state.formdata.img_url}
-                            onChange={(event)=>this.handleInput(event,'img_url')}
-                        />
-                    </div>
-
                     <div className="profile_table">
                     <table>
                         <thead>
@@ -217,6 +208,16 @@ class EditBook extends PureComponent {
                             </tr>
                         </tbody>
                     </table>
+                    </div>
+
+                    <p>Адрес картинки:</p>
+                    <div className="form_element">
+                        <input
+                            type="text"
+                            placeholder="Введите url ..."
+                            value={this.state.formdata.img_url}
+                            onChange={(event)=>this.handleInput(event,'img_url')}
+                        />
                     </div>
                     
                     <p>Информация о вас:</p>
