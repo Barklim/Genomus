@@ -63,83 +63,51 @@ class Profile extends Component {
         :null
     )
 
-    showUserPosts2 = (user) => (
-        user.profileGen ? 
-                        
-            user.profileGen.map(item => (
-                <tr key={item._id}>
-                    <td>№ 2</td>
-                    <td>CFTR: 3944delGT: {item.rule_1}</td>
-                </tr>
-            ))
-        :null
-    )
-
-    showUserPosts3 = (user) => (
-        user.profileGen ? 
-                        
-            user.profileGen.map(item => (
-                <tr key={item._id}>
-                    <td>№ 3</td>
-                    <td>CFTR: 3944delGT: {item.rule_0}</td>
-                </tr>
-            ))
-        :null
-    )
-
-    showUserPosts4 = (user) => (
-        user.profileGen ? 
-                        
-            user.profileGen.map(item => (
-                <tr key={item._id}>
-                    <td>№ 4</td>
-                    <td>CFTR: 3944delGT: {item.rule_0}</td>
-                </tr>
-            ))
-        :null
-    )
-
-    showUserPosts5 = (user) => (
-        user.profileGen ? 
-                        
-            user.profileGen.map(item => (
-                <tr key={item._id}>
-                    <td>№ 5</td>
-                    <td>CFTR: 3944delGT: {item.rule_0}</td>
-                </tr>
-            ))
-        :null
-    )
-
-    showUserPosts6 = (user) => (
+    showUserPosts = (user) => (
         user.profileGen ? 
                         
             user.profileGen.map(item => (
                 <div key={item._id} className='table_profile'>
+                <tbody>
                 <tr>
                     <td>№ 1</td>
-                    <td>CFTR: 3944delGT: {item.rule_0}</td>
+                    <td>{item.rule_0}: </td>
+                    <td> CFTR: 3944delGT </td>
                 </tr>
+                </tbody>
+                <tbody>
                 <tr>
                     <td>№ 2</td>
-                    <td>3944delGT: {item.rule_1}</td>
+                    <td>{item.rule_1}: </td>
+                    <td> CFTR: 3944delGT </td>
                 </tr>
+                </tbody>
                 <tr>
                     <td>№ 3</td>
-                    <td>3944delGT: {item.rule_2}</td>
+                    <td>{item.rule_2}: </td>
+                    <td> CFTR: 3944delGT </td>
                 </tr>
+                <tbody>
                 <tr>
                     <td>№ 4</td>
-                    <td>3944delGT: {item.rule_3}</td>
+                    <td>{item.rule_3}: </td>
+                    <td> CFTR: 3944delGT </td>
                 </tr>
+                </tbody>
+                <tbody>
                 <tr>
                     <td>№ 5</td>
                     <td>3944delGT: {item.rule_4}</td>
+                    <td> CFTR: 3944delGT </td>
                 </tr>
-                                <tr>
+                </tbody>
+                <tbody>
+                <tr>
                     <td>№ 6</td>
                     <td>3944delGT: {item.rule_5}</td>
+                    <td> CFTR: 3944delGT </td>
                 </tr>
+                </tbody>
                 </div>
             ))
         :null
@@ -175,9 +143,7 @@ class Profile extends Component {
 
                 <h4>Таблица мутаций:</h4>
                 <table>
-                    <tbody>
-                        {this.showUserPosts6(user)}
-                    </tbody>
+                    {this.showUserPosts(user)}
                 </table>
             </div>
         </div>
