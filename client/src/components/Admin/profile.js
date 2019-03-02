@@ -115,12 +115,16 @@ class Profile extends Component {
         user.profileGen ? 
                         
             user.profileGen.map(item => (
-                <tr key={item._id}>
+                <div key={item._id}>
+                <tr>
                     <td>№ 6</td>
                     <td>CFTR: 3944delGT: {item.rule_0}</td>
+                </tr>
+                <tr>
                     <td>№ 16</td>
                     <td>16: 3944delGT: {item.rule_0}</td>
                 </tr>
+                </div>
             ))
         :null
     )
