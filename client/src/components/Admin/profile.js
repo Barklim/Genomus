@@ -67,43 +67,193 @@ class Profile extends Component {
         user.profileGen ? 
                         
             user.profileGen.map(item => (
-                <tbody key={item._id} className='table_profile'>
+                <tbody key={item._id}>
+
+                    <tr>
+                        <td></td>
+                        <td>Значение</td>
+                        <td>Название</td>
+                    </tr>
 
                     <tr>
                         <td>№ 1</td>
                         <td>{item.rule_0}: </td>
-                        <td> CFTR: 3944delGT </td>
+                        <td>CFTR: 3944delGT  </td>
                     </tr>
 
 
                     <tr>
                         <td>№ 2</td>
                         <td>{item.rule_1}: </td>
-                        <td> CFTR: 3944delGT </td>
+                        <td>CFTR: F508del </td>
                     </tr>
 
                     <tr>
                         <td>№ 3</td>
                         <td>{item.rule_2}: </td>
-                        <td> CFTR: 3944delGT </td>
+                        <td>CFTR: K285N </td>
                     </tr>
 
                     <tr>
                         <td>№ 4</td>
                         <td>{item.rule_3}: </td>
-                        <td> CFTR: 3944delGT </td>
+                        <td> CFTR: N1303K</td>
                     </tr>
 
                     <tr>
                         <td>№ 5</td>
                         <td>{item.rule_4}</td>
-                        <td> CFTR: 3944delGT </td>
+                        <td>CFTR: 1677delTA</td>
                     </tr>
 
                     <tr>
                         <td>№ 6</td>
                         <td>{item.rule_5}</td>
-                        <td> CFTR: 3944delGT </td>
+                        <td> CFTR: 3849+10kbC>T </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 7</td>
+                        <td>{item.rule_6}</td>
+                        <td> PAH: IVS10nt546 </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 8</td>
+                        <td>{item.rule_7}</td>
+                        <td> CFTR: W1282X </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 9</td>
+                        <td>{item.rule_8}</td>
+                        <td> PAH: R261Q </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 10</td>
+                        <td>{item.rule_9}</td>
+                        <td> CFTR: E92K</td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 11</td>
+                        <td>{item.rule_10}</td>
+                        <td> PAH: E280K </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 12</td>
+                        <td>{item.rule_11}</td>
+                        <td> PAH: R408W </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 13</td>
+                        <td>{item.rule_12}</td>
+                        <td> PAH: P281L </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 14</td>
+                        <td>{item.rule_13}</td>
+                        <td> CFTR: G542X </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 15</td>
+                        <td>{item.rule_14}</td>
+                        <td> PAH: IVS12+1G>A </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 16</td>
+                        <td>{item.rule_15}</td>
+                        <td> PAH: Y414C </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 17</td>
+                        <td>{item.rule_16}</td>
+                        <td> PAH: IVS4+5G>T</td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 18</td>
+                        <td>{item.rule_17}</td>
+                        <td>PAH: R158Q </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 19</td>
+                        <td>{item.rule_18}</td>
+                        <td> CFTR: 2143delT</td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 20</td>
+                        <td>{item.rule_19}</td>
+                        <td> CFTR: R334W </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 21</td>
+                        <td>{item.rule_20}</td>
+                        <td> PAH: R252W </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 22</td>
+                        <td>{item.rule_21}</td>
+                        <td> CFTR: 394delTT </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 23</td>
+                        <td>{item.rule_22}</td>
+                        <td> CFTR: 2184insA</td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 24</td>
+                        <td>{item.rule_23}</td>
+                        <td> CFTR: 3821delT</td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 25</td>
+                        <td>{item.rule_24}</td>
+                        <td> CFTR: S466X </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 26</td>
+                        <td>{item.rule_25}</td>
+                        <td> GALT: N314D</td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 27</td>
+                        <td>{item.rule_26}</td>
+                        <td> GJB2: 35delG </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 28</td>
+                        <td>{item.rule_27}</td>
+                        <td> CFTR: dele2,3 (21kb) </td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 29</td>
+                        <td>{item.rule_28}</td>
+                        <td> PAH: D222X</td>
+                    </tr>
+
+                    <tr>
+                        <td>№ 30</td>
+                        <td>{item.rule_29}</td>
+                        <td> GALT: Q188R</td>
                     </tr>
 
                 </tbody>

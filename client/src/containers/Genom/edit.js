@@ -200,7 +200,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>5 : CFTR: 1677delTA   </h3>
+                    <h3>5 : CFTR: 1677delTA</h3>
 
                     <div className="form_element">
                         <input
@@ -244,7 +244,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>9 : PAH: R261Q   </h3>
+                    <h3>9 : PAH: R261Q </h3>
 
                     <div className="form_element">
                         <input
@@ -321,7 +321,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>16 : PAH: Y414C   </h3>
+                    <h3>16 : PAH: Y414C </h3>
 
                     <div className="form_element">
                         <input
@@ -343,7 +343,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>18 : PAH: R158Q   </h3>
+                    <h3>18 : PAH: R158Q </h3>
 
                     <div className="form_element">
                         <input
@@ -354,7 +354,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>19 : CFTR: 2143delT  </h3>
+                    <h3>19 : CFTR: 2143delT</h3>
 
                     <div className="form_element">
                         <input
@@ -365,7 +365,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>20 : CFTR: R334W   </h3>
+                    <h3>20 : CFTR: R334W</h3>
 
                     <div className="form_element">
                         <input
@@ -376,7 +376,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>21 : PAH: R252W  </h3>
+                    <h3>21 : PAH: R252W</h3>
 
                     <div className="form_element">
                         <input
@@ -387,7 +387,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>22 : CFTR: 394delTT   </h3>
+                    <h3>22 : CFTR: 394delTT</h3>
 
                     <div className="form_element">
                         <input
@@ -398,7 +398,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>23 : CFTR: 2184insA  </h3>
+                    <h3>23 : CFTR: 2184insA </h3>
 
                     <div className="form_element">
                         <input
@@ -409,7 +409,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>24 : CFTR: 3821delT   </h3>
+                    <h3>24 : CFTR: 3821delT</h3>
 
                     <div className="form_element">
                         <input
@@ -420,7 +420,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>25 : CFTR: S466X   </h3>
+                    <h3>25 : CFTR: S466X</h3>
 
                     <div className="form_element">
                         <input
@@ -431,7 +431,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>26 : GALT: N314D  </h3>
+                    <h3>26 : GALT: N314D</h3>
 
                     <div className="form_element">
                         <input
@@ -453,7 +453,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>28 : CFTR: dele2,3 (21kb)   </h3>
+                    <h3>28 : CFTR: dele2,3 (21kb)</h3>
 
                     <div className="form_element">
                         <input
@@ -464,7 +464,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>29 : PAH: D222X  </h3>
+                    <h3>29 : PAH: D222X</h3>
 
                     <div className="form_element">
                         <input
@@ -475,7 +475,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>30 : GALT: Q188R  </h3>
+                    <h3>30 : GALT: Q188R</h3>
 
                     <div className="form_element">
                         <input
