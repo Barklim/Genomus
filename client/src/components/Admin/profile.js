@@ -70,33 +70,33 @@ class Profile extends Component {
                 <tbody key={item._id}>
 
                     <tr>
-                        <td></td>
-                        <td>Значение</td>
+                        <td>Num</td>
+                        <td>Знач.</td>
                         <td>Название</td>
                     </tr>
 
                     <tr>
                         <td>№ 1</td>
-                        <td>{item.rule_0}: </td>
+                        <td>{item.rule_0} </td>
                         <td>CFTR: 3944delGT  </td>
                     </tr>
 
 
                     <tr>
                         <td>№ 2</td>
-                        <td>{item.rule_1}: </td>
+                        <td>{item.rule_1} </td>
                         <td>CFTR: F508del </td>
                     </tr>
 
                     <tr>
                         <td>№ 3</td>
-                        <td>{item.rule_2}: </td>
+                        <td>{item.rule_2} </td>
                         <td>CFTR: K285N </td>
                     </tr>
 
                     <tr>
                         <td>№ 4</td>
-                        <td>{item.rule_3}: </td>
+                        <td>{item.rule_3} </td>
                         <td> CFTR: N1303K</td>
                     </tr>
 
