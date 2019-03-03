@@ -77,7 +77,7 @@ class Profile extends Component {
 
                     <tr>
                         <td>№ 1</td>
-                        <td>{item.rule_0} </td>
+                        <td>{item.rule_0}</td>
                         <td>CFTR: 3944delGT  </td>
                     </tr>
 
