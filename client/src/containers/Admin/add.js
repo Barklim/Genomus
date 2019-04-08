@@ -15,6 +15,7 @@ class AddBook extends Component {
             price:'Муж',
             allowCheck: false,
             allowCompat: false,
+            allowShow: false,
             img_url: 'https://robohash.org/set_set1/bgset_bg1/${this.props.user.login.id}?200x200?3'
         }
     }
@@ -47,6 +48,14 @@ class AddBook extends Component {
 
         if ( name === 'allowCompat' ) {
             if ( this.state.formdata.allowCompat === true ) {
+                 newFormdata[name] = false
+            } else {
+                newFormdata[name] = true
+            }
+        } 
+
+        if ( name === 'allowShow' ) {
+            if ( this.state.formdata.allowShow === true ) {
                  newFormdata[name] = false
             } else {
                 newFormdata[name] = true
@@ -149,14 +158,29 @@ class AddBook extends Component {
                         </thead>
                         <tbody>
                             <tr>
+                                <td>Отображать мою анкету для всех, в общем списке</td>
+                                <td>
+                                    <div>
+                                        <input
+                                            className="profile_checkbox"
+                                            type="checkbox"
+                                            checked={this.state.formdata.allowCompat}
+                                            onChange={(event)=>this.handleInput(event,'allowCompat')}
+                                        />
+                                    </div>                        
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
                                 <td>Отображать мою анкету при проверке совместимости</td>
                                 <td>
                                     <div>
                                         <input
                                             className="profile_checkbox"
                                             type="checkbox"
-                                            checked={this.state.allowCompat}
-                                            onChange={(event)=>this.handleInput(event,'allowCompat')}
+                                            checked={this.state.formdata.allowShow}
+                                            onChange={(event)=>this.handleInput(event,'allowShow')}
                                         />
                                     </div>                        
                                 </td>
