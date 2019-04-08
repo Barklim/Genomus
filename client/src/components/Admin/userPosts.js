@@ -42,8 +42,8 @@ class UserPosts extends Component {
 //{moment(item.createAt).format("DD/MM/YY")}
 
     render() {
-        console.log(this.props);
-        console.log(this.props.user.userGens);
+        //console.log(this.props);
+        //console.log(this.props.user.userGens);
         let user = this.props.user;
         
         return (

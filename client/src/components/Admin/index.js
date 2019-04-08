@@ -21,6 +21,9 @@ class User extends Component {
     componentWillReceiveProps(nextProps){
 
         /*if ( nextProps.user.userPosts.length === 0 ) {*/
+        console.log('componentWillReceiveProps');
+        console.log(nextProps);
+        console.log(nextProps.user.userPosts.length);
         if ( nextProps.user.userPosts === undefined ) {
             this.setState({visible: ''}); 
             this.setState({
@@ -29,9 +32,16 @@ class User extends Component {
         }  else {
             this.setState({visible: 'none'});  
 
+            if (nextProps.user.userPosts.length === 0) {
+                console.log('donothing'); 
+                this.setState({visible: ''}); 
+            } else {
+
             this.setState({
                     img_url: nextProps.user.userPosts[0].img_url
                 })
+
+        }
 
 /*            fetch(nextProps.user.userPosts[0].img_url).then(function(response) {
                 if(response.ok) {

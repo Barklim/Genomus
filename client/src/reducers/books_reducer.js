@@ -4,6 +4,8 @@ export default function(state={},action){
             return { ...state,list:action.payload }
         case 'GET_BOOK':
             return {...state,book:action.payload}
+        case 'GET_BOOK_ALLOW':
+            return {...state,book_allow:action.payload}
         case 'GET_BOOK_W_REVIEWER':
             return {
                 ...state,

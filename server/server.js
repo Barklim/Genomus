@@ -40,7 +40,7 @@ app.get('/api/logout',auth,(req,res)=>{
     })
 })
 
-
+// мб 0браб0дадь
 app.get('/api/getBook',(req,res)=>{
     let id = req.query.id;
 
@@ -50,10 +50,13 @@ app.get('/api/getBook',(req,res)=>{
     })
 })
 
-
 app.get('/api/allow',(req,res)=>{
         Book.findOne({genId:req.query.user}).exec((err,doc)=>{
 
+            if(!doc) return res.send({
+                allowCheck: false,
+                allowCompat: false
+            });
             //if(err) return res.status(400).send(err); :(((
             if(err) return res.send({
                 allowCheck: false,
@@ -84,23 +87,24 @@ app.get('/api/user_other_gen',(req,res)=>{
     })
 })*/
 
-app.get('/api/getGen',(req,res)=>{
+
+/*app.get('/api/getGen',(req,res)=>{
     let id = req.query.id;
 
     Gen.findById(id,(err,doc)=>{
         if(err) return res.status(400).send(err);
         res.send(doc);
     })
-})
+})*/
 
-app.get('/api/getIgen',(req,res)=>{
+/*app.get('/api/getIgen',(req,res)=>{
     let id = req.query.id;
 
     IGen.findById(id,(err,doc)=>{
         if(err) return res.status(400).send(err);
         res.send(doc);
     })
-})
+})*/
 
 app.get('/api/getUser',(req,res)=>{
     let id = req.query.id;
@@ -124,23 +128,6 @@ app.get('/api/books',(req,res)=>{
     })
 })
 
-// x
-app.get('/api/getUserRole',(req,res)=>{
-    let id = req.query.id;
-
-    User.findById(id,(err,doc)=>{
-        if(err) return res.status(400).send(err);
-        res.send(doc);
-    })
-})
-
-app.get('/api/logout',auth,(req,res)=>{
-    req.user.deleteToken(req.token,(err,user)=>{
-        if(err) return res.status(400).send(err);
-        res.sendStatus(200)
-    })
-})
-
 app.get('/api/getReviewer',(req,res)=>{
     let id = req.query.id;
 
@@ -153,10 +140,44 @@ app.get('/api/getReviewer',(req,res)=>{
     })
 })
 
-app.get('/api/users',(req,res)=>{
+/*app.get('/api/users',(req,res)=>{
     User.find({},(err,users)=>{
         if(err) return res.status(400).send(err);
         res.status(200).send(users)
+    })
+})*/
+
+// 0браб0дадь 0дсудсдвие ключа п0 id!
+// 0браб0дадь в случае если ничег0 не придед, ни 0дин юзер
+app.get('/api/users',(req,res)=>{
+    let id = req.query.id;
+    var allow = true;
+
+    User.findById(id,(err,doc)=>{
+        //if(err) return res.status(400).send(err);
+        //if(!doc) return res.status(400).send(err);
+        if(doc) { 
+            allow = doc.role;
+        } 
+    })
+
+    User.find({},(err,users)=>{
+        if(err) return res.status(400).send(err);
+        if(!allow) { 
+            res.status(200).send(users)
+        } else {
+            res.json([{
+                "isFail": "true",
+                "_id": "FAKEiD8ab5d98719d0467359",
+                "email": "test@mail.ru",
+                "password": "$2a$10$FAKEU5NIygANxCwNZHdkUuWVf4HZ4dXY9wLQJ.6z/MUaQl8KcfkWe",
+                "name": "Fakename",
+                "lastname": "FakeLastname",
+                "__v": 0,
+                "genId": "FAKE00",
+                "role": 0
+            }])
+        }
     })
 })
 
@@ -167,17 +188,109 @@ app.get('/api/user_posts',(req,res)=>{
     })
 })
 
-app.get('/api/all_user_posts',(req,res)=>{
+/*app.get('/api/all_user_posts',(req,res)=>{
     Book.find().exec((err,docs)=>{
         if(err) return res.status(400).send(err);
         res.send(docs)
     })
+})*/
+app.get('/api/all_user_posts',(req,res)=>{
+    let id = req.query.id;
+    var allow = true;
+
+    User.findById(id,(err,doc)=>{
+        if(doc) { 
+            allow = doc.role;
+        }
+    })
+
+    Book.find({},(err,users)=>{
+        if(err) return res.status(400).send(err);
+        if(!allow) { 
+            res.status(200).send(users)
+        } else {
+            res.json([{
+                "_id": "FAKE5d5331379f1f0c6671d4",
+                "updatedAt": "2019-01-26T16:53:42.322Z",
+                "createdAt": "2019-01-26T13:14:59.502Z",
+                "name": "testname",
+                "author": "test",
+                "rating": 5,
+                "ownerId": "FAKEe5a7e18c9b171c90ab13",
+                "__v": 0,
+                "allowCompat": false,
+                "allowCheck": false,
+                "genId": "FAKE13",
+                "price": "Неизвестно",
+                "pages": "32",
+                "img_url": "n/a",
+                "review": "test"
+            }])
+        }
+    })
 })
 
-app.get('/api/user_gens',(req,res)=>{
+// Д0льк0 дв0и мудации, для эд0г0 к0мкредн0 юзера
+/*app.get('/api/user_gens',(req,res)=>{
     Gen.find({ownerGenId:req.query.user}).exec((err,docs)=>{
         if(err) return res.status(400).send(err);
         res.send(docs)
+    })
+})*/
+app.get('/api/user_gens',(req,res)=>{
+    let id = req.query.id;
+    var allow = true;
+
+    User.findById(id,(err,doc)=>{
+        if(doc) { 
+            allow = doc.role;
+        } 
+    })
+
+    Gen.find({},(err,docs)=>{
+        if(err) return res.status(400).send(err);
+        if(!allow) { 
+            res.status(200).send(docs);
+        } else {
+            res.json([{
+                "_id": "5c4872e10c3fb61c80337cc0",
+                "updatedAt": "2019-01-26T14:19:56.599Z",
+                "createdAt": "2019-01-23T13:57:53.853Z",
+                "ownerGenId": "FAKEe28ab5d98719d0467359",
+                "__v": 0,
+                "rule_29": 0,
+                "rule_28": 0,
+                "rule_27": 0,
+                "rule_26": 0,
+                "rule_25": 0,
+                "rule_24": 0,
+                "rule_23": 0,
+                "rule_22": 0,
+                "rule_21": 0,
+                "rule_20": 0,
+                "rule_19": 0,
+                "rule_18": 0,
+                "rule_17": 0,
+                "rule_16": 0,
+                "rule_15": 0,
+                "rule_14": 0,
+                "rule_13": 0,
+                "rule_12": 0,
+                "rule_11": 0,
+                "rule_10": 0,
+                "rule_9": 1,
+                "rule_8": 1,
+                "rule_7": 1,
+                "rule_6": 1,
+                "rule_5": 1,
+                "rule_4": 1,
+                "rule_3": 1,
+                "rule_2": 1,
+                "rule_1": 1,
+                "rule_0": 1,
+                "genId": "FAKE11"
+            }])
+        }
     })
 })
 
@@ -201,7 +314,6 @@ app.get('/api/user_gen_special',(req,res)=>{
         res.send(docs)
     })
 })*/
-
 
 app.get('/api/user_other_gen',(req,res)=>{
     Gen.findOne({genId:req.query.user}).exec((err,docs)=>{
@@ -273,16 +385,23 @@ app.get('/api/user_other_gen',(req,res)=>{
     })
 })
 
-//x
-app.get('/api/user_role',(req,res)=>{
-    User.find({role:req.query.user}).exec((err,docs)=>{
+app.get('/api/getBookCompat',(req,res)=>{
+    Book.find({genId:req.query.user}).exec((err,docs)=>{
         if(err) return res.status(400).send(err);
         res.send(docs)
     })
 })
 
 //x
-app.get('/api/getUser_role',(req,res)=>{
+/*app.get('/api/user_role',(req,res)=>{
+    User.find({role:req.query.user}).exec((err,docs)=>{
+        if(err) return res.status(400).send(err);
+        res.send(docs)
+    })
+})*/
+
+//x
+/*app.get('/api/getUser_role',(req,res)=>{
     let id = req.query.id;
 
     User.findById(id,(err,doc)=>{
@@ -293,8 +412,31 @@ app.get('/api/getUser_role',(req,res)=>{
             role: doc.role
         })
     })
-})
+})*/
 
+// x - без0пасный мед0д
+app.get('/api/getUserRole',(req,res)=>{
+    let id = req.query.id;
+
+ 
+    User.findById(id,(err,doc)=>{
+        if(err) return res.status(400).send(err);
+        console.log(doc.role);
+        if(doc.role === 1) {
+                res.json({
+                name: doc.name,
+                lastname: doc.lastname,
+                doc:doc
+            })
+        } else {
+                res.json({
+                name: doc.name,
+                lastname: doc.lastname,
+                doc:doc
+            })
+        }
+    })
+})
 
 // POST //
 app.post('/api/book',(req,res)=>{
@@ -308,6 +450,29 @@ app.post('/api/book',(req,res)=>{
         })
     })
 })
+/*app.post('/api/book',(req,res)=>{
+        const book = new Book(req.body)
+        //const gen = new Gen(req.body);
+
+        Book.findOne({'genId':req.body.genId},(err,nextbook)=>{
+            if(nextbook) { 
+                if(err) return res.json({success1:false});
+                    res.status(200).json({
+                    success:false,
+                    nextbook:nextbook
+                })
+
+            } else {
+                book.save((err,doc)=>{
+                    if(err) return res.json({success2:false});
+                        res.status(200).json({
+                        success:true,
+                        nextbook:nextbook
+                        })
+                    })
+            }
+        })
+})*/
 
 app.post('/api/gen',(req,res)=>{
     const gen = new Gen(req.body)
@@ -322,7 +487,7 @@ app.post('/api/gen',(req,res)=>{
 })
 
 //x
-app.post('/api/igen',(req,res)=>{
+/*app.post('/api/igen',(req,res)=>{
     const igen = new IGen(req.body)
 
     igen.save((err,doc)=>{
@@ -332,7 +497,7 @@ app.post('/api/igen',(req,res)=>{
             igenId: doc._id
         })
     })
-})
+})*/
 
 app.post('/api/register',(req,res)=>{
     const user = new User(req.body);
@@ -346,7 +511,7 @@ app.post('/api/register',(req,res)=>{
     })
 })
 
-app.post('/api/registerScreen',(req,res)=>{
+/*app.post('/api/registerScreen',(req,res)=>{
     const user = new User(req.body);
 
     user.save((err,doc)=>{
@@ -356,6 +521,27 @@ app.post('/api/registerScreen',(req,res)=>{
             user:doc
         })
     })
+})*/
+
+// meeeeeh
+app.post('/api/registerScreen',(req,res)=>{
+        const user = new User(req.body);
+        const gen = new Gen(req.body);
+
+        Gen.findOne({'genId':req.body.genId},(err,gen)=>{
+            if(gen) { 
+                user.save((err,doc)=>{
+                    if(err) return res.json({success:false});
+                        res.status(200).json({
+                        success:true,
+                        user:doc
+                        })
+                    })
+
+            } else {
+                return res.json({isAuth:false, message:'fack era',gen:gen})
+            }
+        })
 })
 
 app.post('/api/login',(req,res)=>{
@@ -412,7 +598,7 @@ app.post('/api/gen_update',(req,res)=>{
     })
 })
 
-app.post('/api/igen_update',(req,res)=>{
+/*app.post('/api/igen_update',(req,res)=>{
     IGen.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,doc)=>{
         if(err) return res.status(400).send(err);
         res.json({
@@ -420,7 +606,7 @@ app.post('/api/igen_update',(req,res)=>{
             doc
         })
     })
-})
+})*/
 
 // DELETE //
 

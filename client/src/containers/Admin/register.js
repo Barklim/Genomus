@@ -16,7 +16,9 @@ class Register extends PureComponent {
     }
 
     componentWillMount(){
-        this.props.dispatch(getUsers())
+        //this.props.dispatch(getUsers())
+        this.props.dispatch(getUsers(this.props.user.login.id))
+        //console.log(this.props.user.login.id);
     }
 
 

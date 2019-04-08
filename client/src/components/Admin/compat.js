@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { getUserGen, getOtherGen, getAllow } from '../../actions';
+import { getUserGen, getOtherGen, getAllow, getBookCompat } from '../../actions';
 import QrReader from "react-qr-reader";
+import { Link } from 'react-router-dom';
+
+import BookItem from '../../widgetsUI/book_item';
 
 // getBook f0r get imf0 ab0ut all0ws
 
@@ -20,6 +23,7 @@ class Compat extends PureComponent {
     };
         this.handleScan = this.handleScan.bind(this);
     }
+
       handleScan(data) {
         if (data) {
           this.setState({
@@ -27,6 +31,7 @@ class Compat extends PureComponent {
             otherGenId: data
           });
             this.props.dispatch(getOtherGen(this.state.otherGenId)) // для д0г0 чд0бы прих0дили пр0псы
+            this.props.dispatch(getBookCompat(this.state.otherGenId))
             this.setState({showFlaw:''});
             if (this.state.otherGenId.length !== 6 ) { 
                 this.setState({showFlaw:true});
@@ -37,12 +42,29 @@ class Compat extends PureComponent {
         console.error(err);
       }
 
+    showUserConfig = (user) => (
+        user.book_allow ? 
+            
+            user.book_allow.map(item => (
+                <div key={item._id}>
+                    <Link to={
+                        `/user/edit-post/${item._id}`
+                    }>
+                    <BookItem {...item} key={item._id}/>
+                    </Link>
+                </div>
+            ))
+        :null
+    )
+
     componentWillMount(){
         this.props.dispatch(getUserGen(this.props.user.login.genId))
         /*this.props.dispatch(getBook(this.props.user.login.id))*/
+
+        //this.props.dispatch(getBookCompat(121212))
     }
 
-/*    componentDidMount(){
+    /*componentDidMount(){
         this.props.dispatch(getAllow(this.state.otherGenId))
     }*/
 
@@ -140,6 +162,7 @@ class Compat extends PureComponent {
         if ( this.state.otherGenId.length === 6 ) {
             this.props.dispatch(getAllow(this.state.otherGenId))
             this.props.dispatch(getOtherGen(this.state.otherGenId))
+            this.props.dispatch(getBookCompat(this.state.otherGenId))
         } 
 
         console.log("handleCheckup");
@@ -157,6 +180,7 @@ class Compat extends PureComponent {
     render() {
         //let genId = this.props.genId;
         /*console.log(this.props);*/
+        let user = this.props.user;
         console.log("remder");
         console.log(this.state);
         console.log(this.props);
@@ -190,25 +214,23 @@ class Compat extends PureComponent {
                                 {this.state.message}
                             </div>
 
-                            <h6>Дек0дир0вание qr:</h6>
-                            <p>{this.state.result}</p>
-                            <h6>Длина GemId:</h6>
                             {
                                 this.state.showFlaw === true ? 
-                                    <div className="">
-                                        Genid должен быть шестизначным!
+                                    <div className="warning-msg">
+                                        ⚠ GenId должен быть шестизначным! 
                                     </div>
                                 :null
                             }
 
-                            <h6>с00бшение 0 д0зв0лении:</h6>
                             {
                                 this.state.allowCheck === false ? 
-                                    <div className="">
-                                        У вас нед в0зм0жн0сди пр0веридь, друг0й чел0век запредил!
+                                    <div className="warning-msg">
+                                        ⚠ Пользователь не разрешал сравнивать!
                                     </div>
                                 :null
                             }
+
+                            {this.showUserConfig(user)}
 
                             <QrReader
                               delay={this.state.delay}
@@ -233,3 +255,6 @@ function mapStateProps(state) {
 }
 
 export default connect(mapStateProps)(Compat);
+
+/*                            <h6>Дек0дир0вание qr:</h6>
+                                <p>{this.state.result}</p>*/

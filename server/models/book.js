@@ -51,6 +51,10 @@ const bookSchema = mongoose.Schema({
     allowCompat:{
         type:Boolean,
         default:false
+    },
+    allowShow:{
+        type:Boolean,
+        default:false
     }
 },{timestamps:true})
 

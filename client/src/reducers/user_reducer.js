@@ -50,6 +50,8 @@ export default function(state={},action){
             return {...state,profileGen:action.payload}
         case 'GET_ALLOW':
             return {...state,allow:action.payload}
+        case 'GET_BOOK_ALLOW':
+            return {...state,book_allow:action.payload}
         default:
             return state;
     }

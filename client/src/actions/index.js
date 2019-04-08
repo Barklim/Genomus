@@ -107,8 +107,8 @@ export function getUserPosts(userId){
     }
 }
 
-export function getAllUserPosts(userId){
-    const request = axios.get(`/api/all_user_posts?user=${userId}`)
+export function getAllUserPosts(id){
+    const request = axios.get(`/api/all_user_posts?id=${id}`)
                     .then(response => response.data)
 
     return {
@@ -205,8 +205,17 @@ export function auth(){
 
 }
 
-export function getUsers(){
+/*export function getUsers(){
     const request = axios.get(`/api/users`)
+                    .then(response => response.data);
+        
+    return {
+        type:'GET_USER',
+        payload:request
+    }
+}*/
+export function getUsers(id){
+    const request = axios.get(`/api/users?id=${id}`)
                     .then(response => response.data);
         
     return {
@@ -335,8 +344,8 @@ export function clearNewGen() {
     }
 }
 
-export function getUserGens(userId){
-    const request = axios.get(`/api/user_gens?user=${userId}`)
+export function getUserGens(id){
+    const request = axios.get(`/api/user_gens?id=${id}`)
                     .then(response => response.data)
 
     return {
@@ -361,6 +370,16 @@ export function getOtherGen(genId){
 
     return {
         type:'GET_OTHER_GEN',
+        payload:request
+    }
+}
+
+export function getBookCompat(genId){
+    const request = axios.get(`/api/getBookCompat?user=${genId}`)
+                    .then(response => response.data)
+
+    return {
+        type:'GET_BOOK_ALLOW',
         payload:request
     }
 }

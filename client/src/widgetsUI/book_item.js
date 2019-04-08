@@ -30,7 +30,7 @@ const BookItem = (item) => {
                 </div>
 
                 <div className="book_bubble rating">
-                    <strong>Rating</strong>☆  {item.rating}
+                    <strong>Рейтинг</strong>☆  {item.rating}
                 </div>
                 </div>
 

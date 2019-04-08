@@ -16,7 +16,8 @@ class EditBook extends PureComponent {
             price:'',
             img_url:'',
             allowCheck: false,
-            allowCompat: false
+            allowCompat: false,
+            allowShow: false
         }
     }
 
@@ -62,6 +63,16 @@ class EditBook extends PureComponent {
             }
         } 
 
+        if ( name === 'allowCompat' ) {
+            newFormdata[name] = event.target.checked
+
+            if ( this.state.formdata.allowShow === true ) {
+                //newFormdata[name] = false
+            } else {
+                //newFormdata[name] = true
+            }
+        } 
+
         this.setState({
             formdata:newFormdata
         })
@@ -99,7 +110,8 @@ class EditBook extends PureComponent {
                 price:book.price,
                 img_url:book.img_url,
                 allowCheck:book.allowCheck,
-                allowCompat:book.allowCompat
+                allowCompat:book.allowCompat,
+                allowShow:book.allowShow 
             }
         })
     }
@@ -194,7 +206,7 @@ class EditBook extends PureComponent {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Отображать мою анкету при проверке совместимости</td>
+                                <td>Отображать мою анкету для всех, в общем списке</td>
                                 <td>
                                     <div>
                                         <input
@@ -202,6 +214,21 @@ class EditBook extends PureComponent {
                                             type="checkbox"
                                             checked={this.state.formdata.allowCompat}
                                             onChange={(event)=>this.handleInput(event,'allowCompat')}
+                                        />
+                                    </div>                        
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>Отображать мою анкету при проверке совместимости</td>
+                                <td>
+                                    <div>
+                                        <input
+                                            className="profile_checkbox"
+                                            type="checkbox"
+                                            checked={this.state.formdata.allowShow}
+                                            onChange={(event)=>this.handleInput(event,'allowShow')}
                                         />
                                     </div>                        
                                 </td>
