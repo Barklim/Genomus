@@ -28,7 +28,5 @@
     "nodemon": "^1.18.11",
     "macaddress": ">=0.2.9"
   },
-  "devDependencies": {
-    "macaddress": ">=0.2.9"
-  }
+  "devDependencies": {}
 }
