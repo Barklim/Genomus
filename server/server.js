@@ -88,14 +88,14 @@ app.get('/api/user_other_gen',(req,res)=>{
 })*/
 
 
-/*app.get('/api/getGen',(req,res)=>{
+app.get('/api/getGen',(req,res)=>{
     let id = req.query.id;
 
     Gen.findById(id,(err,doc)=>{
         if(err) return res.status(400).send(err);
         res.send(doc);
     })
-})*/
+})
 
 /*app.get('/api/getIgen',(req,res)=>{
     let id = req.query.id;
@@ -294,12 +294,22 @@ app.get('/api/user_gens',(req,res)=>{
     })
 })
 
+
 app.get('/api/user_gen',(req,res)=>{
     Gen.findOne({genId:req.query.user}).exec((err,docs)=>{
         if(err) return res.status(400).send(err);
         res.send(docs)
     })
 })
+
+/*app.get('/api/user_gen',(req,res)=>{
+    let id = req.query.id;
+
+    Gen.findById(id,((err,docs)=>{
+        if(err) return res.status(400).send(err);
+        res.send(docs)
+    })
+})*/
 
 app.get('/api/user_gen_special',(req,res)=>{
     Gen.find({genId:req.query.user}).exec((err,docs)=>{

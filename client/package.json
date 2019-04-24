@@ -4,18 +4,18 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
-    "moment": "^2.23.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
-    "react-qr-reader": "^2.1.2",
-    "react-redux": "^5.0.6",
-    "react-router-dom": "^4.2.2",
+    "react-qr-reader": "^2.2.1",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.0",
     "react-simple-sidenav": "^0.1.6",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
