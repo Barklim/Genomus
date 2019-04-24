@@ -1,12 +1,21 @@
-<<<<<<< HEAD
-#For Alex
+п0пр0б0вадь удалидь м0д.м0дулес и переусдан0видь
+
+не раб0даед 3яя гал0чка // если в0звраадься при сравнении а п0льз0вадель не разрешил в0зврашаедся д0 чег0 быдь не д0лжн0
+в0зврашаедся ерунда не нужн0е убрадь как нидь
+если 0шибка на клиенде в0зврашадь че нидь
+д0бавидь дискас?
+
+перекинудь README.md
+
+
+# For Alex
 
 routes:
 
 / - Home
 /login
 /user/logout
-/user-ankets
+/user-anketsA
 /user/user
 /user/add
 /user/registerScren
@@ -27,12 +36,11 @@ routes:
 <hr/>
 =======
 
-##Warning
+## Warning
 
 	GenId должен быть шестизначнм в окне Регистрации!
->>>>>>> b34aced59764c5d4761cd3ac42259fedef87d9a0
 
-#hold start
+# hold start
 
 	npm i // client & аnd root
 	npm run dev
@@ -42,7 +50,7 @@ mongod
 
 npm run dev
 
-#reqirements:
+# reqirements:
 
 	node 8.0.0
 	mongo
@@ -51,7 +59,7 @@ npm run dev
 
 	<br/>
 
-#chage lg:
+# chage lg:
 
   veri0m: 0.0.1
 	//bcrypt 1.0.3 -> 2.0.1
@@ -63,7 +71,7 @@ npm run dev
 
 	0браб0дка fetch img из0бражения
 
-#Feature
+# Feature
 
 	Can watch hows add gen
 	//В панеле анкет, зайдя кликнув по genId, перейдем к модели genId
@@ -72,7 +80,7 @@ npm run dev
 	Только у одной учётки есть права удалять/редактировать/создавать юзеров/посты/мутации 
 	нельзя из админки редакдир0вадь р0ль, д.к. иначе не в0зм0жн0 будед вернудь себе права
 
-#to do
+# to do
 
 	Самое важное:
 
@@ -107,6 +115,7 @@ npm run dev
 
   react как отправить письмо на почту/ карту сайта/ react animation
 	добавить гайд начальным скрином
+	из за п0дх0да через mextRecievePrps, при перех0де п0 разным сдраницам м0жн0 случайн0 найди не де плр0пс в сравнении
 	footer
 	adminka
 	prop types
@@ -129,7 +138,7 @@ npm run dev
 	Н0в0е:
 	  0браб0дадь случай если id не с00двесдвуед ничег0 в мед0дах
 
-#question for dev
+# question for dev
 
   server
   r0utes
@@ -148,7 +157,7 @@ npm run dev
 	кардинки деф0рмируюдся
 	В к0мпад, дак0г0 юзера нед
 
-#question for alex
+# question for alex
 	
 	Важно:
 		не будет корректно сравниваться если не все поля проставлены! В качестве результата будет 'ожидание' в сравнении
@@ -175,7 +184,7 @@ npm run dev
 	  https://expressjs.com/ru/advanced/best-practice-security.html
 
 
-#comments for dev
+# comments for dev
 
 	## problems
 
@@ -202,8 +211,6 @@ npm run dev
 	about:
 	создайте анкету в профиле, чтобы её видели другие пользователи
 	вы сами можете удалить анкету в любой момент
-
-	https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
 
 	/api/мед0ды:
 	  get:
@@ -243,7 +250,7 @@ npm run dev
 	    *delete_user - удаление
 	    *delete_gen - удаление
 
-#Pr0hects
+# Pr0hects
 	# tinder-clone-nodeJS
 	tinder clone backend written with nodeJS
 	https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
@@ -252,16 +259,22 @@ npm run dev
 
 	https://alkanyx.com/item/118/Binder---React-Native-Dating-App-Template
 
+	https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
+
 	redux-saga 
 	styled
 
-#workflow
+# workflow
 
  git add .
- git commit -m 'fix meth0ds'
+ git commit -m 'upgrade macadress'
  git push 
  git push heroku
 
-#META
+ npm outdated
+ npm update
+ npm info express version
+
+# META
 
   https://github.com/mastekator
