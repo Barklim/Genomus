@@ -34,7 +34,6 @@ routes:
 /* - любoй случайный route перекидываед вас на Login
 
 <hr/>
-=======
 
 ## Warning
 
@@ -278,3 +277,48 @@ npm run dev
 # META
 
   https://github.com/mastekator
+
+
+  CLIEMT
+
+  npm WARN deprecated fsevents@1.1.2: Way too old
+npm WARN deprecated browserslist@2.11.3: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
+npm WARN deprecated browserslist@1.7.7: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
+npm WARN deprecated circular-json@0.3.3: CircularJSON is in maintenance only, flatted is its successor.
+npm WARN deprecated cryptiles@2.0.5: This version is no longer maintained. Please upgrade to the latest version.
+npm WARN deprecated boom@2.10.1: This version is no longer maintained. Please upgrade to the latest version.
+npm WARN deprecated hoek@2.16.3: This version is no longer maintained. Please upgrade to the latest version.
+
+> uglifyjs-webpack-plugin@0.4.6 postinstall D:\_OSPanel\domains\project\G2apk\Genomus\client\node_modules\uglifyjs-webpack-plugin
+> node lib/post_install.js
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN react-simple-sidenav@0.1.6 requires a peer of react@^15.0.0 but none was installed.
+npm WARN react-simple-sidenav@0.1.6 requires a peer of react-dom@^15.0.0 but none was installed.
+npm WARN ajv-keywords@3.4.0 requires a peer of ajv@^6.9.1 but none was installed.
+npm WARN The package macaddress is included as both a dev and production dependency.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.2 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+  SERVER
+
+ npm WARN deprecated bcrypt@1.0.3: bcrypt < v2.0.0 is susceptible to bcrypt wrap-around bug. Upgrade to bcrypt >= v2.0.0 for improved support for newer bcrypt hashes
+
+> bcrypt@1.0.3 install D:\_OSPanel\domains\project\G2apk\Genomus\node_modules\bcrypt
+> node-pre-gyp install --fallback-to-build
+
+[bcrypt] Success: "D:\_OSPanel\domains\project\G2apk\Genomus\node_modules\bcrypt\lib\binding\bcrypt_lib.node" is installed via remote
+
+> nodemon@1.18.11 postinstall D:\_OSPanel\domains\project\G2apk\Genomus\node_modules\nodemon
+> node bin/postinstall || exit 0
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN 13_book_shelf@1.0.0 No repository field.
+npm WARN The package macaddress is included as both a dev and production dependency.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.8 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.8: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+
+
