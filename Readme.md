@@ -16,13 +16,13 @@
 - [Projects](#Projects)
 - [Meta](#Meta)
 
-##  User info  
+## User info
 
 Внимание:
 GenId `должен` быть шестизначнм в окне Регистрации!
 
 За изменениями можете следить здесь [changelog](https://github.com/Barklim/Genomus/blob/master/CHANGELOG.md).
-
+	
 ## Collaborator info
 
 Routes:
@@ -70,7 +70,7 @@ Build for mobile:
 
 ### workflow
  git add .
- git commit -m 'upgrade macadress'
+ git commit -m 'upgrade Readme amd Chamgelg'
  git push 
  git push heroku
 
@@ -164,7 +164,7 @@ registerScreem
 igen = inf abut mutatins
 убрал время создания в панели создания генов
 
-## Question for Al 
+## Question for Al
 	
 Важно:
 не будет корректно сравниваться если не все поля проставлены! В качестве результата будет 'ожидание' в сравнении
