@@ -23,7 +23,7 @@ class User extends Component {
         /*if ( nextProps.user.userPosts.length === 0 ) {*/
         console.log('componentWillReceiveProps');
         console.log(nextProps);
-        console.log(nextProps.user.userPosts.length);
+        //console.log(nextProps.user.userPosts.length);
         if ( nextProps.user.userPosts === undefined ) {
             this.setState({visible: ''}); 
             this.setState({
@@ -91,7 +91,7 @@ class User extends Component {
             <div className="nfo">
                 <div className="formattext">
                     <div className="formatImg">
-                        <img src={this.state.img_url} />
+                        <img alt='gen-profile' src={this.state.img_url} />
                     </div>
                     <div><span>Name:</span> {user2.name}</div>
                     <div><span>Lastname:</span> {user2.lastname}</div>

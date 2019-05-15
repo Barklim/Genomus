@@ -11,7 +11,7 @@ const BookItem = (item) => {
         <Link to={`/books/${item._id}`} className="book_item">
 
             <div className="formatImg2">
-                <img src={item.img_url}/>
+                <img alt='gen-card' src={item.img_url}/>
             </div>
             
             <div>
