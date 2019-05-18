@@ -4,13 +4,13 @@
 - [Hold start](#hold-start)
   - [npm run dev](#npm-run-dev)
   - [build](#build)
+  - [deploy](#deploy)
   - [workflow](#workflow)
 - [TОDО](#TОDО)
 - [Compat](#Compat)
 - [Question for dev](#question-for-dev)
 - [Question for Al](#question-for-Al)
 - [Comments for dev](#comments-for-dev)
-- [Time manager](#time-manager)
 - [Dev staff](#dev-staff)
 - [Dev issues](#dev-issues)
 - [Garbage](#garbage)
@@ -18,6 +18,9 @@
 ## Help
 
 Как помочь?..
+См. T0D0
+
+Чд0бы п0днядь пр0екд, нужн0 л0кальн0 запусдидь м0нг0 базу, далее сервер и клиенд.
 
 ## Hold start
 
@@ -33,10 +36,20 @@ In c:/Program Files/MongoDB/server/4.0/bin
 ### `build`
 Build for mobile:
 
+### `deploy`
+
+  heroku create
+  heroku addons:create mongolab:sandbox
+  heroku config:set SECRET=ASDFADSFASDF
+
+cd client
+
+  npm run build
+
 ### workflow
 
 	git add .
-	git commit -m 'upgrade Readme amd Chamgelg'
+	git commit -m 'upgrade Readme all'
 	git push 
 	git push heroku
 
@@ -223,10 +236,6 @@ delete:
 
 <hr/>
 
-## Time manager
-
-15/05/ - 21:00,1ч - 0рганизация md и фикс линдера.
-
 ## Dev staff
 
 tinder-clone-nodeJS:
@@ -254,3 +263,4 @@ https://material.io/develop/
 ## Garbage
 
 S0me garbage
+  egines -> 8.0.0 

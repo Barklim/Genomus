@@ -7,7 +7,6 @@
 - [Hold start](#hold-start)
   - [install](#install)
   - [run](#run)
-  - [build](#build)
 - [Botstrapped](#botstrapped)
 - [Meta](#Meta)
 
@@ -20,7 +19,7 @@ GenId `должен` быть шестизначнм в окне Регистр�
 
 За изменениями можете следить здесь [changelog](https://github.com/Barklim/Genomus/blob/master/CHANGELOG.md).
 
-Инфрмация для сотрудников [changelog](https://github.com/Barklim/Genomus/blob/master/CОLLABОRATОR.md).
+Инфрмация для сотрудников [collaborator](https://github.com/Barklim/Genomus/blob/master/CОLLABОRATОR.md).
 
 ## Sending Feedback
 
@@ -53,10 +52,6 @@ Run server and client:
 In c:/Program Files/MongoDB/server/4.0/bin
 
 	mongod
-
-### `build`
-
-Build for mobile:
 
 ## Botstrapped
 
