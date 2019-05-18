@@ -46,6 +46,9 @@ cd client
 
   npm run build
 
+  // heroku git:remote -a afternoon-reef-93619
+  // package-l0ck.жc0н
+
 ### workflow
 
 	git add .
