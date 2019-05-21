@@ -41,6 +41,7 @@ Build for mobile:
   heroku create
   heroku addons:create mongolab:sandbox
   heroku config:set SECRET=ASDFADSFASDF
+  git push heroku
 
 cd client
 
@@ -48,11 +49,14 @@ cd client
 
   // heroku git:remote -a afternoon-reef-93619
   // package-l0ck.жc0н
+  // heroku git:clone -a afternoon-reef-93619
+  // NPM ls bcrypt
+  // heroku apps:destroy --app afternoon-reef-93619
 
 ### workflow
 
 	git add .
-	git commit -m 'upgrade Readme all'
+	git commit -m 'fix 0me users meth0d 0m server, d0c.all0w'
 	git push 
 	git push heroku
 
@@ -267,3 +271,15 @@ https://material.io/develop/
 
 S0me garbage
   egines -> 8.0.0 
+
+boiling-wildwood-42627 -> G
+Use heroku addons:docs mongolab to view documentation
+
+react-scripts -> 2.0.0
+ в ручную без update
+
+ "proxy": {
+    "/api/": {
+      "target": "http://localhost:3001"
+    }
+  },

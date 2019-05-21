@@ -1,5 +1,5 @@
 {
-  "name": "13_book_shelf",
+  "name": "g-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,15 +18,15 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^1.0.3",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "concurrently": "^3.6.1",
     "cookie-parser": "^1.4.4",
-    "express": "^4.16.4",
+    "express": "^4.17.0",
     "jsonwebtoken": "^8.5.1",
+    "macaddress": ">=0.2.9",
     "moment-js": "^1.1.15",
     "mongoose": "^4.13.18",
-    "nodemon": "^1.18.11",
-    "macaddress": ">=0.2.9"
+    "nodemon": "^1.19.0"
   },
   "devDependencies": {}
 }

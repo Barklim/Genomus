@@ -305,6 +305,16 @@ export function getGen(id){
     }
 }
 
+export function getTestGens(id){
+    const request = axios.get(`/api/test_gens?id=${id}`)
+                    .then(response => response.data)
+
+    return {
+        type:'GET_TEST_GENS',
+        payload:request
+    }
+}
+
 export function updateGen(data){
     const request = axios.post(`/api/gen_update`,data)
                 .then(response => response.data);
@@ -373,6 +383,8 @@ export function getOtherGen(genId){
         payload:request
     }
 }
+
+// b00ks
 
 export function getBookCompat(genId){
     const request = axios.get(`/api/getBookCompat?user=${genId}`)

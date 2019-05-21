@@ -97,6 +97,44 @@ app.get('/api/getGen',(req,res)=>{
     })
 })
 
+
+// TEST
+/*app.get('/api/test_gens',(req,res)=>{
+    let id = req.query.id;
+
+    Gen.findById(id,(err,doc)=>{
+        if(err) return res.status(400).send(err);
+        //res.send(doc);
+
+        if ( doc.id === '5c4964881f382c1cbc547318' ) {
+            res.send(doc);
+        } else {
+            res.send(false);
+        }
+    })
+})*/
+// TEST
+app.get('/api/test_gens',(req,res)=>{
+    let id = req.query.id;
+
+    Gen.findById(id,(err,doc)=>{
+        if(err) return res.status(400).send(err);
+        //res.send(doc);
+
+        if ( false ) {
+            res.send(doc);
+        } else {
+
+            Gen.findById(id,(err,doc)=>{
+                if(err) return res.status(400).send(err);
+                //res.send(doc);
+                    res.send(false);
+            })
+
+        }
+    })
+})
+
 /*app.get('/api/getIgen',(req,res)=>{
     let id = req.query.id;
 
@@ -140,15 +178,9 @@ app.get('/api/getReviewer',(req,res)=>{
     })
 })
 
-/*app.get('/api/users',(req,res)=>{
-    User.find({},(err,users)=>{
-        if(err) return res.status(400).send(err);
-        res.status(200).send(users)
-    })
-})*/
-
 // 0браб0дадь 0дсудсдвие ключа п0 id!
 // 0браб0дадь в случае если ничег0 не придед, ни 0дин юзер
+/*
 app.get('/api/users',(req,res)=>{
     let id = req.query.id;
     var allow = true;
@@ -165,6 +197,50 @@ app.get('/api/users',(req,res)=>{
         if(err) return res.status(400).send(err);
         if(!allow) { 
             res.status(200).send(users)
+        } else {
+            res.json([{
+                "isFail": "true",
+                "_id": "FAKEiD8ab5d98719d0467359",
+                "email": "test@mail.ru",
+                "password": "$2a$10$FAKEU5NIygANxCwNZHdkUuWVf4HZ4dXY9wLQJ.6z/MUaQl8KcfkWe",
+                "name": "Fakename",
+                "lastname": "FakeLastname",
+                "__v": 0,
+                "genId": "FAKE00",
+                "role": 0
+            }])
+        }
+    })
+})
+*/
+app.get('/api/users',(req,res)=>{
+    let id = req.query.id;
+    var allow = true;
+
+    User.findById(id,(err,doc)=>{
+        if(err) return res.status(400).send(err);
+
+        if(!doc) return res.status(400).send(
+                [{
+                    "isFail": "true",
+                    "_id": "FAKEiD8ab5d98719d0467351",
+                    "email": "test@mail.ru",
+                    "password": "$2a$10$FAKEU5NIygANxCwNZHdkUuWVf4HZ4dXY9wLQJ.6z/MUaQl8KcfkWe",
+                    "name": "Fakename",
+                    "lastname": "FakeLastname",
+                    "__v": 0,
+                    "genId": "FAKE00",
+                    "role": 0
+                }]
+            );
+
+        if(doc.role === 0) { 
+
+            User.find({},(err,users)=>{
+                if(err) return res.status(400).send(err);
+                    res.status(200).send(users);
+            })
+
         } else {
             res.json([{
                 "isFail": "true",
