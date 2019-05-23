@@ -26,7 +26,8 @@
     "macaddress": ">=0.2.9",
     "moment-js": "^1.1.15",
     "mongoose": "^4.13.18",
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.0",
+    "tar": ">=4.4.2"
   },
   "devDependencies": {}
 }

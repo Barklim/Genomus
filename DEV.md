@@ -31,7 +31,7 @@ Run server and client:
 
 In c:/Program Files/MongoDB/server/4.0/bin
 
-	mongod
+		
 
 ### `build`
 Build for mobile:
@@ -293,3 +293,6 @@ react-scripts -> 2.0.0
       "target": "http://localhost:3001"
     }
   },
+
+depemdemcies cliemt, server
+  "tar":">=4.4.2"
