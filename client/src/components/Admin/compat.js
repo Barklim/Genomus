@@ -19,6 +19,7 @@ class Compat extends PureComponent {
         delay: 300,
         result: "No result",
         allowCheck: true,
+        allowShow: false,
         allowMessage: '',
     };
         this.handleScan = this.handleScan.bind(this);
@@ -64,15 +65,12 @@ class Compat extends PureComponent {
         //this.props.dispatch(getBookCompat(121212))
     }
 
-    /*componentDidMount(){
-        this.props.dispatch(getAllow(this.state.otherGenId))
-    }*/
-
     componentWillReceiveProps(nextProps){
 
         if(nextProps.user.allow === undefined){
         } else {
             this.setState({allowCheck: nextProps.user.allow.allowCheck})
+            this.setState({allowShow: nextProps.user.allow.allowShow})
         } 
 
         if ( this.state.allowCheck === true ) {
@@ -184,6 +182,7 @@ class Compat extends PureComponent {
         console.log("remder");
         console.log(this.state);
         console.log(this.props);
+        //user.book_allow
 
         return (
             <div className="user_container">
@@ -230,7 +229,13 @@ class Compat extends PureComponent {
                                 :null
                             }
 
-                            {this.showUserConfig(user)}
+                            {
+                                this.state.allowShow === true ? 
+                                    <div>
+                                        {this.showUserConfig(user)}
+                                    </div>
+                                :null
+                            }
 
                             <QrReader
                               delay={this.state.delay}

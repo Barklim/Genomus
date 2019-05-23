@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 class About extends Component {
     render() {
+        //console.log(this.props.user.login.genId);
     
         return (
             <div className="rl_container">
@@ -11,12 +12,34 @@ class About extends Component {
                     <h4>Мы в социальных сетях: <a href="https://vk.com/genomusApp">https://vk.com/genomusApp</a></h4>
                     <h4>Обратная связь: example@gmail.com</h4>
                     <h4>Здесь можно будет скачать файл apk. для Android  </h4>
-                    <p> Ваш QR-code: </p>
-                    <img 
-                        alt='robots' 
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${this.props.user.login.genId}`} 
-                        className="qr"
-                    />
+                    {
+                        this.props.user.login.genId !== undefined  ? 
+                            <p> Ваш QR-code: </p>
+                        :null
+                    }
+                    {
+                        this.props.user.login.genId === undefined  ? 
+                            <p> Ваш QR-code, будет здесь: </p>
+                        :null
+                    }
+                    {
+                        this.props.user.login.genId !== undefined  ? 
+                            <img 
+                                alt='robots' 
+                                src={`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${this.props.user.login.genId}`} 
+                                className="qr"
+                            />
+                        :null
+                    }
+                    {
+                        this.props.user.login.genId === undefined  ? 
+                            <img 
+                                alt='robots' 
+                                src={`https://www.denso-wave.com/imageupd/3217/14078_contents4.jpg`} 
+                                className="qr"
+                            />
+                        :null
+                    }
                 </div>
             </div>
         );
@@ -41,4 +64,5 @@ export default connect(mapStateProps)(About)
                     <p>Как рассчитывается рейтинг?</p> 
                     <p>Вручную администратором. Оценка зависит от "полноты" данных анкеты.П0ка дак</p>
                     <p>П0чему не 'на р0баед м0я кардинка'?</p> 
-                    <p>Убедидесь, чд0 вы ввели к0ррекдный url-адрес</p>*/
+                    <p>Убедидесь, чд0 вы ввели к0ррекдный url-адрес</p>
+*/

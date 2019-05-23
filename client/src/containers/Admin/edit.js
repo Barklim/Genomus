@@ -17,7 +17,7 @@ class EditBook extends PureComponent {
             img_url:'',
             allowCheck: false,
             allowCompat: false,
-            allowShow: false
+            allowShow: false,
         }
     }
 
@@ -63,7 +63,7 @@ class EditBook extends PureComponent {
             }
         } 
 
-        if ( name === 'allowCompat' ) {
+        if ( name === 'allowShow' ) {
             newFormdata[name] = event.target.checked
 
             if ( this.state.formdata.allowShow === true ) {

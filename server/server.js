@@ -55,16 +55,19 @@ app.get('/api/allow',(req,res)=>{
 
             if(!doc) return res.send({
                 allowCheck: false,
-                allowCompat: false
+                allowCompat: false,
+                allowShow: false
             });
             //if(err) return res.status(400).send(err); :(((
             if(err) return res.send({
                 allowCheck: false,
-                allowCompat: false
+                allowCompat: false,
+                allowShow: false
             });
             if(doc) return res.send({
                 allowCheck: doc.allowCheck,
-                allowCompat: doc.allowCompat
+                allowCompat: doc.allowCompat,
+                allowShow: doc.allowShow
             }); 
 /*            else {
                     res.send({
@@ -215,7 +218,7 @@ app.get('/api/users',(req,res)=>{
 */
 app.get('/api/users',(req,res)=>{
     let id = req.query.id;
-    var allow = true;
+    var allow = true; // Убрадь
 
     User.findById(id,(err,doc)=>{
         if(err) return res.status(400).send(err);
@@ -270,6 +273,7 @@ app.get('/api/user_posts',(req,res)=>{
         res.send(docs)
     })
 })*/
+/*
 app.get('/api/all_user_posts',(req,res)=>{
     let id = req.query.id;
     var allow = true;
@@ -305,6 +309,61 @@ app.get('/api/all_user_posts',(req,res)=>{
         }
     })
 })
+*/
+app.get('/api/all_user_posts',(req,res)=>{
+    let id = req.query.id;
+
+    User.findById(id,(err,doc)=>{
+        if(err) return res.status(400).send(err);
+
+            if(!doc) return res.status(400).send(
+                [{
+                    "_id": "FAKE1d5331379f1f0c6671d4",
+                    "updatedAt": "2019-01-26T16:53:42.322Z",
+                    "createdAt": "2019-01-26T13:14:59.502Z",
+                    "name": "testname",
+                    "author": "test",
+                    "rating": 5,
+                    "ownerId": "FAKEe5a7e18c9b171c90ab13",
+                    "__v": 0,
+                    "allowCompat": false,
+                    "allowCheck": false,
+                    "genId": "FAKE13",
+                    "price": "Неизвестно",
+                    "pages": "32",
+                    "img_url": "n/a",
+                    "review": "test"
+                }]
+            );    
+
+        if(doc.role === 0) { 
+
+            Book.find({},(err,users)=>{
+                if(err) return res.status(400).send(err);
+                    res.status(200).send(users);
+            })
+
+        } else {
+            res.json([{
+                "_id": "FAKE2d5331379f1f0c6671d4",
+                "updatedAt": "2019-01-26T16:53:42.322Z",
+                "createdAt": "2019-01-26T13:14:59.502Z",
+                "name": "testname",
+                "author": "test",
+                "rating": 5,
+                "ownerId": "FAKEe5a7e18c9b171c90ab13",
+                "__v": 0,
+                "allowCompat": false,
+                "allowCheck": false,
+                "genId": "FAKE13",
+                "price": "Неизвестно",
+                "pages": "32",
+                "img_url": "n/a",
+                "review": "test"
+            }])
+        }
+    })
+})
 
 // Д0льк0 дв0и мудации, для эд0г0 к0мкредн0 юзера
 /*app.get('/api/user_gens',(req,res)=>{
@@ -313,6 +372,7 @@ app.get('/api/all_user_posts',(req,res)=>{
         res.send(docs)
     })
 })*/
+/*
 app.get('/api/user_gens',(req,res)=>{
     let id = req.query.id;
     var allow = true;
@@ -366,6 +426,105 @@ app.get('/api/user_gens',(req,res)=>{
                 "rule_0": 1,
                 "genId": "FAKE11"
             }])
+        }
+    })
+})
+*/
+app.get('/api/user_gens',(req,res)=>{
+    let id = req.query.id;
+
+    User.findById(id,(err,doc)=>{
+        if(err) return res.status(400).send(err);
+
+        if(!doc) return res.status(400).send(
+            [{
+                "_id": "5c4872e10c3fb61c80337cc0",
+                "updatedAt": "2019-01-26T14:19:56.599Z",
+                "createdAt": "2019-01-23T13:57:53.853Z",
+                "ownerGenId": "FAKEe28ab5d98719d0467359",
+                "__v": 0,
+                "rule_29": 0,
+                "rule_28": 0,
+                "rule_27": 0,
+                "rule_26": 0,
+                "rule_25": 0,
+                "rule_24": 0,
+                "rule_23": 0,
+                "rule_22": 0,
+                "rule_21": 0,
+                "rule_20": 0,
+                "rule_19": 0,
+                "rule_18": 0,
+                "rule_17": 0,
+                "rule_16": 0,
+                "rule_15": 0,
+                "rule_14": 0,
+                "rule_13": 0,
+                "rule_12": 0,
+                "rule_11": 0,
+                "rule_10": 0,
+                "rule_9": 1,
+                "rule_8": 1,
+                "rule_7": 1,
+                "rule_6": 1,
+                "rule_5": 1,
+                "rule_4": 1,
+                "rule_3": 1,
+                "rule_2": 1,
+                "rule_1": 1,
+                "rule_0": 1,
+                "genId": "FAKE1"
+            }]
+        );
+
+        if(doc.role === 0) { 
+
+            Gen.find({},(err,docs)=>{
+                if(err) return res.status(400).send(err);
+                res.status(200).send(docs);
+            })
+
+        } else {
+            res.json(
+                [{
+                    "_id": "5c4872e10c3fb61c80337cc0",
+                    "updatedAt": "2019-01-26T14:19:56.599Z",
+                    "createdAt": "2019-01-23T13:57:53.853Z",
+                    "ownerGenId": "FAKEe28ab5d98719d0467359",
+                    "__v": 0,
+                    "rule_29": 0,
+                    "rule_28": 0,
+                    "rule_27": 0,
+                    "rule_26": 0,
+                    "rule_25": 0,
+                    "rule_24": 0,
+                    "rule_23": 0,
+                    "rule_22": 0,
+                    "rule_21": 0,
+                    "rule_20": 0,
+                    "rule_19": 0,
+                    "rule_18": 0,
+                    "rule_17": 0,
+                    "rule_16": 0,
+                    "rule_15": 0,
+                    "rule_14": 0,
+                    "rule_13": 0,
+                    "rule_12": 0,
+                    "rule_11": 0,
+                    "rule_10": 0,
+                    "rule_9": 1,
+                    "rule_8": 1,
+                    "rule_7": 1,
+                    "rule_6": 1,
+                    "rule_5": 1,
+                    "rule_4": 1,
+                    "rule_3": 1,
+                    "rule_2": 1,
+                    "rule_1": 1,
+                    "rule_0": 1,
+                    "genId": "FAKE2"
+                }]
+            )
         }
     })
 })

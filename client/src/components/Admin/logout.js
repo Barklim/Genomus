@@ -9,6 +9,7 @@ const Logout = (props) => {
                         props.history.push('/')
                     },2000)
                 })
+    console.log(request);
 
     return (
         <div className="logout_container">
