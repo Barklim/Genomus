@@ -116,7 +116,7 @@ class EditGenom extends PureComponent {
 
                     <div className="form_element">
                         <input
-                            type="number"
+                            type="text"
                             placeholder="Enter Genocode"
                             value={this.state.formdata.genId}
                             onChange={(event)=>this.handleInput(event,'genId')}

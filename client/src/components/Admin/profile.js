@@ -18,36 +18,36 @@ class Profile extends Component {
 
             console.log(nextProps);
             console.log(nextProps.user.profileGen[0]);
-            nextProps.user.profileGen[0].rule_0 === null ? nextProps.user.profileGen[0].rule_0 = 'н' : nextProps.user.profileGen[0].rule_0 = null 
-            nextProps.user.profileGen[0].rule_1 === null ? nextProps.user.profileGen[0].rule_1 = 'н' : nextProps.user.profileGen[0].rule_1 = null 
-            nextProps.user.profileGen[0].rule_2 === null ? nextProps.user.profileGen[0].rule_2 = 'н' : nextProps.user.profileGen[0].rule_2 = null 
-            nextProps.user.profileGen[0].rule_3 === null ? nextProps.user.profileGen[0].rule_3 = 'н' : nextProps.user.profileGen[0].rule_3 = null 
-            nextProps.user.profileGen[0].rule_4 === null ? nextProps.user.profileGen[0].rule_4 = 'н' : nextProps.user.profileGen[0].rule_4 = null
-            nextProps.user.profileGen[0].rule_5 === null ? nextProps.user.profileGen[0].rule_5 = 'н' : nextProps.user.profileGen[0].rule_5 = null
-            nextProps.user.profileGen[0].rule_6 === null ? nextProps.user.profileGen[0].rule_6 = 'н' : nextProps.user.profileGen[0].rule_6 = null
-            nextProps.user.profileGen[0].rule_7 === null ? nextProps.user.profileGen[0].rule_7 = 'н' : nextProps.user.profileGen[0].rule_7 = null
-            nextProps.user.profileGen[0].rule_8 === null ? nextProps.user.profileGen[0].rule_8 = 'н' : nextProps.user.profileGen[0].rule_8 = null
-            nextProps.user.profileGen[0].rule_9 === null ? nextProps.user.profileGen[0].rule_9 = 'н' : nextProps.user.profileGen[0].rule_9 = null
-            nextProps.user.profileGen[0].rule_10 === null ? nextProps.user.profileGen[0].rule_10 = 'н' : nextProps.user.profileGen[0].rule_10 = null
-            nextProps.user.profileGen[0].rule_11 === null ? nextProps.user.profileGen[0].rule_11 = 'н' : nextProps.user.profileGen[0].rule_11 = null
-            nextProps.user.profileGen[0].rule_12 === null ? nextProps.user.profileGen[0].rule_12 = 'н' : nextProps.user.profileGen[0].rule_12 = null
-            nextProps.user.profileGen[0].rule_13 === null ? nextProps.user.profileGen[0].rule_13 = 'н' : nextProps.user.profileGen[0].rule_13 = null
-            nextProps.user.profileGen[0].rule_14 === null ? nextProps.user.profileGen[0].rule_14 = 'н' : nextProps.user.profileGen[0].rule_14 = null
-            nextProps.user.profileGen[0].rule_15 === null ? nextProps.user.profileGen[0].rule_15 = 'н' : nextProps.user.profileGen[0].rule_15 = null
-            nextProps.user.profileGen[0].rule_16 === null ? nextProps.user.profileGen[0].rule_16 = 'н' : nextProps.user.profileGen[0].rule_16 = null
-            nextProps.user.profileGen[0].rule_17 === null ? nextProps.user.profileGen[0].rule_17 = 'н' : nextProps.user.profileGen[0].rule_17 = null
-            nextProps.user.profileGen[0].rule_18 === null ? nextProps.user.profileGen[0].rule_18 = 'н' : nextProps.user.profileGen[0].rule_18 = null
-            nextProps.user.profileGen[0].rule_19 === null ? nextProps.user.profileGen[0].rule_19 = 'н' : nextProps.user.profileGen[0].rule_19 = null
-            nextProps.user.profileGen[0].rule_20 === null ? nextProps.user.profileGen[0].rule_20 = 'н' : nextProps.user.profileGen[0].rule_20 = null
-            nextProps.user.profileGen[0].rule_21 === null ? nextProps.user.profileGen[0].rule_21 = 'н' : nextProps.user.profileGen[0].rule_21 = null
-            nextProps.user.profileGen[0].rule_22 === null ? nextProps.user.profileGen[0].rule_22 = 'н' : nextProps.user.profileGen[0].rule_22 = null
-            nextProps.user.profileGen[0].rule_23 === null ? nextProps.user.profileGen[0].rule_23 = 'н' : nextProps.user.profileGen[0].rule_23 = null
-            nextProps.user.profileGen[0].rule_24 === null ? nextProps.user.profileGen[0].rule_24 = 'н' : nextProps.user.profileGen[0].rule_24 = null
-            nextProps.user.profileGen[0].rule_25 === null ? nextProps.user.profileGen[0].rule_25 = 'н' : nextProps.user.profileGen[0].rule_25 = null
-            nextProps.user.profileGen[0].rule_26 === null ? nextProps.user.profileGen[0].rule_26 = 'н' : nextProps.user.profileGen[0].rule_26 = null
-            nextProps.user.profileGen[0].rule_27 === null ? nextProps.user.profileGen[0].rule_27 = 'н' : nextProps.user.profileGen[0].rule_27 = null
-            nextProps.user.profileGen[0].rule_28 === null ? nextProps.user.profileGen[0].rule_28 = 'н' : nextProps.user.profileGen[0].rule_28 = null
-            nextProps.user.profileGen[0].rule_29 === null ? nextProps.user.profileGen[0].rule_29 = 'н' : nextProps.user.profileGen[0].rule_29 = null
+            nextProps.user.profileGen[0].rule_0 === null ? nextProps.user.profileGen[0].rule_0 = 'н' : nextProps.user.profileGen[0].rule_0 = nextProps.user.profileGen[0].rule_0
+            nextProps.user.profileGen[0].rule_1 === null ? nextProps.user.profileGen[0].rule_1 = 'н' : nextProps.user.profileGen[0].rule_1 = nextProps.user.profileGen[0].rule_1 
+            nextProps.user.profileGen[0].rule_2 === null ? nextProps.user.profileGen[0].rule_2 = 'н' : nextProps.user.profileGen[0].rule_2 = nextProps.user.profileGen[0].rule_2
+            nextProps.user.profileGen[0].rule_3 === null ? nextProps.user.profileGen[0].rule_3 = 'н' : nextProps.user.profileGen[0].rule_3 = nextProps.user.profileGen[0].rule_3 
+            nextProps.user.profileGen[0].rule_4 === null ? nextProps.user.profileGen[0].rule_4 = 'н' : nextProps.user.profileGen[0].rule_4 = nextProps.user.profileGen[0].rule_4
+            nextProps.user.profileGen[0].rule_5 === null ? nextProps.user.profileGen[0].rule_5 = 'н' : nextProps.user.profileGen[0].rule_5 = nextProps.user.profileGen[0].rule_5
+            nextProps.user.profileGen[0].rule_6 === null ? nextProps.user.profileGen[0].rule_6 = 'н' : nextProps.user.profileGen[0].rule_6 = nextProps.user.profileGen[0].rule_6
+            nextProps.user.profileGen[0].rule_7 === null ? nextProps.user.profileGen[0].rule_7 = 'н' : nextProps.user.profileGen[0].rule_7 = nextProps.user.profileGen[0].rule_7
+            nextProps.user.profileGen[0].rule_8 === null ? nextProps.user.profileGen[0].rule_8 = 'н' : nextProps.user.profileGen[0].rule_8 = nextProps.user.profileGen[0].rule_8
+            nextProps.user.profileGen[0].rule_9 === null ? nextProps.user.profileGen[0].rule_9 = 'н' : nextProps.user.profileGen[0].rule_9 = nextProps.user.profileGen[0].rule_9
+            nextProps.user.profileGen[0].rule_10 === null ? nextProps.user.profileGen[0].rule_10 = 'н' : nextProps.user.profileGen[0].rule_10 = nextProps.user.profileGen[0].rule_10
+            nextProps.user.profileGen[0].rule_11 === null ? nextProps.user.profileGen[0].rule_11 = 'н' : nextProps.user.profileGen[0].rule_11 = nextProps.user.profileGen[0].rule_11
+            nextProps.user.profileGen[0].rule_12 === null ? nextProps.user.profileGen[0].rule_12 = 'н' : nextProps.user.profileGen[0].rule_12 = nextProps.user.profileGen[0].rule_12
+            nextProps.user.profileGen[0].rule_13 === null ? nextProps.user.profileGen[0].rule_13 = 'н' : nextProps.user.profileGen[0].rule_13 = nextProps.user.profileGen[0].rule_13
+            nextProps.user.profileGen[0].rule_14 === null ? nextProps.user.profileGen[0].rule_14 = 'н' : nextProps.user.profileGen[0].rule_14 = nextProps.user.profileGen[0].rule_14
+            nextProps.user.profileGen[0].rule_15 === null ? nextProps.user.profileGen[0].rule_15 = 'н' : nextProps.user.profileGen[0].rule_15 = nextProps.user.profileGen[0].rule_15
+            nextProps.user.profileGen[0].rule_16 === null ? nextProps.user.profileGen[0].rule_16 = 'н' : nextProps.user.profileGen[0].rule_16 = nextProps.user.profileGen[0].rule_16
+            nextProps.user.profileGen[0].rule_17 === null ? nextProps.user.profileGen[0].rule_17 = 'н' : nextProps.user.profileGen[0].rule_17 = nextProps.user.profileGen[0].rule_17
+            nextProps.user.profileGen[0].rule_18 === null ? nextProps.user.profileGen[0].rule_18 = 'н' : nextProps.user.profileGen[0].rule_18 = nextProps.user.profileGen[0].rule_18
+            nextProps.user.profileGen[0].rule_19 === null ? nextProps.user.profileGen[0].rule_19 = 'н' : nextProps.user.profileGen[0].rule_19 = nextProps.user.profileGen[0].rule_19
+            nextProps.user.profileGen[0].rule_20 === null ? nextProps.user.profileGen[0].rule_20 = 'н' : nextProps.user.profileGen[0].rule_20 = nextProps.user.profileGen[0].rule_20
+            nextProps.user.profileGen[0].rule_21 === null ? nextProps.user.profileGen[0].rule_21 = 'н' : nextProps.user.profileGen[0].rule_21 = nextProps.user.profileGen[0].rule_21
+            nextProps.user.profileGen[0].rule_22 === null ? nextProps.user.profileGen[0].rule_22 = 'н' : nextProps.user.profileGen[0].rule_22 = nextProps.user.profileGen[0].rule_22
+            nextProps.user.profileGen[0].rule_23 === null ? nextProps.user.profileGen[0].rule_23 = 'н' : nextProps.user.profileGen[0].rule_23 = nextProps.user.profileGen[0].rule_23
+            nextProps.user.profileGen[0].rule_24 === null ? nextProps.user.profileGen[0].rule_24 = 'н' : nextProps.user.profileGen[0].rule_24 = nextProps.user.profileGen[0].rule_24
+            nextProps.user.profileGen[0].rule_25 === null ? nextProps.user.profileGen[0].rule_25 = 'н' : nextProps.user.profileGen[0].rule_25 = nextProps.user.profileGen[0].rule_25
+            nextProps.user.profileGen[0].rule_26 === null ? nextProps.user.profileGen[0].rule_26 = 'н' : nextProps.user.profileGen[0].rule_26 = nextProps.user.profileGen[0].rule_26
+            nextProps.user.profileGen[0].rule_27 === null ? nextProps.user.profileGen[0].rule_27 = 'н' : nextProps.user.profileGen[0].rule_27 = nextProps.user.profileGen[0].rule_27
+            nextProps.user.profileGen[0].rule_28 === null ? nextProps.user.profileGen[0].rule_28 = 'н' : nextProps.user.profileGen[0].rule_28 = nextProps.user.profileGen[0].rule_28
+            nextProps.user.profileGen[0].rule_29 === null ? nextProps.user.profileGen[0].rule_29 = 'н' : nextProps.user.profileGen[0].rule_29 = nextProps.user.profileGen[0].rule_29
         }
     }
 

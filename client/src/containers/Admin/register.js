@@ -139,7 +139,7 @@ class Register extends PureComponent {
 
                     <div className="form_element">
                         <input
-                            type="number"
+                            type="string"
                             placeholder="Ввести genId"
                             value={this.state.genId}
                             onChange={this.handleInputGenId}

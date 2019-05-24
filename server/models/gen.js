@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const genSchema = mongoose.Schema({
     genId:{
-        type:Number,
+        type:String,
         default:303030,
         required:true,
         unique:1,

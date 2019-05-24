@@ -65,7 +65,7 @@ class User extends Component {
                         `/user/edit-post/${item._id}`
                     }>
                     <button type="submit">
-                        Настройки и редактирование анкеты
+                        Настройки 
                     </button>
 
                     </Link>

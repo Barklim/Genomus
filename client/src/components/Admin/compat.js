@@ -195,7 +195,7 @@ class Compat extends PureComponent {
 
                             <div className="form_element">
                                 <input 
-                                    type='string' 
+                                    type='text' 
                                     placeholder='Введите Genid'
                                     value={this.state.otherGenId}
                                     onChange={this.handleInputId}
@@ -231,7 +231,7 @@ class Compat extends PureComponent {
 
                             {
                                 this.state.allowShow === true ? 
-                                    <div>
+                                    <div className = 'none-nfo'>
                                         {this.showUserConfig(user)}
                                     </div>
                                 :null
