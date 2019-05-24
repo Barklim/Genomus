@@ -23,12 +23,12 @@ const bookSchema = mongoose.Schema({
         min:5,
         max:80
     },
-    rating:{
-        type:Number,
-        required:true,
-        min:5,
-        max:10
-    },
+    // rating:{
+    //     type:Number,
+    //     required:true,
+    //     min:5,
+    //     max:10
+    // },
     price:{
         type:String,
         default:'n/a'

@@ -29,14 +29,17 @@ const BookItem = (item) => {
                     <strong>Возраст</strong>  {item.pages}
                 </div>
 
-                <div className="book_bubble rating">
-                    <strong>Рейтинг</strong>☆  {item.rating}
-                </div>
                 </div>
 
             </div>
         </Link>
     );
 };
+
+/*
+                <div className="book_bubble rating">
+                    <strong>Рейтинг</strong>☆  {item.rating}
+                </div>
+*/
 
 export default BookItem;

@@ -11,7 +11,7 @@ class AddBook extends Component {
             author:'',
             review:'',
             pages:'',
-            rating:9,
+            //rating:9,
             price:'Муж',
             allowCheck: false,
             allowCompat: false,

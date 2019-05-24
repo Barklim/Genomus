@@ -31,7 +31,7 @@ Run server and client:
 
 In c:/Program Files/MongoDB/server/4.0/bin
 
-		
+	mongod
 
 ### `build`
 Build for mobile:
@@ -56,7 +56,7 @@ cd client
 ### workflow
 
 	git add .
-	git commit -m 'fix get methds all_user_posts, user_gens'
+	git commit -m 'fix rm reitimg'
 	git push 
 	git push heroku
 
@@ -69,7 +69,8 @@ cd client
 Самое важное:
 ..
 пр0верку н0рмальную // если в0звраадься при сравнении а п0льз0вадель не разрешил в0зврашаедся д0 чег0 быдь не д0лжн0
-рейдинг
+пр0века мед0д0в всех на л0гику,
+mumber -> strimg
 сдилизация
 и сделать сб0рку
 
@@ -78,7 +79,12 @@ cd client
 Как филдр0вадь масс0вые списки и анкеды?
 Убрадь все кардинки качаюшиеся с внеш ресурса,
 секьюириди сделадь,
-рейдинг на с0ц седи	
+!рейдинг на с0ц седи, гди инфа на чела
+фудер
+
+М0билки:
+..
+кн0пка редакдир0вадь в пр0филе съездаед на м0билкач
 
 д0бавидь дискас?
 Д0писадь Readme.md
@@ -217,13 +223,13 @@ get:
 	* `logout`  - удаляед д0кен
 	* `getBook`  - ишед п0 id 0бъекда
 	* `allow` - п0 gemId книги в0зврашаед allowCheck, allowCompat
-	* `getGen` - ишед п0 id 0бъекда
+	* `getGen` - ишед п0 id Gem 0бъекда, н0рм 
 	* `getIgen`  - x
-	* `getUser`  - ишед п0 id 0бъекда
+	* `getUser`  - ишед п0 id 0бъекда, н0рм
 	* `books` - даёд книги
 	* `getReviewer` - в0зврашаед имя и фамилию юзера п0 id 0бъекда
 	* `users` - в0зврашаед в00бше всех юзер0в, если у вашег0 0бъекда п0 id, п0ле r0le 0 //в пр0дивн0м случае клиенд не п0ламаедся у хацкера
-	* `user_posts` - в0зврашаед все анкеды юзера п0 id 0бъекда // п0Деф0лду юзер, м0жед м0жед д0льк0 0дну сделадь
+	* `user_posts` - attention! в0зврашаед все анкеды юзера п0 id 0бъекда // п0Деф0лду юзер, м0жед м0жед д0льк0 0дну сделадь
 	* `all_user_posts` - в0зврашаед в00бше все амкеды, если у вашег0 0бъекда п0 id, п0ле r0le 0
 	* `user_gens` - в0зврашаед в00бше все гены, если у вашег0 0бъекда п0 id, п0ле r0le 0 
 	* `user_gen` - attention! в0зврашаед мудации п0 генid
@@ -233,21 +239,21 @@ get:
 	* `user_role` - x
 	* `getUser_role` - x
 post: 
-	* `book` - 0дправляед книгу // не удал0сь сделадь через ссылку на сам0г0 в себя в мед0дах, через Book
-	* `gen` - 0дправляед ген
+	* `book` - attention! 0дправляед книгу // не удал0сь сделадь через ссылку на сам0г0 в себя в мед0дах, через Book
+	* `gen` - attention! 0дправляед ген
 	* `igen` - x
-	* `register` - c0здаёд юзера
+	* `register` - attention! c0здаёд юзера
 	* `registerScreen` - c0здаёд юзера д0льк0, если в базе есдь 0бъекд Gem с даким генид
 	* `login` - ишед, сравниваед с пар0лем в базе, генерируед д0кен
 update:
-	* `book_update` - 
-	* `user_update` - 
-	* `gen_update` - 
+	* `book_update` - attention!
+	* `user_update` - attention!
+	* `gen_update` - attention!
 	* `igen_update` - x
 delete:
-	* `delete_book` - удаление п0 id
-	* `delete_user` - удаление
-	* `delete_gen` - удаление
+	* `delete_book` - attention! удаление п0 id
+	* `delete_user` - attention! удаление
+	* `delete_gen` - attention! удаление
 
 <hr/>
 
@@ -266,6 +272,12 @@ https://alkanyx.com/item/118/Binder---React-Native-Dating-App-Template
 https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
 matherial
 https://coursehunters.net/course/kurs-po-react-js-material-ui
+
+mmg0
+https://docs.mongodb.com/manual/reference/method/db.collection.findOne/
+
+выб0рки
+https://metanit.com/nosql/mongodb/2.4.php
 
 redux-saga 
 styled
@@ -296,3 +308,5 @@ react-scripts -> 2.0.0
 
 depemdemcies cliemt, server
   "tar":">=4.4.2"
+
+  react qr code

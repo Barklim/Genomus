@@ -27,7 +27,7 @@ We are always open to [your feedback](https://github.com/Barklim/Genomus/issues)
 
 ## Contributing
 
-You can help to upgrade this app overflow tasks in this file [Contributing](https://github.com/Barklim/Genomus/blob/master/DEV.md).
+You can help to upgrade this app overflow tasks in this file [сontributing](https://github.com/Barklim/Genomus/blob/master/DEV.md).
 
 ## Reqirements
 

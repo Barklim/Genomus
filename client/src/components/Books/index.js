@@ -35,13 +35,15 @@ class BookView extends Component {
                         </div>
                     </div>
                     <div className="right">
-                        <span>Рейтинг:</span>
-                        <div>{books.book.rating}/10</div>
+                        
                     </div>
                 </div>
             </div>
         :null
     )
+    //<span>Рейтинг:</span>
+    //<div>{books.book.rating}/10</div>
+
                     //<div className="br_reviewer">
                     //    <span>Добавил:</span> {books.reviewer.name} {books.reviewer.lastname}
                     //</div>

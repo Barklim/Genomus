@@ -12,7 +12,7 @@ class EditBook extends PureComponent {
             author:'',
             review:'',
             pages:'',
-            rating:'',
+            //rating:'',
             price:''
         }
     }
@@ -58,7 +58,7 @@ class EditBook extends PureComponent {
                 author:book.author,
                 review:book.review,
                 pages:book.pages,
-                rating:book.rating,
+                //rating:book.rating,
                 price:book.price
             }
         })
@@ -123,20 +123,6 @@ class EditBook extends PureComponent {
 
                     <div className="form_element">
                         <select
-                            value={this.state.formdata.rating}
-                            onChange={(event)=>this.handleInput(event,'rating')}
-                        >
-                            <option val="1">5</option>
-                            <option val="2">6</option>
-                            <option val="3">7</option>
-                            <option val="4">8</option>
-                            <option val="5">9</option>
-                            <option val="5">10</option>
-                        </select>
-                    </div>
-
-                    <div className="form_element">
-                        <select
                             className="select_box"
                             value={this.state.formdata.price}
                             onChange={(event)=>this.handleInput(event,'price')}
@@ -166,6 +152,23 @@ class EditBook extends PureComponent {
         );
     }
 }
+/*
+
+                    <div className="form_element">
+                        <select
+                            value={this.state.formdata.rating}
+                            onChange={(event)=>this.handleInput(event,'rating')}
+                        >
+                            <option val="1">5</option>
+                            <option val="2">6</option>
+                            <option val="3">7</option>
+                            <option val="4">8</option>
+                            <option val="5">9</option>
+                            <option val="5">10</option>
+                        </select>
+                    </div>
+
+*/
 
 function mapStateToProps(state){
     return {
