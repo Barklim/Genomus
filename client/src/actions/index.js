@@ -384,6 +384,16 @@ export function getOtherGen(genId){
     }
 }
 
+export function userCompatGens(user_first, user_sec){
+    const request = axios.get(`/api/user_compat_gens?user_first=${user_first}&user_sec=${user_sec}`)
+                    .then(response => response.data)
+
+    return {
+        type:'GET_COMPAT_USER_GENS',
+        payload:request
+    }
+}
+
 // b00ks
 
 export function getBookCompat(genId){

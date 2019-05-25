@@ -1,12 +1,10 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { getUserGen, getOtherGen, getAllow, getBookCompat } from '../../actions';
+import { getAllow, getBookCompat, userCompatGens } from '../../actions'; // getUserGen, getOtherGen
 import QrReader from "react-qr-reader";
 import { Link } from 'react-router-dom';
 
 import BookItem from '../../widgetsUI/book_item';
-
-// getBook f0r get imf0 ab0ut all0ws
 
 class Compat extends PureComponent {
     constructor(props) {
@@ -31,8 +29,8 @@ class Compat extends PureComponent {
             result: data, 
             otherGenId: data
           });
-            this.props.dispatch(getOtherGen(this.state.otherGenId)) // для д0г0 чд0бы прих0дили пр0псы
-            this.props.dispatch(getBookCompat(this.state.otherGenId))
+            //this.props.dispatch(getOtherGen(this.state.otherGenId)) // для д0г0 чд0бы прих0дили пр0псы
+            //this.props.dispatch(getBookCompat(this.state.otherGenId))
             this.setState({showFlaw:''});
             if (this.state.otherGenId.length !== 6 ) { 
                 this.setState({showFlaw:true});
@@ -59,18 +57,19 @@ class Compat extends PureComponent {
     )
 
     componentWillMount(){
-        this.props.dispatch(getUserGen(this.props.user.login.genId))
-        /*this.props.dispatch(getBook(this.props.user.login.id))*/
-
-        //this.props.dispatch(getBookCompat(121212))
+        //this.props.dispatch(getUserGen(this.props.user.login.genId))
     }
 
     componentWillReceiveProps(nextProps){
 
+        console.log("MEXT");
+        console.log(nextProps);
+        console.log(nextProps.user.userCompatGens);
+
         if(nextProps.user.allow === undefined){
         } else {
-            this.setState({allowCheck: nextProps.user.allow.allowCheck})
-            this.setState({allowShow: nextProps.user.allow.allowShow})
+            this.setState({allowCheck: nextProps.user.allow.allowCheck});
+            this.setState({allowShow: nextProps.user.allow.allowShow});
         } 
 
         if ( this.state.allowCheck === true ) {
@@ -80,51 +79,16 @@ class Compat extends PureComponent {
             this.setState({message:'ожидание ⏰'})
         }
 
-/*        if( this.state.result !== 'No result'){
-            this.setState({otherGen: this.state.result })
-            this.setState({message:'ожидание'})
-        } else*/
-
-        // if(nextProps.user.otherGen === undefined || this.state.showFlaw === true ){
-
-        if(nextProps.user.otherGen === undefined || nextProps.user.allow === undefined ){
+        if(nextProps.user.allow === undefined || nextProps.user.userCompatGens === undefined ){ // nextProps.user.otherGen === undefined ||
             this.setState({message:'ожидание ⏰'})
-            /*this.setState({result:'No result'})*/
-
         } else {
 
-            if (
-                ((nextProps.user.otherGen.rule_0 === 1 ) && (nextProps.user.userGen.rule_0 === 1 )) ||
-                ((nextProps.user.otherGen.rule_1 === 1 ) && (nextProps.user.userGen.rule_1 === 1 )) ||
-                ((nextProps.user.otherGen.rule_2 === 1 ) && (nextProps.user.userGen.rule_2 === 1 )) ||
-                ((nextProps.user.otherGen.rule_3 === 1 ) && (nextProps.user.userGen.rule_3 === 1 )) ||
-                ((nextProps.user.otherGen.rule_4 === 1 ) && (nextProps.user.userGen.rule_4 === 1 )) ||
-                ((nextProps.user.otherGen.rule_5 === 1 ) && (nextProps.user.userGen.rule_5 === 1 )) ||
-                ((nextProps.user.otherGen.rule_6 === 1 ) && (nextProps.user.userGen.rule_6 === 1 )) ||
-                ((nextProps.user.otherGen.rule_7 === 1 ) && (nextProps.user.userGen.rule_7 === 1 )) ||
-                ((nextProps.user.otherGen.rule_8 === 1 ) && (nextProps.user.userGen.rule_8 === 1 )) ||
-                ((nextProps.user.otherGen.rule_9 === 1 ) && (nextProps.user.userGen.rule_9 === 1 )) ||
-                ((nextProps.user.otherGen.rule_10 === 1 ) && (nextProps.user.userGen.rule_10 === 1 )) ||
-                ((nextProps.user.otherGen.rule_11 === 1 ) && (nextProps.user.userGen.rule_11 === 1 )) ||
-                ((nextProps.user.otherGen.rule_12 === 1 ) && (nextProps.user.userGen.rule_12 === 1 )) ||
-                ((nextProps.user.otherGen.rule_13 === 1 ) && (nextProps.user.userGen.rule_13 === 1 )) ||
-                ((nextProps.user.otherGen.rule_14 === 1 ) && (nextProps.user.userGen.rule_14 === 1 )) ||
-                ((nextProps.user.otherGen.rule_15 === 1 ) && (nextProps.user.userGen.rule_15 === 1 )) ||
-                ((nextProps.user.otherGen.rule_16 === 1 ) && (nextProps.user.userGen.rule_16 === 1 )) ||
-                ((nextProps.user.otherGen.rule_17 === 1 ) && (nextProps.user.userGen.rule_17 === 1 )) ||
-                ((nextProps.user.otherGen.rule_18 === 1 ) && (nextProps.user.userGen.rule_18 === 1 )) ||
-                ((nextProps.user.otherGen.rule_19 === 1 ) && (nextProps.user.userGen.rule_19 === 1 )) ||
-                ((nextProps.user.otherGen.rule_20 === 1 ) && (nextProps.user.userGen.rule_20 === 1 )) ||
-                ((nextProps.user.otherGen.rule_21 === 1 ) && (nextProps.user.userGen.rule_21 === 1 )) ||
-                ((nextProps.user.otherGen.rule_22 === 1 ) && (nextProps.user.userGen.rule_22 === 1 )) ||
-                ((nextProps.user.otherGen.rule_23 === 1 ) && (nextProps.user.userGen.rule_23 === 1 )) ||
-                ((nextProps.user.otherGen.rule_24 === 1 ) && (nextProps.user.userGen.rule_24 === 1 )) ||
-                ((nextProps.user.otherGen.rule_25 === 1 ) && (nextProps.user.userGen.rule_25 === 1 )) ||
-                ((nextProps.user.otherGen.rule_26 === 1 ) && (nextProps.user.userGen.rule_26 === 1 )) ||
-                ((nextProps.user.otherGen.rule_27 === 1 ) && (nextProps.user.userGen.rule_27 === 1 )) ||
-                ((nextProps.user.otherGen.rule_28 === 1 ) && (nextProps.user.userGen.rule_28 === 1 )) ||
-                ((nextProps.user.otherGen.rule_29 === 1 ) && (nextProps.user.userGen.rule_29 === 1 )) 
-                ) {
+        console.log("MEXT2");
+        console.log(nextProps);
+        console.log(nextProps.user.userCompatGens.message);
+
+            if ( nextProps.user.userCompatGens.message === 'bad' ) // п0иск пр0блемы
+            {
                 if (this.state.allowCheck === true) {
                     this.setState({message:'проблема ✘'})
                 }
@@ -133,13 +97,7 @@ class Compat extends PureComponent {
                     this.setState({message:'все хорошо ✔'})  
                 }
             }
-
-        // nextProps.user.otherGen.length !== 6
-        console.log("MEXT");
-        console.log(nextProps);
-
         }
-
     }
 
     handleInputId = (event) => {
@@ -149,7 +107,6 @@ class Compat extends PureComponent {
     handleCheckup(e) {
         e.preventDefault();
 
-        /*this.setState({allowCheck: true})*/
         this.setState({result: 'No result' })
         this.setState({message:'ожидание ⏰'})
         this.setState({showFlaw:''}); 
@@ -159,7 +116,13 @@ class Compat extends PureComponent {
 
         if ( this.state.otherGenId.length === 6 ) {
             this.props.dispatch(getAllow(this.state.otherGenId))
-            this.props.dispatch(getOtherGen(this.state.otherGenId))
+            //this.props.dispatch(getOtherGen(this.state.otherGenId))
+
+            console.log("ATTEMTIM !!!");
+            console.log(this.state);
+            console.log(this.props.user.login.genId);
+            this.props.dispatch(userCompatGens(this.props.user.login.genId, this.state.otherGenId))
+
             this.props.dispatch(getBookCompat(this.state.otherGenId))
         } 
 
@@ -176,13 +139,10 @@ class Compat extends PureComponent {
     }
 
     render() {
-        //let genId = this.props.genId;
-        /*console.log(this.props);*/
         let user = this.props.user;
         console.log("remder");
         console.log(this.state);
         console.log(this.props);
-        //user.book_allow
 
         return (
             <div className="user_container">

@@ -68,8 +68,7 @@ cd client
 
 Самое важное:
 ..
-пр0верку н0рмальную // если в0звраадься при сравнении а п0льз0вадель не разрешил в0зврашаедся д0 чег0 быдь не д0лжн0
-пр0века мед0д0в всех на л0гику,
+пр0века мед0д0в всех на л0гику
 и сделать сб0рку
 
 Н0в0е:
@@ -80,6 +79,7 @@ cd client
 !рейдинг на с0ц седи, гди инфа на чела, vk telegram
 сдилизация
 д0бавидь ссылку на git уг0л0к
+пр0верку н0рмальную // если в0звраадься при сравнении а п0льз0вадель не разрешил в0зврашаедся д0 чег0 быдь не д0лжн0
 
 М0билки:
 ..
@@ -160,31 +160,10 @@ https://expressjs.com/ru/advanced/best-practice-security.html
 
 ## Comments for dev
 
-..problems
-
-/containers/Admin/registerScreen
-
 pages,iq -> age
 price -> gender
 img_url
 social web
-
-редирект сделать на login и новость
-isAdmi
-2 === n
-color red == css...
-
-в сравнении посмотретть начало add reviews 2
-
-in sidenavItems
-registerScreen
-userPosts
-redirectUser в editRule
-
-
-about:
-создайте анкету в профиле, чтобы её видели другие пользователи
-вы сами можете удалить анкету в любой момент
 
 /api/мед0ды:
 x - не реализ0ван
@@ -231,6 +210,11 @@ delete:
 
 ## Dev staff
 
+дизайн
+https://marvelapp.com/9c0hia0/screen/46760961
+https://marvelapp.com/e65532e/screen/46464508
+https://drive.google.com/file/d/1PpX83RbzdgUNcgSlR2xbVNetDpssY8qO/view
+
 tinder-clone-nodeJS:
 tinder clone backend written with nodeJS
 https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
@@ -241,11 +225,12 @@ https://reactjsexample.com/a-very-lightweight-accordion-component-in-react/
 
 https://alkanyx.com/item/118/Binder---React-Native-Dating-App-Template
 
+курсы
 https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
 matherial
 https://coursehunters.net/course/kurs-po-react-js-material-ui
 
-mmg0
+m0mg0
 https://docs.mongodb.com/manual/reference/method/db.collection.findOne/
 
 выб0рки
@@ -256,6 +241,9 @@ styled
 
 lib
 https://material.io/develop/
+
+генерад0р
+https://www.the-qrcode-generator.com/
 
 сделать webview
 

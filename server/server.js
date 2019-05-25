@@ -438,10 +438,8 @@ app.get('/api/user_other_gen',(req,res)=>{
 })
 
 app.get('/api/user_compat_gens',(req,res)=>{
-    var user_firstArr = true;
 
-    Gen.find( {genId: {$in : [req.query.user_first, req.query.user_sec]}}).exec((err,docs)=>{
-        user_firstArr = docs.rule_0;
+    Gen.find({genId: {$in : [req.query.user_first, req.query.user_sec]}}).exec((err,docs)=>{
         if(err) return res.send({
             rule_0: 0,
             rule_1: 0,
@@ -474,8 +472,8 @@ app.get('/api/user_compat_gens',(req,res)=>{
             rule_28: 0,
             rule_29: 0,
         });
-        if(docs) {
-            // console.log(docs)
+        if(docs.length === 2 ) {
+            //console.log(docs.length)
             //console.log(docs[0])
             //console.log(docs[1])
             if (
@@ -511,13 +509,15 @@ app.get('/api/user_compat_gens',(req,res)=>{
                 (docs[0].rule_29 === 1 && docs[1].rule_29 === 1) 
                 ) {
 
-                return res.send({message: 'have trouble'});
+                return res.send({message: 'bad'});
             } else {
                 return res.send({message: 'good'});
                 //return res.send(docs);
             }
 
             //return res.send(docs);
+        } else {
+            return res.send({message: 'check'});
         }
     })
 })

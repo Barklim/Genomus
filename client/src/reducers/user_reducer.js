@@ -8,6 +8,8 @@ export default function(state={},action){
             return {...state,userPosts:action.payload}
         case 'GET_USER_GENS':
             return {...state,userGens:action.payload}
+        case 'GET_COMPAT_USER_GENS':
+            return {...state,userCompatGens:action.payload}
         case 'GET_USER':
             return {...state,users:action.payload}
         case 'GET_USER_ID':
