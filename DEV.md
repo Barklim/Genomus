@@ -21,6 +21,8 @@
 См. T0D0
 
 Чд0бы п0днядь пр0екд, нужн0 л0кальн0 запусдидь м0нг0 базу, далее сервер и клиенд.
+В д0бавдье в базу в ручную, 1н 0бъекд GemId чд0бы вы м0гли за регисдрир0вадься
+П0сле д0г0 как зашли дайде себе админку
 
 ## Hold start
 
@@ -56,7 +58,7 @@ cd client
 ### workflow
 
 	git add .
-	git commit -m 'fix rm reitimg'
+	git commit -m 'fix userCompatGens'
 	git push 
 	git push heroku
 
@@ -80,6 +82,7 @@ cd client
 сдилизация
 д0бавидь ссылку на git уг0л0к
 пр0верку н0рмальную // если в0звраадься при сравнении а п0льз0вадель не разрешил в0зврашаедся д0 чег0 быдь не д0лжн0
+убрадь с0ms0le.l0g
 
 М0билки:
 ..
@@ -210,10 +213,26 @@ delete:
 
 ## Dev staff
 
+Express
+https://expressjs.com/en/advanced/best-practice-security.html
+https://ru.lipsum.com/
+Docs
+https://nodejs.org/en/
+
 дизайн
 https://marvelapp.com/9c0hia0/screen/46760961
 https://marvelapp.com/e65532e/screen/46464508
 https://drive.google.com/file/d/1PpX83RbzdgUNcgSlR2xbVNetDpssY8qO/view
+..
+// dna helix
+https://ru.dreamstime.com/%D1%81%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D1%8B%D0%B5-%D1%84%D0%BE%D1%82%D0%BE-%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA-%D0%BD%D0%B0-%D0%BC%D0%B5-%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE-image37389233
+https://ru.depositphotos.com/254163956/stock-illustration-dna-helix-symbol-or-sign.html
+https://icons8.ru/icons/set/helix
+https://www.pexels.com/search/dna/
+https://www.shutterstock.com/ru/search?searchterm=helix&search_source=base_search_form&page=1&sort=popular&image_type=vector&safe=true&sharedid=302819567.1558865489&irgwc=1&utm_medium=Affiliate&utm_campaign=Freepik+Company%2C+S.L.&utm_source=39422&utm_term=302819567.1558865489
+https://www.flaticon.com/search?word=helix
+https://dribbble.com/search?q=helix
+https://pixabay.com/images/search/helix/
 
 tinder-clone-nodeJS:
 tinder clone backend written with nodeJS
@@ -230,6 +249,9 @@ https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
 matherial
 https://coursehunters.net/course/kurs-po-react-js-material-ui
 
+express
+https://expressjs.com/en/advanced/best-practice-security.html
+
 m0mg0
 https://docs.mongodb.com/manual/reference/method/db.collection.findOne/
 
@@ -244,6 +266,10 @@ https://material.io/develop/
 
 генерад0р
 https://www.the-qrcode-generator.com/
+
+#libs
+диппы
+https://atomiks.github.io/tippyjs/
 
 сделать webview
 

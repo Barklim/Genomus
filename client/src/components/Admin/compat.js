@@ -19,6 +19,7 @@ class Compat extends PureComponent {
         allowCheck: true,
         allowShow: false,
         allowMessage: '',
+        messageInfo: ''
     };
         this.handleScan = this.handleScan.bind(this);
     }
@@ -29,7 +30,6 @@ class Compat extends PureComponent {
             result: data, 
             otherGenId: data
           });
-            //this.props.dispatch(getOtherGen(this.state.otherGenId)) // для д0г0 чд0бы прих0дили пр0псы
             //this.props.dispatch(getBookCompat(this.state.otherGenId))
             this.setState({showFlaw:''});
             if (this.state.otherGenId.length !== 6 ) { 
@@ -57,14 +57,22 @@ class Compat extends PureComponent {
     )
 
     componentWillMount(){
-        //this.props.dispatch(getUserGen(this.props.user.login.genId))
+
     }
 
     componentWillReceiveProps(nextProps){
 
-        console.log("MEXT");
-        console.log(nextProps);
-        console.log(nextProps.user.userCompatGens);
+        // console.log("MEXT");
+        // console.log(nextProps);
+        // console.log(nextProps.user.userCompatGens);
+
+        if (nextProps.user.userCompatGens !== undefined){
+            this.setState({messageInfo: ''});
+
+            if (nextProps.user.userCompatGens.info !== undefined){
+                this.setState({messageInfo: nextProps.user.userCompatGens.info});
+            } 
+        } 
 
         if(nextProps.user.allow === undefined){
         } else {
@@ -83,9 +91,9 @@ class Compat extends PureComponent {
             this.setState({message:'ожидание ⏰'})
         } else {
 
-        console.log("MEXT2");
-        console.log(nextProps);
-        console.log(nextProps.user.userCompatGens.message);
+        // console.log("MEXT2");
+        // console.log(nextProps);
+        // console.log(nextProps.user.userCompatGens.message);
 
             if ( nextProps.user.userCompatGens.message === 'bad' ) // п0иск пр0блемы
             {
@@ -96,6 +104,10 @@ class Compat extends PureComponent {
                 if (this.state.allowCheck === true) {
                     this.setState({message:'все хорошо ✔'})  
                 }
+            }
+
+            if ( nextProps.user.userCompatGens.message === 'check' )  {
+                this.setState({message:'ожидание ⏰'})
             }
         }
     }
@@ -116,7 +128,6 @@ class Compat extends PureComponent {
 
         if ( this.state.otherGenId.length === 6 ) {
             this.props.dispatch(getAllow(this.state.otherGenId))
-            //this.props.dispatch(getOtherGen(this.state.otherGenId))
 
             console.log("ATTEMTIM !!!");
             console.log(this.state);
@@ -182,17 +193,10 @@ class Compat extends PureComponent {
                             }
 
                             {
-                                this.state.allowCheck === false ? 
+                                this.state.messageInfo !== '' ? 
                                     <div className="warning-msg">
-                                        ⚠ Пользователь не разрешал сравнивать!
-                                    </div>
-                                :null
-                            }
-
-                            {
-                                this.state.allowShow === true ? 
-                                    <div className = 'none-nfo'>
-                                        {this.showUserConfig(user)}
+                                        <span>Уточнение:<br/></span>
+                                        Проблема с {this.state.messageInfo}
                                     </div>
                                 :null
                             }
@@ -223,3 +227,18 @@ export default connect(mapStateProps)(Compat);
 
 /*                            <h6>Дек0дир0вание qr:</h6>
                                 <p>{this.state.result}</p>*/
+/*
+                            {
+                                this.state.allowCheck === false ? 
+                                    <div className="warning-msg">
+                                        ⚠ Пользователь не разрешал сравнивать!
+                                    </div>
+                                :null
+                            }
+                            {
+                                this.state.allowShow === true ? 
+                                    <div className = 'none-nfo'>
+                                        {this.showUserConfig(user)}
+                                    </div>
+                                :null
+                            }*/

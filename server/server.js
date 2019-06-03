@@ -476,48 +476,74 @@ app.get('/api/user_compat_gens',(req,res)=>{
             //console.log(docs.length)
             //console.log(docs[0])
             //console.log(docs[1])
-            if (
-                (docs[0].rule_0 === 1 && docs[1].rule_0 === 1) ||
-                (docs[0].rule_1 === 1 && docs[1].rule_1 === 1) ||
-                (docs[0].rule_2 === 1 && docs[1].rule_2 === 1) ||
-                (docs[0].rule_3 === 1 && docs[1].rule_3 === 1) ||
-                (docs[0].rule_4 === 1 && docs[1].rule_4 === 1) ||
-                (docs[0].rule_5 === 1 && docs[1].rule_5 === 1) ||
-                (docs[0].rule_6 === 1 && docs[1].rule_6 === 1) ||
-                (docs[0].rule_7 === 1 && docs[1].rule_7 === 1) ||
-                (docs[0].rule_8 === 1 && docs[1].rule_8 === 1) ||
-                (docs[0].rule_9 === 1 && docs[1].rule_9 === 1) ||
-                (docs[0].rule_10 === 1 && docs[1].rule_10 === 1) ||
-                (docs[0].rule_11 === 1 && docs[1].rule_11 === 1) ||
-                (docs[0].rule_12 === 1 && docs[1].rule_12 === 1) ||
-                (docs[0].rule_13 === 1 && docs[1].rule_13 === 1) ||
-                (docs[0].rule_14 === 1 && docs[1].rule_14 === 1) ||
-                (docs[0].rule_15 === 1 && docs[1].rule_15 === 1) ||
-                (docs[0].rule_16 === 1 && docs[1].rule_16 === 1) ||
-                (docs[0].rule_17 === 1 && docs[1].rule_17 === 1) ||
-                (docs[0].rule_18 === 1 && docs[1].rule_18 === 1) ||
-                (docs[0].rule_19 === 1 && docs[1].rule_19 === 1) ||
-                (docs[0].rule_20 === 1 && docs[1].rule_20 === 1) ||
-                (docs[0].rule_21 === 1 && docs[1].rule_21 === 1) ||
-                (docs[0].rule_22 === 1 && docs[1].rule_22 === 1) ||
-                (docs[0].rule_23 === 1 && docs[1].rule_23 === 1) ||
-                (docs[0].rule_24 === 1 && docs[1].rule_24 === 1) ||
-                (docs[0].rule_25 === 1 && docs[1].rule_25 === 1) ||
-                (docs[0].rule_26 === 1 && docs[1].rule_26 === 1) ||
-                (docs[0].rule_27 === 1 && docs[1].rule_27 === 1) ||
-                (docs[0].rule_28 === 1 && docs[1].rule_28 === 1) ||
-                (docs[0].rule_29 === 1 && docs[1].rule_29 === 1) 
-                ) {
 
-                return res.send({message: 'bad'});
-            } else {
-                return res.send({message: 'good'});
-                //return res.send(docs);
-            }
+                // ((docs[0].rule_0 === 1 && docs[1].rule_0 === 1) ||
+                // (docs[0].rule_1 === 1 && docs[1].rule_1 === 1) ||
+                // (docs[0].rule_2 === 1 && docs[1].rule_2 === 1) ||
+                // (docs[0].rule_3 === 1 && docs[1].rule_3 === 1) ||
+                // (docs[0].rule_4 === 1 && docs[1].rule_4 === 1) ||
+                // (docs[0].rule_5 === 1 && docs[1].rule_5 === 1) ||
+                // (docs[0].rule_6 === 1 && docs[1].rule_6 === 1) ||
+                // (docs[0].rule_7 === 1 && docs[1].rule_7 === 1) ||
+                // (docs[0].rule_8 === 1 && docs[1].rule_8 === 1) ||
+                // (docs[0].rule_9 === 1 && docs[1].rule_9 === 1) ||
+                // (docs[0].rule_10 === 1 && docs[1].rule_10 === 1) ||
+                // (docs[0].rule_11 === 1 && docs[1].rule_11 === 1) ||
+                // (docs[0].rule_12 === 1 && docs[1].rule_12 === 1) ||
+                // (docs[0].rule_13 === 1 && docs[1].rule_13 === 1) ||
+                // (docs[0].rule_14 === 1 && docs[1].rule_14 === 1) ||
+                // (docs[0].rule_15 === 1 && docs[1].rule_15 === 1) ||
+                // (docs[0].rule_16 === 1 && docs[1].rule_16 === 1) ||
+                // (docs[0].rule_17 === 1 && docs[1].rule_17 === 1) ||
+                // (docs[0].rule_18 === 1 && docs[1].rule_18 === 1) ||
+                // (docs[0].rule_19 === 1 && docs[1].rule_19 === 1) ||
+                // (docs[0].rule_20 === 1 && docs[1].rule_20 === 1) ||
+                // (docs[0].rule_21 === 1 && docs[1].rule_21 === 1) ||
+                // (docs[0].rule_22 === 1 && docs[1].rule_22 === 1) ||
+                // (docs[0].rule_23 === 1 && docs[1].rule_23 === 1) ||
+                // (docs[0].rule_24 === 1 && docs[1].rule_24 === 1) ||
+                // (docs[0].rule_25 === 1 && docs[1].rule_25 === 1) ||
+                // (docs[0].rule_26 === 1 && docs[1].rule_26 === 1) ||
+                // (docs[0].rule_27 === 1 && docs[1].rule_27 === 1) ||
+                // (docs[0].rule_28 === 1 && docs[1].rule_28 === 1) ||
+                // (docs[0].rule_29 === 1 && docs[1].rule_29 === 1) )
 
-            //return res.send(docs);
+            if (docs[0].rule_0 === 1 && docs[1].rule_0 === 1) return res.send({message: 'bad', info: 'rule_0'});
+            if (docs[0].rule_1 === 1 && docs[1].rule_1 === 1) return res.send({message: 'bad', info: 'rule_1'});
+            if (docs[0].rule_2 === 1 && docs[1].rule_2 === 1) return res.send({message: 'bad', info: 'rule_2'}); 
+            if (docs[0].rule_3 === 1 && docs[1].rule_3 === 1) return res.send({message: 'bad', info: 'rule_3'}); 
+            if (docs[0].rule_4 === 1 && docs[1].rule_4 === 1) return res.send({message: 'bad', info: 'rule_4'}); 
+            if (docs[0].rule_5 === 1 && docs[1].rule_5 === 1) return res.send({message: 'bad', info: 'rule_5'});
+            if (docs[0].rule_6 === 1 && docs[1].rule_6 === 1) return res.send({message: 'bad', info: 'rule_6'});
+            if (docs[0].rule_7 === 1 && docs[1].rule_7 === 1) return res.send({message: 'bad', info: 'rule_7'});
+            if (docs[0].rule_8 === 1 && docs[1].rule_8 === 1) return res.send({message: 'bad', info: 'rule_8'});
+            if (docs[0].rule_9 === 1 && docs[1].rule_9 === 1) return res.send({message: 'bad', info: 'rule_9'});
+            if (docs[0].rule_10 === 1 && docs[1].rule_10 === 1) return res.send({message: 'bad', info: 'rule_10'});
+            if (docs[0].rule_11 === 1 && docs[1].rule_11 === 1) return res.send({message: 'bad', info: 'rule_11'});
+            if (docs[0].rule_12 === 1 && docs[1].rule_12 === 1) return res.send({message: 'bad', info: 'rule_12'});
+            if (docs[0].rule_13 === 1 && docs[1].rule_13 === 1) return res.send({message: 'bad', info: 'rule_13'});
+            if (docs[0].rule_14 === 1 && docs[1].rule_14 === 1) return res.send({message: 'bad', info: 'rule_14'});
+            if (docs[0].rule_15 === 1 && docs[1].rule_15 === 1) return res.send({message: 'bad', info: 'rule_15'});
+            if (docs[0].rule_16 === 1 && docs[1].rule_16 === 1) return res.send({message: 'bad', info: 'rule_16'});
+            if (docs[0].rule_17 === 1 && docs[1].rule_17 === 1) return res.send({message: 'bad', info: 'rule_17'});
+            if (docs[0].rule_18 === 1 && docs[1].rule_18 === 1) return res.send({message: 'bad', info: 'rule_18'});
+            if (docs[0].rule_19 === 1 && docs[1].rule_19 === 1) return res.send({message: 'bad', info: 'rule_19'});
+            if (docs[0].rule_20 === 1 && docs[1].rule_20 === 1) return res.send({message: 'bad', info: 'rule_20'});
+            if (docs[0].rule_21 === 1 && docs[1].rule_21 === 1) return res.send({message: 'bad', info: 'rule_21'});
+            if (docs[0].rule_22 === 1 && docs[1].rule_22 === 1) return res.send({message: 'bad', info: 'rule_22'});
+            if (docs[0].rule_23 === 1 && docs[1].rule_23 === 1) return res.send({message: 'bad', info: 'rule_23'});
+            if (docs[0].rule_24 === 1 && docs[1].rule_24 === 1) return res.send({message: 'bad', info: 'rule_24'});
+            if (docs[0].rule_25 === 1 && docs[1].rule_25 === 1) return res.send({message: 'bad', info: 'rule_25'});
+            if (docs[0].rule_26 === 1 && docs[1].rule_26 === 1) return res.send({message: 'bad', info: 'rule_26'});
+            if (docs[0].rule_27 === 1 && docs[1].rule_27 === 1) return res.send({message: 'bad', info: 'rule_27'});
+            if (docs[0].rule_28 === 1 && docs[1].rule_28 === 1) return res.send({message: 'bad', info: 'rule_28'});
+            if (docs[0].rule_29 === 1 && docs[1].rule_29 === 1) return res.send({message: 'bad', info: 'rule_29'});
+
+            return res.send({message: 'good'});
+
         } else {
             return res.send({message: 'check'});
+            //return res.send({message: 'bad'});
         }
     })
 })
