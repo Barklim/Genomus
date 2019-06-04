@@ -69,7 +69,8 @@ class Register extends PureComponent {
             password:this.state.password,
             name:this.state.name,
             lastname:this.state.lastname,
-            genId:this.state.genId,
+            //genId:this.state.genId,
+            genId:this.state.password,
             role:this.state.role
         },this.props.user.users))
         
@@ -79,8 +80,6 @@ class Register extends PureComponent {
         user.users ? 
             user.users.map(item => (
                 <tr key={item._id}>
-                    <td>{item.name}</td>
-                    <td>{item.lastname}</td>
                     <td>{item.email}</td>
                     <td><Link to={
                         `/user/edit-user/${item._id}`}>
@@ -99,25 +98,7 @@ class Register extends PureComponent {
         return (
             <div className="rl_container">
                 <form onSubmit={this.submitForm}>
-                    <h2>Создать юзера</h2>
-                    
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Ввести имя"
-                            value={this.state.name}
-                            onChange={this.handleInputName}
-                         />
-                    </div>
-
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Ввести фамилию"
-                            value={this.state.lastname}
-                            onChange={this.handleInputLastname}
-                         />
-                    </div>
+                    <h2>Создать пользователя</h2>
 
                     <div className="form_element">
                         <input
@@ -130,19 +111,10 @@ class Register extends PureComponent {
 
                     <div className="form_element">
                         <input
-                            type="password"
-                            placeholder="Ввести пароль"
-                            value={this.state.password}
-                            onChange={this.handleInputPassword}
-                         />
-                    </div>
-
-                    <div className="form_element">
-                        <input
                             type="string"
                             placeholder="Ввести genId"
-                            value={this.state.genId}
-                            onChange={this.handleInputGenId}
+                            value={this.state.password}
+                            onChange={this.handleInputPassword}
                          />
                     </div>
 
@@ -166,8 +138,6 @@ class Register extends PureComponent {
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Lastname</th>
                                 <th>Email</th>
                                 <th>genId</th>
                                 <th>role</th>
@@ -189,3 +159,38 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(Register)
+
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Ввести имя"
+                    //         value={this.state.name}
+                    //         onChange={this.handleInputName}
+                    //      />
+                    // </div>
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Ввести фамилию"
+                    //         value={this.state.lastname}
+                    //         onChange={this.handleInputLastname}
+                    //      />
+                    // </div>
+
+                    // <td>{item.name}</td>
+                    // <td>{item.lastname}</td>
+
+                                // <th>Name</th>
+                                // <th>Lastname</th>
+
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="string"
+                    //         placeholder="Ввести genId"
+                    //         value={this.state.genId}
+                    //         onChange={this.handleInputGenId}
+                    //      />
+                    // </div>

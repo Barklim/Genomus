@@ -32,9 +32,6 @@ class UserPosts extends Component {
                         {item.name}
                     </Link></td>
                     <td>{item.author}</td>
-                    <td>
-                        {moment(item.createAt).format("DD/MM/YY")}
-                    </td>
                 </tr>
             ))
         :null
@@ -55,7 +52,6 @@ class UserPosts extends Component {
                             <th>GenId</th>
                             <th>Name</th>
                             <th>University</th>
-                            <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,3 +70,9 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(UserPosts)
+
+// <th>Date</th>
+
+                    // <td>
+                    //     {moment(item.createAt).format("DD/MM/YY")}
+                    // </td>

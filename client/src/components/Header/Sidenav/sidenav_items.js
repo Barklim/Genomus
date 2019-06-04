@@ -31,7 +31,7 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
         {
             type:'navItem',
             icon:'user-circle',
-            text:'Мой профиль',
+            text:'Анкета',
             link:'/user/user',
             restricted:true
         },
@@ -68,14 +68,14 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
             exclude:true,
             exclude_for_user: true
         },
-        {
-            type:'navItem',
-            icon:'copy',
-            text:'Анкеты',
-            link:'/user/user-reviews',
-            restricted:true,
-            exclude_for_user: true
-        },
+        // {
+        //     type:'navItem',
+        //     icon:'copy',
+        //     text:'Анкеты',
+        //     link:'/user/user-reviews',
+        //     restricted:true,
+        //     exclude_for_user: true
+        // },
         {
             type:'navItem',
             icon:'edit',
@@ -84,14 +84,14 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
             restricted:true,
             exclude_for_user: true
         },
-        {
-            type:'navItem',
-            icon:'plus-circle',
-            text:'Добавить анкету',
-            link:'/user/add',
-            restricted:true,
-            exclude_for_user: true
-        },
+        // {
+        //     type:'navItem',
+        //     icon:'plus-circle',
+        //     text:'Добавить анкету',
+        //     link:'/user/add',
+        //     restricted:true,
+        //     exclude_for_user: true
+        // },
         {
             type:'navItem',
             icon:'plus-circle',

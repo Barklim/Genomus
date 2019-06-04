@@ -14,7 +14,7 @@ const Logout = (props) => {
     return (
         <div className="logout_container">
             <h1>
-                Увидемся позже!
+                Увидимся позже!
             </h1>
         </div>
     );

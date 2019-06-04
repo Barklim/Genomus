@@ -26,7 +26,6 @@ class EditGenom extends PureComponent {
         })
     }
 
-
     submitForm = (e) => {
         e.preventDefault();
         this.props.dispatch(updateUser(this.state.formdata))
@@ -40,7 +39,6 @@ class EditGenom extends PureComponent {
             this.props.history.push('/user/register')
         },1000)
     }
-
 
     componentWillMount(){
         this.props.dispatch(getUser(this.props.match.params.id))
@@ -92,26 +90,6 @@ class EditGenom extends PureComponent {
                 <form onSubmit={this.submitForm}>
                     <h2>Редактировать</h2>
 
-                    <p>Имя, фамилия:</p>
-
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Enter name"
-                            value={this.state.formdata.name}
-                            onChange={(event)=>this.handleInput(event,'name')}
-                        />
-                    </div>
-
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Enter lastname"
-                            value={this.state.formdata.lastname}
-                            onChange={(event)=>this.handleInput(event,'lastname')}
-                        />
-                    </div>
-
                     <p>GenId:</p>
 
                     <div className="form_element">
@@ -145,3 +123,23 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(EditGenom)
+
+                    // <p>Имя, фамилия:</p>
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Enter name"
+                    //         value={this.state.formdata.name}
+                    //         onChange={(event)=>this.handleInput(event,'name')}
+                    //     />
+                    // </div>
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Enter lastname"
+                    //         value={this.state.formdata.lastname}
+                    //         onChange={(event)=>this.handleInput(event,'lastname')}
+                    //     />
+                    // </div>

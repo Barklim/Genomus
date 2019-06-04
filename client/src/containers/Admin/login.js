@@ -51,7 +51,7 @@ class Login extends Component {
                     <div className="form_element">
                         <input 
                             type="password"
-                            placeholder="Введите пароль"
+                            placeholder="Введите genId"
                             value={this.state.password}
                             onChange={this.handleInputPassword}
                         />
@@ -71,8 +71,6 @@ class Login extends Component {
                         <button type="">Регистрация</button>
                     </Link>
 
-                    <h4 className="fixed">Забыли пароль?</h4>
-
                 </form>
             </div>
         );
@@ -86,4 +84,10 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(Login)
+
+
+
+
+
+//  <h4 className="fixed">Забыли пароль?</h4>
 

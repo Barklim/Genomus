@@ -15,7 +15,6 @@ class User extends Component {
     }
 
     componentDidUpdate(){
-
     }
 
     componentWillReceiveProps(nextProps){
@@ -90,11 +89,6 @@ class User extends Component {
         <div className="user_container">
             <div className="nfo">
                 <div className="formattext">
-                    <div className="formatImg">
-                        <img alt='gen-profile' src={this.state.img_url} />
-                    </div>
-                    <div><span>Name:</span> {user2.name}</div>
-                    <div><span>Lastname:</span> {user2.lastname}</div>
                     <div><span>Email:</span> {user2.email}</div>
                     <div><span>GenId:</span> {user2.genId}</div>
                 </div>
@@ -106,13 +100,13 @@ class User extends Component {
                     </div>
                 </Link>
 
-                {this.showUserConfig(user)}
-
                 <Link to={`/user/add`}>        
                     <div className={this.state.visible}>
                         <button type="submit">Создать анкету</button>
                     </div>
                 </Link>
+
+                {this.showUserConfig(user)}
     
                 </div>
             </div>
@@ -128,3 +122,11 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(User)
+
+                    // <div className="formatImg">
+                    //     <img alt='gen-profile' src={this.state.img_url} />
+                    // </div>
+                    // <div><span>Name:</span> {user2.name}</div>
+                    // <div><span>Lastname:</span> {user2.lastname}</div>
+
+// {this.showUserConfig(user)}

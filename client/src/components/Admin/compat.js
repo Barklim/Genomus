@@ -57,7 +57,7 @@ class Compat extends PureComponent {
     )
 
     componentWillMount(){
-
+        this.setState({message:'ожидание ⏰'})
     }
 
     componentWillReceiveProps(nextProps){

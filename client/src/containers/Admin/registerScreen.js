@@ -35,15 +35,23 @@ class RegisterScreen extends PureComponent {
             this.setState({
                 error:'Ошибка,попробуйте еще.'
             })
-        } else{
+        } else {
             this.setState({
                 name:'',
                 lastname:'',
                 email:'',
                 password:'',
-                genId:'',
+                //genId:'',
                 role: 1,
             })
+            // this.setState({
+            //     genId: this.state.password
+            // })
+            // console.log('h!!');
+            // console.log(this.state);
+            // console.log(this.state.password);
+            //console.log(nextProps);
+        
             this.props.history.push('/login')
         }
 
@@ -58,7 +66,8 @@ class RegisterScreen extends PureComponent {
             password:this.state.password,
             name:this.state.name,
             lastname:this.state.lastname,
-            genId:this.state.genId,
+            //genId:this.state.genId,
+            genId:this.state.password,
             role:this.state.role
         },this.props.user.users));
         
@@ -72,24 +81,6 @@ class RegisterScreen extends PureComponent {
                 <form onSubmit={this.submitForm}>
                     <h2> Регистрация</h2>
                     <h5>Введите настоящие данные</h5>
-                    
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Введите имя"
-                            value={this.state.name}
-                            onChange={this.handleInputName}
-                         />
-                    </div>
-
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Введите фамилию"
-                            value={this.state.lastname}
-                            onChange={this.handleInputLastname}
-                         />
-                    </div>
 
                     <div className="form_element">
                         <input
@@ -103,18 +94,9 @@ class RegisterScreen extends PureComponent {
                     <div className="form_element">
                         <input
                             type="password"
-                            placeholder="Введите пароль"
+                            placeholder="Введите genId"
                             value={this.state.password}
                             onChange={this.handleInputPassword}
-                         />
-                    </div>
-
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Введите GenId"
-                            value={this.state.genId}
-                            onChange={this.handleInputGenId}
                          />
                     </div>
 
@@ -122,9 +104,6 @@ class RegisterScreen extends PureComponent {
                     <div className="error">
                         {this.state.error}
                     </div>
-
-                    <h5>Пароль должен сордержать цифры и буквы!</h5>
-                    <h5>Запишите ваш пароль и email!</h5>
 
                 </form>
             </div>
@@ -138,3 +117,36 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(RegisterScreen)
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Введите имя"
+                    //         value={this.state.name}
+                    //         onChange={this.handleInputName}
+                    //      />
+                    // </div>
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Введите фамилию"
+                    //         value={this.state.lastname}
+                    //         onChange={this.handleInputLastname}
+                    //      />
+                    // </div>
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Введите GenId"
+                    //         value={this.state.genId}
+                    //         onChange={this.handleInputGenId}
+                    //      />
+                    // </div>
+
+            
+
+
+                    // <h5>Пароль должен сордержать цифры и буквы!</h5>
+                    // <h5>Запишите ваш пароль и email!</h5>

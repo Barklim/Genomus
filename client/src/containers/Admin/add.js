@@ -7,10 +7,10 @@ class AddBook extends Component {
 
     state = {
         formdata:{
-            name:'',
-            author:'',
-            review:'',
-            pages:'',
+            name:'name',
+            author:'author',
+            review:'review',
+            pages: 25,
             //rating:9,
             price:'Муж',
             allowCheck: false,
@@ -99,45 +99,6 @@ class AddBook extends Component {
             <div className="rl_container article">
                 <form onSubmit={this.submitForm}>
                     <h2>Создать анкету</h2>
-
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Введите имя"
-                            value={this.state.formdata.name}
-                            onChange={(event)=>this.handleInput(event,'name')}
-                        />
-                    </div>
-
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Введите университет"
-                            value={this.state.formdata.author}
-                            onChange={(event)=>this.handleInput(event,'author')}
-                        />
-                    </div>
-
-                    <div className="form_element">
-                        <input
-                            type="number"
-                            placeholder="Введите возраст"
-                            value={this.state.formdata.pages}
-                            onChange={(event)=>this.handleInput(event,'pages')}
-                        />
-                    </div>
-
-                    <div className="form_element">
-                        <select
-                            className="select_box"
-                            value={this.state.formdata.price}
-                            onChange={(event)=>this.handleInput(event,'price')}
-                        >   
-                            <option val='Муж'>Муж</option>
-                            <option val='Жен'>Жен</option>
-                            <option val='Неизвестно'>Неизвестно</option>
-                        </select>
-                    </div>
                     
                     <div className="profile_table">
                     <table>
@@ -156,61 +117,10 @@ class AddBook extends Component {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Отображать мою анкету для всех, в общем списке</td>
-                                <td>
-                                    <div>
-                                        <input
-                                            className="profile_checkbox"
-                                            type="checkbox"
-                                            checked={this.state.formdata.allowCompat}
-                                            onChange={(event)=>this.handleInput(event,'allowCompat')}
-                                        />
-                                    </div>                        
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>Отображать мою анкету при проверке совместимости</td>
-                                <td>
-                                    <div>
-                                        <input
-                                            className="profile_checkbox"
-                                            type="checkbox"
-                                            checked={this.state.formdata.allowShow}
-                                            onChange={(event)=>this.handleInput(event,'allowShow')}
-                                        />
-                                    </div>                        
-                                </td>
-                            </tr>
-                        </tbody>
                     </table>
                     </div>
 
-                    <p>Адрес картинки:</p>
-                    <div className="form_element">
-                        <input
-                            type="text"
-                            placeholder="Введите url ..."
-                            value={this.state.formdata.img_url}
-                            onChange={(event)=>this.handleInput(event,'img_url')}
-                        />
-                    </div>
-
-                    <p>Информация о вас:</p>
-                    <textarea
-                        value={this.state.formdata.review}
-                        onChange={(event)=>this.handleInput(event,'review')}
-                    />
-
                     <button type="submit">Создать</button>
-                    {
-                        this.props.books.newbook ? 
-                            this.showNewBook(this.props.books.newbook)
-                        :null
-                    }
                 </form>
             </div>
         );
@@ -224,3 +134,98 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(AddBook)
+
+                    // {
+                    //     this.props.books.newbook ? 
+                    //         this.showNewBook(this.props.books.newbook)
+                    //     :null
+                    // }
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Введите имя"
+                    //         value={this.state.formdata.name}
+                    //         onChange={(event)=>this.handleInput(event,'name')}
+                    //     />
+                    // </div>
+
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Введите университет"
+                    //         value={this.state.formdata.author}
+                    //         onChange={(event)=>this.handleInput(event,'author')}
+                    //     />
+                    // </div>
+
+                    // <div className="form_element">
+                    //     <input
+                    //         type="number"
+                    //         placeholder="Введите возраст"
+                    //         value={this.state.formdata.pages}
+                    //         onChange={(event)=>this.handleInput(event,'pages')}
+                    //     />
+                    // </div>
+
+                    // <div className="form_element">
+                    //     <select
+                    //         className="select_box"
+                    //         value={this.state.formdata.price}
+                    //         onChange={(event)=>this.handleInput(event,'price')}
+                    //     >   
+                    //         <option val='Муж'>Муж</option>
+                    //         <option val='Жен'>Жен</option>
+                    //         <option val='Неизвестно'>Неизвестно</option>
+                    //     </select>
+                    // </div>
+
+
+                    //     <tbody>
+                    //         <tr>
+                    //             <td>Отображать мою анкету для всех, в общем списке</td>
+                    //             <td>
+                    //                 <div>
+                    //                     <input
+                    //                         className="profile_checkbox"
+                    //                         type="checkbox"
+                    //                         checked={this.state.formdata.allowCompat}
+                    //                         onChange={(event)=>this.handleInput(event,'allowCompat')}
+                    //                     />
+                    //                 </div>                        
+                    //             </td>
+                    //         </tr>
+                    //     </tbody>
+                    //     <tbody>
+                    //         <tr>
+                    //             <td>Отображать мою анкету при проверке совместимости</td>
+                    //             <td>
+                    //                 <div>
+                    //                     <input
+                    //                         className="profile_checkbox"
+                    //                         type="checkbox"
+                    //                         checked={this.state.formdata.allowShow}
+                    //                         onChange={(event)=>this.handleInput(event,'allowShow')}
+                    //                     />
+                    //                 </div>                        
+                    //             </td>
+                    //         </tr>
+                    //     </tbody>
+
+
+                    // <p>Адрес картинки:</p>
+                    // <div className="form_element">
+                    //     <input
+                    //         type="text"
+                    //         placeholder="Введите url ..."
+                    //         value={this.state.formdata.img_url}
+                    //         onChange={(event)=>this.handleInput(event,'img_url')}
+                    //     />
+                    // </div>
+
+                    // <p>Информация о вас:</p>
+                    // <textarea
+                    //     value={this.state.formdata.review}
+                    //     onChange={(event)=>this.handleInput(event,'review')}
+                    // />
