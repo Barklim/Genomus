@@ -38,6 +38,14 @@ a:focus {
     margin-left: 10px;
     margin-right: 10px;
 }
+.format_about p {
+  text-align: justify;
+  padding: 0 12px;
+  text-indent: 20px;
+}
+.format_about ul {
+  text-align: initial;
+}
 
 .select_box {
     padding: 11px 31px;

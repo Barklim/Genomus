@@ -110,7 +110,7 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
         {
             type:'navItem',
             icon:'question-circle',
-            text:'О нас',
+            text:'О проекте',
             link:'/about',
             restricted:false,
         }

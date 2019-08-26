@@ -218,11 +218,16 @@ delete:
 
 ## Dev staff
 
-Express
-https://expressjs.com/en/advanced/best-practice-security.html
-https://ru.lipsum.com/
-Docs
-https://nodejs.org/en/
+генерад0р
+https://www.the-qrcode-generator.com/
+..
+Animated page transitions with React Router 4, ReactTransitionGroup and Animated
+https://hackernoon.com/animated-page-transitions-with-react-router-4-reacttransitiongroup-and-animated-1ca17bd97a1a
+..
+Простая валидация форм в ReactJS
+https://www.kanby.ru/prostaya-validacziya-form-v-reactjs.html
+..
+https://reactjsexample.com/a-very-lightweight-accordion-component-in-react/
 
 дизайн
 https://marvelapp.com/9c0hia0/screen/46760961
@@ -244,39 +249,41 @@ tinder clone backend written with nodeJS
 https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
 dattimg-app 
 https://www.flaticon.com/free-icons/chemical
-
-https://reactjsexample.com/a-very-lightweight-accordion-component-in-react/
-
+..
 https://alkanyx.com/item/118/Binder---React-Native-Dating-App-Template
 
-курсы
+курсы:
 https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
 matherial
 https://coursehunters.net/course/kurs-po-react-js-material-ui
 
+Docs:
+https://nodejs.org/en/
+..
+Express
+https://expressjs.com/en/advanced/best-practice-security.html
+https://ru.lipsum.com/
+..
 express
 https://expressjs.com/en/advanced/best-practice-security.html
-
+..
 m0mg0
 https://docs.mongodb.com/manual/reference/method/db.collection.findOne/
-
-выб0рки
-https://metanit.com/nosql/mongodb/2.4.php
-
-redux-saga 
-styled
-
+..
 lib
 https://material.io/develop/
 
-генерад0р
-https://www.the-qrcode-generator.com/
-
-#libs
+глянудь:
+redux-saga 
+styled
+..
+выб0рки
+https://metanit.com/nosql/mongodb/2.4.php
+..
+сделать webview
+..
 диппы
 https://atomiks.github.io/tippyjs/
-
-сделать webview
 
 ## Dev issues
 
