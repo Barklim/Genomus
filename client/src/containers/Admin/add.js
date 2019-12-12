@@ -88,6 +88,16 @@ class AddBook extends Component {
         }))
     }
 
+    handleClick = (props) => {
+        let messageAllowCheck;
+        messageAllowCheck = this.state.formdata.allowCheck ? 'Вы разрешили проверять совместимость' : 'Вы запретили проверять совместимость!';
+        let doMessage = function () {
+            alert(messageAllowCheck);
+            props.history.push('/user/compat');
+        };
+        setTimeout(doMessage, 500);
+    }
+
     componentWillUnmount(){
         this.props.dispatch(clearNewBook())
     }
@@ -98,7 +108,7 @@ class AddBook extends Component {
         return (
             <div className="rl_container article">
                 <form onSubmit={this.submitForm}>
-                    <h2>Создать анкету</h2>
+                    <h2>Настройки</h2>
                     
                     <div className="profile_table">
                     <table>
@@ -120,7 +130,7 @@ class AddBook extends Component {
                     </table>
                     </div>
 
-                    <button type="submit">Создать</button>
+                    <button onClick={this.handleClick.bind(null, this.props)} type="submit">Сохранить</button>
                 </form>
             </div>
         );

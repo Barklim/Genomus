@@ -93,6 +93,21 @@ class EditBook extends PureComponent {
         },1000)
     }
 
+    handleClick = (props) => {
+        console.log(props);
+        console.log(props);
+        console.log(props);
+        console.log(this.state);
+        console.log(this.state.formdata);
+        console.log(this.state.formdata.allowCheck);
+        let messageAllowCheck;
+        messageAllowCheck = this.state.formdata.allowCheck ? 'Вы разрешили проверять совместимость' : 'Вы запретили проверять совместимость!';
+        let doMessage = function () {
+            alert(messageAllowCheck);
+        };
+        setTimeout(doMessage, 500);
+    }
+
     componentWillMount(){
         this.props.dispatch(getBook(this.props.match.params.id))
     }
@@ -129,7 +144,7 @@ class EditBook extends PureComponent {
             <div className="rl_container article">
 
                 <form onSubmit={this.submitForm}>
-                    <h2>Редактировать</h2>
+                    <h2>Настройки</h2>
 
                     <div className="profile_table">
                     <table>
@@ -151,7 +166,7 @@ class EditBook extends PureComponent {
                     </table>
                     </div>
 
-                    <button type="submit">Принять</button>
+                    <button onClick={this.handleClick.bind(null, this.props)} type="submit">Принять</button>
 
                 </form>
             </div>

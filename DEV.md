@@ -58,7 +58,7 @@ cd client
 ### workflow
 
 	git add .
-	git commit -m 'fix fix f0r self_test_2'
+	git commit -m 'del lemdimg, add imf0 0m page ab0ut'
 	git push 
 	git push heroku
 

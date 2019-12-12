@@ -645,3 +645,9 @@ margin-right: 10px;  */
 .fixed {
   margin-bottom: 200px;
 }
+
+.fixCell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 10vw;
+}

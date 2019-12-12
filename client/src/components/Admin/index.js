@@ -6,7 +6,7 @@ import { getUserPosts } from '../../actions';
 class User extends Component {
 
     state = {
-        visible: '', 
+        visible: false, 
         img_url: 'https://robohash.org/set_set1/bgset_bg1/${this.props.user.login.id}?200x200?3`'
     }
 
@@ -24,16 +24,16 @@ class User extends Component {
         console.log(nextProps);
         //console.log(nextProps.user.userPosts.length);
         if ( nextProps.user.userPosts === undefined ) {
-            this.setState({visible: ''}); 
+            this.setState({visible: true}); 
             this.setState({
                 img_url: 'https://robohash.org/set_set1/bgset_bg1/${this.props.user.login.id}?200x200?3`'
             })
         }  else {
-            this.setState({visible: 'none'});  
+            this.setState({visible: false});  
 
             if (nextProps.user.userPosts.length === 0) {
                 console.log('donothing'); 
-                this.setState({visible: ''}); 
+                this.setState({visible: true}); 
             } else {
 
             this.setState({
@@ -73,12 +73,25 @@ class User extends Component {
         :null
     )
 
+    showUserAdd = () => (
+        this.state.visible ? 
+            
+                <Link to={`/user/add`}>        
+                    <div className={this.state.visible}>
+                        <button type="submit">Настройки</button>
+                    </div>
+                </Link>
+        :null
+    )
+
 
     render() {
         let user = this.props.user;
         let user2 = this.props.user.login;
         
         console.log(this.props);
+        console.log(this.state);
+        console.log(this.state);
         /*console.log(this.state);*/
 /*       
         console.log(this.props.user.userPosts);
@@ -100,11 +113,7 @@ class User extends Component {
                     </div>
                 </Link>
 
-                <Link to={`/user/add`}>        
-                    <div className={this.state.visible}>
-                        <button type="submit">Создать анкету</button>
-                    </div>
-                </Link>
+                {this.showUserAdd()}
 
                 {this.showUserConfig(user)}
     

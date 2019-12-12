@@ -30,3 +30,18 @@ Can watch hows add gen
 0браб0дка fetch img из0бражения
 validati0m
 fr0m registerScreem
+
+ ## 0.1.1 (December 12, 2019)
+
+ In the next version we will be introduced: 
+ - SetTimeout password protection (3-5 and water);
+ - Matherial UI Theme;
+ - Change Password;
+
+# Highlights
+
+- Edited the settings page in the profile;
+- Redid the render rule of the settings button in the profile;
+- If the user is logged in then throw on the profile;
+- Edit info on profile page (0 -> нет, 1 -> да, н, undefined -> н/д);
+- Error handling for matches in the email and password database;
