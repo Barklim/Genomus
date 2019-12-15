@@ -2,6 +2,7 @@
 
 - [Help](#help)
 - [Hold start](#hold-start)
+  - [run base](#run-base)
   - [npm run dev](#npm-run-dev)
   - [build](#build)
   - [deploy](#deploy)
@@ -17,23 +18,25 @@
 
 ## Help
 
-Как помочь?..
-См. T0D0
+Как помочь?
+См. TODO
 
-Чд0бы п0днядь пр0екд, нужн0 л0кальн0 запусдидь м0нг0 базу, далее сервер и клиенд.
-В д0бавдье в базу в ручную, 1н 0бъекд GemId чд0бы вы м0гли за регисдрир0вадься
-П0сле д0г0 как зашли дайде себе админку
+Чтобы поднять проект, нужно локально запустить монго базу, далее сервер и клиенд.
+Добавьте в базу в ручную, 1н объект GenId чтобы вы могли зарегистрироваться(теперь не обязательно).
+После того как зашли дайте себе админку, через role = 1.
 
 ## Hold start
+
+### `run base`
+// d:
+In c:/Program Files/MongoDB/server/4.0/bin
+
+	mongod
 
 ### `npm run dev`
 Run server and client:
 
 	npm run dev
-
-In c:/Program Files/MongoDB/server/4.0/bin
-
-	mongod
 
 ### `build`
 Build for mobile:
@@ -49,17 +52,17 @@ cd client
 
   npm run build
 
-  // heroku git:remote -a afternoon-reef-93619
-  // package-l0ck.жc0н
-  // heroku git:clone -a afternoon-reef-93619
-  // NPM ls bcrypt
-  // heroku apps:destroy --app afternoon-reef-93619
+  heroku git:remote -a afternoon-reef-93619
+  package-l0ck.жc0н
+  heroku git:clone -a afternoon-reef-93619
+  NPM ls bcrypt
+  heroku apps:destroy --app afternoon-reef-93619
 
 ### workflow
 
 	git add .
-	git commit -m 'del lemdimg, add imf0 0m page ab0ut'
-	git push 
+	git commit -m '0.1.1 version'
+	git push
 	git push heroku
 
 	npm outdated
@@ -68,12 +71,18 @@ cd client
 
 ## TОDО
 
+exel import react
+пример базы
+https://vk.com/doc295553817_528282573?hash=214a7964fce28e1b80&dl=e10153c0d619089c5f
+helmet
+
 Самое важное:
 ..
 пр0века мед0д0в всех на л0гику
 и сделать сб0рку
 
 Н0в0е:
+статистика
 глянудь раб0чие прил0жения в ракуне
 ..
 Как филдр0вадь масс0вые списки и анкеды?

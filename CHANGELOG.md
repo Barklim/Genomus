@@ -20,16 +20,15 @@ Thanks to all the maintainers and contributors who worked so hard on this releas
 
 ## New Features
 
-Can watch hows add gen
-//В панеле анкет, зайдя кликнув по genId, перейдем к модели genId
-Пока анкет не наделаешь в админке
-Админ может менять рейтинг анкеты, который по дефолту 9
-Только у одной учётки есть права удалять/редактировать/создавать юзеров/посты/мутации 
-	нельзя из админки редакдир0вадь р0ль, д.к. иначе не в0зм0жн0 будед вернудь себе права
-
-0браб0дка fetch img из0бражения
-validati0m
-fr0m registerScreem
+- Can watch hows add gen
+- В панеле анкет, зайдя кликнув по genId, перейдем к модели genId
+- Пока анкет не наделаешь в админке
+- Админ может менять рейтинг анкеты, который по дефолту 9
+- Только у одной учётки есть права удалять/редактировать/создавать юзеров/посты/мутации 
+- Нельзя из админки редакдир0вадь р0ль, д.к. иначе не в0зм0жн0 будед вернудь себе права
+- Обработка fetch img из0бражения
+- Validation
+- Fr0m registerScreem
 
  ## 0.1.1 (December 12, 2019)
 
@@ -45,3 +44,15 @@ fr0m registerScreem
 - If the user is logged in then throw on the profile;
 - Edit info on profile page (0 -> нет, 1 -> да, н, undefined -> н/д);
 - Error handling for matches in the email and password database;
+
+ ## 0.1.2 (December 15, 2019)
+
+ In the next version we will be introduced: 
+ - Statistics on requests;
+
+# Highlights
+
+- x    1. Add the ability to import from EXCEL or another database.
+- ?/✓  2. Collect a security system for data so that there is no single access to all data.
+- ?    3. Add the ability to make passwords and make them more complicated (8 characters, letters + numbers).
+- ✓    4. In the data on genetic mutations leave: 0 - no mutation, 1 - heterozygous for the mutation, 2 - homozygous for the mutation, n / a - no data.

@@ -16,68 +16,520 @@ class Profile extends Component {
 
         } else {
 
-            let profileGen1 = nextProps.user.profileGen[0].rule_0 ? 'да' : 'нет';
-            let profileGen2 = nextProps.user.profileGen[0].rule_1 ? 'да' : 'нет';
-            let profileGen3 = nextProps.user.profileGen[0].rule_2 ? 'да' : 'нет';
-            let profileGen4 = nextProps.user.profileGen[0].rule_3 ? 'да' : 'нет';
-            let profileGen5 = nextProps.user.profileGen[0].rule_4 ? 'да' : 'нет';
-            let profileGen6 = nextProps.user.profileGen[0].rule_5 ? 'да' : 'нет';
-            let profileGen7 = nextProps.user.profileGen[0].rule_6 ? 'да' : 'нет';
-            let profileGen8 = nextProps.user.profileGen[0].rule_7 ? 'да' : 'нет';
-            let profileGen9 = nextProps.user.profileGen[0].rule_8 ? 'да' : 'нет';
-            let profileGen10 = nextProps.user.profileGen[0].rule_9 ? 'да' : 'нет';
-            let profileGen11 = nextProps.user.profileGen[0].rule_10 ? 'да' : 'нет';
-            let profileGen12 = nextProps.user.profileGen[0].rule_11 ? 'да' : 'нет';
-            let profileGen13 = nextProps.user.profileGen[0].rule_12 ? 'да' : 'нет';
-            let profileGen14 = nextProps.user.profileGen[0].rule_13 ? 'да' : 'нет';
-            let profileGen15 = nextProps.user.profileGen[0].rule_14 ? 'да' : 'нет';
-            let profileGen16 = nextProps.user.profileGen[0].rule_15 ? 'да' : 'нет';
-            let profileGen17 = nextProps.user.profileGen[0].rule_16 ? 'да' : 'нет';
-            let profileGen18 = nextProps.user.profileGen[0].rule_17 ? 'да' : 'нет';
-            let profileGen19 = nextProps.user.profileGen[0].rule_18 ? 'да' : 'нет';
-            let profileGen20 = nextProps.user.profileGen[0].rule_19 ? 'да' : 'нет';
-            let profileGen21 = nextProps.user.profileGen[0].rule_20 ? 'да' : 'нет';
-            let profileGen22 = nextProps.user.profileGen[0].rule_21 ? 'да' : 'нет';
-            let profileGen23 = nextProps.user.profileGen[0].rule_22 ? 'да' : 'нет';
-            let profileGen24 = nextProps.user.profileGen[0].rule_23 ? 'да' : 'нет';
-            let profileGen25 = nextProps.user.profileGen[0].rule_24 ? 'да' : 'нет';
-            let profileGen26 = nextProps.user.profileGen[0].rule_25 ? 'да' : 'нет';
-            let profileGen27 = nextProps.user.profileGen[0].rule_26 ? 'да' : 'нет';
-            let profileGen28 = nextProps.user.profileGen[0].rule_27 ? 'да' : 'нет';
-            let profileGen29 = nextProps.user.profileGen[0].rule_28 ? 'да' : 'нет';
-            let profileGen30 = nextProps.user.profileGen[0].rule_29 ? 'да' : 'нет';
+            switch(nextProps.user.profileGen[0].rule_0) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_0 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_0 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_0 = 2;
+                break;
+              // Надо бы проверить.
+              // case null: 
+              //   profileGen1 = 'н/д';
+              //   break;
+              default:
+                nextProps.user.profileGen[0].rule_0 = 'н/д';
+                break;
+            }
 
+            switch(nextProps.user.profileGen[0].rule_1) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_1 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_1 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_1 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_1 = 'н/д';
+                break;
+            }
 
-            nextProps.user.profileGen[0].rule_0 === null ? nextProps.user.profileGen[0].rule_0 = 'н/д' : nextProps.user.profileGen[0].rule_0 = profileGen1
-            nextProps.user.profileGen[0].rule_1 === null ? nextProps.user.profileGen[0].rule_1 = 'н/д' : nextProps.user.profileGen[0].rule_1 = profileGen2 
-            nextProps.user.profileGen[0].rule_2 === null ? nextProps.user.profileGen[0].rule_2 = 'н/д' : nextProps.user.profileGen[0].rule_2 = profileGen3
-            nextProps.user.profileGen[0].rule_3 === null ? nextProps.user.profileGen[0].rule_3 = 'н/д' : nextProps.user.profileGen[0].rule_3 = profileGen4 
-            nextProps.user.profileGen[0].rule_4 === null ? nextProps.user.profileGen[0].rule_4 = 'н/д' : nextProps.user.profileGen[0].rule_4 = profileGen5
-            nextProps.user.profileGen[0].rule_5 === null ? nextProps.user.profileGen[0].rule_5 = 'н/д' : nextProps.user.profileGen[0].rule_5 = profileGen6
-            nextProps.user.profileGen[0].rule_6 === null ? nextProps.user.profileGen[0].rule_6 = 'н/д' : nextProps.user.profileGen[0].rule_6 = profileGen7
-            nextProps.user.profileGen[0].rule_7 === null ? nextProps.user.profileGen[0].rule_7 = 'н/д' : nextProps.user.profileGen[0].rule_7 = profileGen8
-            nextProps.user.profileGen[0].rule_8 === null ? nextProps.user.profileGen[0].rule_8 = 'н/д' : nextProps.user.profileGen[0].rule_8 = profileGen9
-            nextProps.user.profileGen[0].rule_9 === null ? nextProps.user.profileGen[0].rule_9 = 'н/д' : nextProps.user.profileGen[0].rule_9 = profileGen10
-            nextProps.user.profileGen[0].rule_10 === null ? nextProps.user.profileGen[0].rule_10 = 'н/д' : nextProps.user.profileGen[0].rule_10 = profileGen11
-            nextProps.user.profileGen[0].rule_11 === null ? nextProps.user.profileGen[0].rule_11 = 'н/д' : nextProps.user.profileGen[0].rule_11 = profileGen12
-            nextProps.user.profileGen[0].rule_12 === null ? nextProps.user.profileGen[0].rule_12 = 'н/д' : nextProps.user.profileGen[0].rule_12 = profileGen13
-            nextProps.user.profileGen[0].rule_13 === null ? nextProps.user.profileGen[0].rule_13 = 'н/д' : nextProps.user.profileGen[0].rule_13 = profileGen14
-            nextProps.user.profileGen[0].rule_14 === null ? nextProps.user.profileGen[0].rule_14 = 'н/д' : nextProps.user.profileGen[0].rule_14 = profileGen15
-            nextProps.user.profileGen[0].rule_15 === null ? nextProps.user.profileGen[0].rule_15 = 'н/д' : nextProps.user.profileGen[0].rule_15 = profileGen16
-            nextProps.user.profileGen[0].rule_16 === null ? nextProps.user.profileGen[0].rule_16 = 'н/д' : nextProps.user.profileGen[0].rule_16 = profileGen17
-            nextProps.user.profileGen[0].rule_17 === null ? nextProps.user.profileGen[0].rule_17 = 'н/д' : nextProps.user.profileGen[0].rule_17 = profileGen18
-            nextProps.user.profileGen[0].rule_18 === null ? nextProps.user.profileGen[0].rule_18 = 'н/д' : nextProps.user.profileGen[0].rule_18 = profileGen19
-            nextProps.user.profileGen[0].rule_19 === null ? nextProps.user.profileGen[0].rule_19 = 'н/д' : nextProps.user.profileGen[0].rule_19 = profileGen20
-            nextProps.user.profileGen[0].rule_20 === null ? nextProps.user.profileGen[0].rule_20 = 'н/д' : nextProps.user.profileGen[0].rule_20 = profileGen21
-            nextProps.user.profileGen[0].rule_21 === null ? nextProps.user.profileGen[0].rule_21 = 'н/д' : nextProps.user.profileGen[0].rule_21 = profileGen22
-            nextProps.user.profileGen[0].rule_22 === null ? nextProps.user.profileGen[0].rule_22 = 'н/д' : nextProps.user.profileGen[0].rule_22 = profileGen23
-            nextProps.user.profileGen[0].rule_23 === null ? nextProps.user.profileGen[0].rule_23 = 'н/д' : nextProps.user.profileGen[0].rule_23 = profileGen24
-            nextProps.user.profileGen[0].rule_24 === null ? nextProps.user.profileGen[0].rule_24 = 'н/д' : nextProps.user.profileGen[0].rule_24 = profileGen25
-            nextProps.user.profileGen[0].rule_25 === null ? nextProps.user.profileGen[0].rule_25 = 'н/д' : nextProps.user.profileGen[0].rule_25 = profileGen26
-            nextProps.user.profileGen[0].rule_26 === null ? nextProps.user.profileGen[0].rule_26 = 'н/д' : nextProps.user.profileGen[0].rule_26 = profileGen27
-            nextProps.user.profileGen[0].rule_27 === null ? nextProps.user.profileGen[0].rule_27 = 'н/д' : nextProps.user.profileGen[0].rule_27 = profileGen28
-            nextProps.user.profileGen[0].rule_28 === null ? nextProps.user.profileGen[0].rule_28 = 'н/д' : nextProps.user.profileGen[0].rule_28 = profileGen29
-            nextProps.user.profileGen[0].rule_29 === null ? nextProps.user.profileGen[0].rule_29 = 'н/д' : nextProps.user.profileGen[0].rule_29 = profileGen30
+            switch(nextProps.user.profileGen[0].rule_2) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_2 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_2 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_2 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_2 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_3) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_3 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_3 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_3 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_3 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_4) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_4 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_4 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_4 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_4 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_5) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_5 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_5 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_5 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_5 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_6) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_6 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_6 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_6 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_6 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_7) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_7 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_7 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_7 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_7 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_8) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_8 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_8 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_8 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_8 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_9) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_9 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_9 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_9 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_9 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_10) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_10 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_10 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_10 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_10 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_11) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_11 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_11 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_11 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_11 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_12) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_12 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_12 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_12 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_12 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_13) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_13 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_13 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_13 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_13 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_14) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_14 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_14 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_14 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_14 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_15) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_15 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_15 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_15 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_15 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_16) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_16 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_16 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_16 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_16 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_17) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_17 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_17 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_17 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_17 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_18) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_18 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_18 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_18 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_18 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_19) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_19 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_19 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_19 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_19 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_20) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_20 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_20 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_20 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_20 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_21) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_21 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_21 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_21 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_21 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_22) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_22 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_22 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_22 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_22 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_23) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_23 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_23 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_23 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_23 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_24) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_24 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_24 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_24 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_24 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_25) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_25 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_25 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_25 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_25 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_26) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_26 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_26 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_26 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_26 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_27) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_27 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_27 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_27 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_27 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_28) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_28 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_28 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_28 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_28 = 'н/д';
+                break;
+            }
+
+            switch(nextProps.user.profileGen[0].rule_29) {
+              case 0: 
+                nextProps.user.profileGen[0].rule_29 = 0; 
+                break;
+              case 1: 
+                nextProps.user.profileGen[0].rule_29 = 1;
+                break;
+              case 2: 
+                nextProps.user.profileGen[0].rule_29 = 2;
+                break;
+              default:
+                nextProps.user.profileGen[0].rule_29 = 'н/д';
+                break;
+            }
+
+            // let profileGen2 = nextProps.user.profileGen[0].rule_1 ? 'да' : 'нет';
+            // let profileGen3 = nextProps.user.profileGen[0].rule_2 ? 'да' : 'нет';
+            // let profileGen4 = nextProps.user.profileGen[0].rule_3 ? 'да' : 'нет';
+            // let profileGen5 = nextProps.user.profileGen[0].rule_4 ? 'да' : 'нет';
+            // let profileGen6 = nextProps.user.profileGen[0].rule_5 ? 'да' : 'нет';
+            // let profileGen7 = nextProps.user.profileGen[0].rule_6 ? 'да' : 'нет';
+            // let profileGen8 = nextProps.user.profileGen[0].rule_7 ? 'да' : 'нет';
+            // let profileGen9 = nextProps.user.profileGen[0].rule_8 ? 'да' : 'нет';
+            // let profileGen10 = nextProps.user.profileGen[0].rule_9 ? 'да' : 'нет';
+            // let profileGen11 = nextProps.user.profileGen[0].rule_10 ? 'да' : 'нет';
+            // let profileGen12 = nextProps.user.profileGen[0].rule_11 ? 'да' : 'нет';
+            // let profileGen13 = nextProps.user.profileGen[0].rule_12 ? 'да' : 'нет';
+            // let profileGen14 = nextProps.user.profileGen[0].rule_13 ? 'да' : 'нет';
+            // let profileGen15 = nextProps.user.profileGen[0].rule_14 ? 'да' : 'нет';
+            // let profileGen16 = nextProps.user.profileGen[0].rule_15 ? 'да' : 'нет';
+            // let profileGen17 = nextProps.user.profileGen[0].rule_16 ? 'да' : 'нет';
+            // let profileGen18 = nextProps.user.profileGen[0].rule_17 ? 'да' : 'нет';
+            // let profileGen19 = nextProps.user.profileGen[0].rule_18 ? 'да' : 'нет';
+            // let profileGen20 = nextProps.user.profileGen[0].rule_19 ? 'да' : 'нет';
+            // let profileGen21 = nextProps.user.profileGen[0].rule_20 ? 'да' : 'нет';
+            // let profileGen22 = nextProps.user.profileGen[0].rule_21 ? 'да' : 'нет';
+            // let profileGen23 = nextProps.user.profileGen[0].rule_22 ? 'да' : 'нет';
+            // let profileGen24 = nextProps.user.profileGen[0].rule_23 ? 'да' : 'нет';
+            // let profileGen25 = nextProps.user.profileGen[0].rule_24 ? 'да' : 'нет';
+            // let profileGen26 = nextProps.user.profileGen[0].rule_25 ? 'да' : 'нет';
+            // let profileGen27 = nextProps.user.profileGen[0].rule_26 ? 'да' : 'нет';
+            // let profileGen28 = nextProps.user.profileGen[0].rule_27 ? 'да' : 'нет';
+            // let profileGen29 = nextProps.user.profileGen[0].rule_28 ? 'да' : 'нет';
+            // let profileGen30 = nextProps.user.profileGen[0].rule_29 ? 'да' : 'нет';
+
+            //nextProps.user.profileGen[0].rule_0 === null ? nextProps.user.profileGen[0].rule_0 = 'н/д' : nextProps.user.profileGen[0].rule_0 = profileGen1
+            // nextProps.user.profileGen[0].rule_1 === null ? nextProps.user.profileGen[0].rule_1 = 'н/д' : nextProps.user.profileGen[0].rule_1 = profileGen2 
+            // nextProps.user.profileGen[0].rule_2 === null ? nextProps.user.profileGen[0].rule_2 = 'н/д' : nextProps.user.profileGen[0].rule_2 = profileGen3
+            // nextProps.user.profileGen[0].rule_3 === null ? nextProps.user.profileGen[0].rule_3 = 'н/д' : nextProps.user.profileGen[0].rule_3 = profileGen4 
+            // nextProps.user.profileGen[0].rule_4 === null ? nextProps.user.profileGen[0].rule_4 = 'н/д' : nextProps.user.profileGen[0].rule_4 = profileGen5
+            // nextProps.user.profileGen[0].rule_5 === null ? nextProps.user.profileGen[0].rule_5 = 'н/д' : nextProps.user.profileGen[0].rule_5 = profileGen6
+            // nextProps.user.profileGen[0].rule_6 === null ? nextProps.user.profileGen[0].rule_6 = 'н/д' : nextProps.user.profileGen[0].rule_6 = profileGen7
+            // nextProps.user.profileGen[0].rule_7 === null ? nextProps.user.profileGen[0].rule_7 = 'н/д' : nextProps.user.profileGen[0].rule_7 = profileGen8
+            // nextProps.user.profileGen[0].rule_8 === null ? nextProps.user.profileGen[0].rule_8 = 'н/д' : nextProps.user.profileGen[0].rule_8 = profileGen9
+            // nextProps.user.profileGen[0].rule_9 === null ? nextProps.user.profileGen[0].rule_9 = 'н/д' : nextProps.user.profileGen[0].rule_9 = profileGen10
+            // nextProps.user.profileGen[0].rule_10 === null ? nextProps.user.profileGen[0].rule_10 = 'н/д' : nextProps.user.profileGen[0].rule_10 = profileGen11
+            // nextProps.user.profileGen[0].rule_11 === null ? nextProps.user.profileGen[0].rule_11 = 'н/д' : nextProps.user.profileGen[0].rule_11 = profileGen12
+            // nextProps.user.profileGen[0].rule_12 === null ? nextProps.user.profileGen[0].rule_12 = 'н/д' : nextProps.user.profileGen[0].rule_12 = profileGen13
+            // nextProps.user.profileGen[0].rule_13 === null ? nextProps.user.profileGen[0].rule_13 = 'н/д' : nextProps.user.profileGen[0].rule_13 = profileGen14
+            // nextProps.user.profileGen[0].rule_14 === null ? nextProps.user.profileGen[0].rule_14 = 'н/д' : nextProps.user.profileGen[0].rule_14 = profileGen15
+            // nextProps.user.profileGen[0].rule_15 === null ? nextProps.user.profileGen[0].rule_15 = 'н/д' : nextProps.user.profileGen[0].rule_15 = profileGen16
+            // nextProps.user.profileGen[0].rule_16 === null ? nextProps.user.profileGen[0].rule_16 = 'н/д' : nextProps.user.profileGen[0].rule_16 = profileGen17
+            // nextProps.user.profileGen[0].rule_17 === null ? nextProps.user.profileGen[0].rule_17 = 'н/д' : nextProps.user.profileGen[0].rule_17 = profileGen18
+            // nextProps.user.profileGen[0].rule_18 === null ? nextProps.user.profileGen[0].rule_18 = 'н/д' : nextProps.user.profileGen[0].rule_18 = profileGen19
+            // nextProps.user.profileGen[0].rule_19 === null ? nextProps.user.profileGen[0].rule_19 = 'н/д' : nextProps.user.profileGen[0].rule_19 = profileGen20
+            // nextProps.user.profileGen[0].rule_20 === null ? nextProps.user.profileGen[0].rule_20 = 'н/д' : nextProps.user.profileGen[0].rule_20 = profileGen21
+            // nextProps.user.profileGen[0].rule_21 === null ? nextProps.user.profileGen[0].rule_21 = 'н/д' : nextProps.user.profileGen[0].rule_21 = profileGen22
+            // nextProps.user.profileGen[0].rule_22 === null ? nextProps.user.profileGen[0].rule_22 = 'н/д' : nextProps.user.profileGen[0].rule_22 = profileGen23
+            // nextProps.user.profileGen[0].rule_23 === null ? nextProps.user.profileGen[0].rule_23 = 'н/д' : nextProps.user.profileGen[0].rule_23 = profileGen24
+            // nextProps.user.profileGen[0].rule_24 === null ? nextProps.user.profileGen[0].rule_24 = 'н/д' : nextProps.user.profileGen[0].rule_24 = profileGen25
+            // nextProps.user.profileGen[0].rule_25 === null ? nextProps.user.profileGen[0].rule_25 = 'н/д' : nextProps.user.profileGen[0].rule_25 = profileGen26
+            // nextProps.user.profileGen[0].rule_26 === null ? nextProps.user.profileGen[0].rule_26 = 'н/д' : nextProps.user.profileGen[0].rule_26 = profileGen27
+            // nextProps.user.profileGen[0].rule_27 === null ? nextProps.user.profileGen[0].rule_27 = 'н/д' : nextProps.user.profileGen[0].rule_27 = profileGen28
+            // nextProps.user.profileGen[0].rule_28 === null ? nextProps.user.profileGen[0].rule_28 = 'н/д' : nextProps.user.profileGen[0].rule_28 = profileGen29
+            // nextProps.user.profileGen[0].rule_29 === null ? nextProps.user.profileGen[0].rule_29 = 'н/д' : nextProps.user.profileGen[0].rule_29 = profileGen30
         }
     }
 
