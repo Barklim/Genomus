@@ -651,15 +651,23 @@ app.post('/api/register',(req,res)=>{
     })
 })
 
-// meeeeeh
+// Админская регистрация user's
 app.post('/api/registerScreen',(req,res)=>{
         const user = new User(req.body);
         const gen = new Gen(req.body);
 
+        // Обязательно со стороны сервера не давать возможность создавать юзера с правами админа.
+        user.role = 1;
+
         Gen.findOne({'genId':req.body.genId},(err,gen)=>{
+                        //console.log(user);
+            console.log(user);
+                //console.log(gen);
+            console.log(gen);
             if(gen) { 
                 user.save((err,doc)=>{
-                    if(err) return res.json({success:false});
+                    //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+                    if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
                         res.status(200).json({
                         success:true,
                         user:doc
@@ -667,14 +675,14 @@ app.post('/api/registerScreen',(req,res)=>{
                     })
 
             } else {
-                return res.json({isAuth:false, message:'fack era',gen:gen})
+                return res.json({isAuth:false, success:false, message:'Такого GenId нет в базе данных'})
             }
         })
 })
 
 app.post('/api/login',(req,res)=>{
     User.findOne({'email':req.body.email},(err,user)=>{
-        if(!user) return res.json({isAuth:false,message:'Не удалось войти, email не найден'})
+        if(!user) return res.json({isAuth:false, message:'Не удалось войти, email не найден'})
 
         user.comparePassword(req.body.password,(err,isMatch)=>{
             if(!isMatch) return res.json({

@@ -109,7 +109,7 @@ class User extends Component {
 
                 <Link to={`/user/profile`}>
                     <div>
-                    <button type="submit">Профиль</button>
+                    <button type="submit">Генетический профиль</button>
                     </div>
                 </Link>
 

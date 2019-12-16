@@ -23,8 +23,9 @@ export default function(state={},action){
         case 'USER_REGISTER_SCREEN':
             return {
                 ...state,
-                register:action.payload.success,
-                users:action.payload.users
+                register:action.payload, // success
+                // register:action.payload.isAuth,
+                // user:action.payload.isAuth
             }
         case 'UPDATE_USER':
             return {

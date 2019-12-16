@@ -56,3 +56,14 @@ Thanks to all the maintainers and contributors who worked so hard on this releas
 - ?/✓  2. Collect a security system for data so that there is no single access to all data.
 - ?    3. Add the ability to make passwords and make them more complicated (8 characters, letters + numbers).
 - ✓    4. In the data on genetic mutations leave: 0 - no mutation, 1 - heterozygous for the mutation, 2 - homozygous for the mutation, n / a - no data.
+
+ ## 0.1.3 (December 16, 2019)
+
+# Highlights
+
+- Fix text on different pages.
+- Edited the registration method, now it is not possible to create an admin using the post-method.
+- Error handling during registration:
+- 1. There is no such GenId in the database.
+- 2. A user with such mail or GenId is already registered.
+- After the first registration, it redirects to login and substitutes the entered mail and genId for login.

@@ -31,9 +31,12 @@ class RegisterScreen extends PureComponent {
     } 
 
     componentWillReceiveProps(nextProps){
-        if(nextProps.user.register === false){
+        console.log(nextProps);
+        console.log(nextProps);
+        if(nextProps.user.register.success === false){
             this.setState({
-                error:'Ошибка,попробуйте еще.'
+                //error:'Ошибка,попробуйте еще.'
+                error: nextProps.user.register.message
             })
         } else {
             this.setState({
@@ -52,9 +55,17 @@ class RegisterScreen extends PureComponent {
             // console.log(this.state.password);
             //console.log(nextProps);
         
-            this.props.history.push('/login')
+            // Вернуть
+            //this.props.history.push('/login')
         }
-
+        if(nextProps.user.register.success === true){
+            this.setState({
+                //error:'Ошибка,попробуйте еще.'
+            //error: nextProps.user.register.message
+            })
+            alert('Вы успешно зарегестрировались! \nВойдите пожалуйста в приложение');
+            this.props.history.push('/login');
+        }
     }
 
     submitForm = (e) => {
@@ -75,7 +86,7 @@ class RegisterScreen extends PureComponent {
 
     render() {
         //let user = this.props.user;
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <div className="rl_container">
                 <form onSubmit={this.submitForm}>

@@ -20,9 +20,13 @@ class Login extends Component {
         this.setState({password:event.target.value})
     }
 
-    componentWillReceiveProps(nextProps){
-        if(nextProps.user.login.isAuth){
-            this.props.history.push('/user/user');
+    componentWillMount() {
+        console.log('test')
+        console.log(this.props)
+        console.log(this.state)
+        if (this.props.user.register !== undefined ) {
+            this.setState({email: this.props.user.register.user.email}); 
+            this.setState({password: this.props.user.register.user.genId});
         }
     }
 
@@ -30,9 +34,18 @@ class Login extends Component {
         if(this.props.user.login.isAuth) {
             this.props.history.push('/user/user')
         }
+        if(this.props.user.register !== undefined) {
+            if (this.props.user.register.success === true) {
+                setTimeout(this.props.dispatch(loginUser(this.state)), 2000);
+            }
+        }
     }
 
-
+    componentWillReceiveProps(nextProps){
+        if(nextProps.user.login.isAuth){
+            this.props.history.push('/user/user');
+        }
+    }
 
     submitForm = (e) =>{
         e.preventDefault();

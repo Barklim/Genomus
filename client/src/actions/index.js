@@ -224,25 +224,30 @@ export function getUsers(id){
     }
 }
 
+// Ргеистрация одиночного юзера.
 export function userRegisterScreen(user,userList){
     const request = axios.post(`/api/registerScreen`,user)
 
     return (dispatch) =>{
         request.then(({data})=>{
-            let user = data.success ? [data.user]: null;
-            let response = {
-                success:data.success,
-                user
-            }
+            //let user = data.success ? [data.user]: null;
+            // let user;
+            // let response = {
+            //     //success:data.success,
+            //     isAuth:data.isAuth,
+            //     //message:data.message,
+            //     registe: data
+            // }
 
             dispatch({
                 type:'USER_REGISTER_SCREEN',
-                payload:response
+                payload:data
             })
         })
     }
 }
 
+// Админская регистрация user's
 export function userRegister(user,userList){
     const request = axios.post(`/api/register`,user)
 

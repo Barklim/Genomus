@@ -36,7 +36,10 @@ class About extends Component {
 
                     {
                         this.props.user.login.genId !== undefined  ? 
-                            <p> Ваш QR-code: </p>
+                            <div>
+                                <p> Вы можете дать отсканировать свой QR-код вместо того, чтобы набирать GenId. Быстро и удобно! Функция может не работать, если запрещён доступ к камере.</p>
+                                <p> Ваш QR-code: </p>
+                            </div>
                         :null
                     }
                     {
