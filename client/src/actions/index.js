@@ -247,6 +247,29 @@ export function userRegisterScreen(user,userList){
     }
 }
 
+// Изменение пароля юзера.
+export function userChangePassword(user,userList){
+    const request = axios.post(`/api/userChangePassword`,user)
+
+    return (dispatch) =>{
+        request.then(({data})=>{
+            //let user = data.success ? [data.user]: null;
+            // let user;
+            // let response = {
+            //     //success:data.success,
+            //     isAuth:data.isAuth,
+            //     //message:data.message,
+            //     registe: data
+            // }
+
+            dispatch({
+                type:'USER_CHANGE_PASSWORD',
+                payload:data
+            })
+        })
+    }
+}
+
 // Админская регистрация user's
 export function userRegister(user,userList){
     const request = axios.post(`/api/register`,user)

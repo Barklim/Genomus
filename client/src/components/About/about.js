@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+var QRCode = require('qrcode.react');
 
 class About extends Component {
     render() {
@@ -49,10 +50,10 @@ class About extends Component {
                     }
                     {
                         this.props.user.login.genId !== undefined  ? 
-                            <img 
-                                alt='robots' 
-                                src={`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${this.props.user.login.genId}`} 
-                                className="qr"
+                            <QRCode 
+                            value={this.props.user.login.genId}
+                            className="qr"
+                            size='256'
                             />
                         :null
                     }
@@ -73,6 +74,17 @@ class About extends Component {
                     // <h4>Мы в социальных сетях: <a href="https://vk.com/genomusApp">https://vk.com/genomusApp</a></h4>
                     // <h4>Обратная связь: example@gmail.com</h4>
                     // <h4>Здесь можно будет скачать файл apk. для Android  </h4>
+
+
+                    //                    {
+                    //     this.props.user.login.genId !== undefined  ? 
+                    //         <img 
+                    //             alt='robots' 
+                    //             src={`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${this.props.user.login.genId}`} 
+                    //             className="qr"
+                    //         />
+                    //     :null
+                    // }
 
 function mapStateProps(state) {
     return {

@@ -116,6 +116,10 @@ class User extends Component {
                 {this.showUserAdd()}
 
                 {this.showUserConfig(user)}
+
+                <Link to={`/user/userPassword`}>
+                    <button type="submit">Изменить пароль</button>
+                </Link>
     
                 </div>
             </div>

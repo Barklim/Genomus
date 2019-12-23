@@ -67,3 +67,15 @@ Thanks to all the maintainers and contributors who worked so hard on this releas
 - 1. There is no such GenId in the database.
 - 2. A user with such mail or GenId is already registered.
 - After the first registration, it redirects to login and substitutes the entered mail and genId for login.
+
+ ## 0.1.4 (December 23, 2019)
+
+- After changing the password, it takes you to enter the page and requires you to enter a new password, and automatically
+- the old password is entered in input input.
+- Validation Procedure:
+- The password has not been changed because the new password was repeated incorrectly.
+- The password has not been changed, since the new password is shorter than six characters, consists only of numbers, or contains invalid characters.
+- Invalid old password (no).
+- There is no such GenId in the database;
+- A user with such mail or GenId is already registered;
+- Changed qrcode Api to qrcode generator (qrcode.react);

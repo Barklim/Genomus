@@ -652,6 +652,35 @@ app.post('/api/register',(req,res)=>{
 })
 
 // Админская регистрация user's
+// app.post('/api/registerScreen',(req,res)=>{
+//         const user = new User(req.body);
+//         const gen = new Gen(req.body);
+
+//         // Обязательно со стороны сервера не давать возможность создавать юзера с правами админа.
+//         user.role = 1;
+
+//         Gen.findOne({'genId':req.body.genId},(err,gen)=>{
+//                         //console.log(user);
+//             console.log(user);
+//                 //console.log(gen);
+//             console.log(gen);
+//             if(gen) { 
+//                 user.save((err,doc)=>{
+//                     //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+//                     if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
+//                         res.status(200).json({
+//                         success:true,
+//                         user:doc
+//                         })
+//                     })
+
+//             } else {
+//                 return res.json({isAuth:false, success:false, message:'Такого GenId нет в базе данных'})
+//             }
+//         })
+// })
+
+// Админская регистрация user's
 app.post('/api/registerScreen',(req,res)=>{
         const user = new User(req.body);
         const gen = new Gen(req.body);
@@ -679,6 +708,328 @@ app.post('/api/registerScreen',(req,res)=>{
             }
         })
 })
+
+// Изменение пароля юзера.
+app.post('/api/userChangePassword1',(req,res)=>{
+        const user = new User(req.body);
+        const gen = new Gen(req.body);
+
+        console.log('USER');
+        console.log(req.body);
+        console.log(user);
+
+        // Обязательно со стороны сервера не давать возможность создавать юзера с правами админа.
+        //user.role = 1;
+
+        // Gen.findOne({'genId':req.body.genId},(err,gen)=>{
+        //                 //console.log(user);
+        //     console.log('USER');
+        //     console.log(req.body);
+        //     console.log(res.body);
+        //     console.log(user);
+        //     console.log(gen);
+        //     if(gen) { 
+        //         user.save((err,doc)=>{
+        //             //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+        //             if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
+        //                 res.status(200).json({
+        //                 success:true,
+        //                 user:doc
+        //                 })
+        //             })
+
+        //     } else {
+        //         return res.json({isAuth:false, success:false, message:'Такого GenId нет в базе данных'})
+        //     }
+        // })
+
+
+
+    //     User.findOne({'email':req.body.email},(err,user)=>{
+    //     //if(!user) return res.json({isAuth:false, success:false, message:'Не удалось войти, email не найден'})
+
+    //     // Book.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,doc)=>{
+
+    //     user.comparePassword(req.body.password,(err,isMatch)=>{
+    //         if(!isMatch) return res.json({
+    //             isAuth:false,
+    //             success:false,
+    //             message:'Неверный пароль'
+    //         });
+
+    //         user.generateToken((err,user)=>{
+    //             if(err) return res.status(400).send(err);
+    //             res.cookie('auth',user.token).json({
+    //                 isAuth:true,
+    //                 success:true,
+    //                 id:user._id,
+    //                 email:user.email
+    //             })
+    //         })
+    //     })
+    // })
+
+    //    User.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,doc)=>{
+    //User.findOne(req.body._id,req.body,{new:true},(err,doc)=>{
+        //'genId':req.body.genId
+        //Gen.findOne({'genId':req.body.genId},(err,gen)=>{
+        //User.findOne({'genId':req.body.genId},(err,gen)=>{
+
+        User.findOne({'_id':req.body._id},(err,user2)=>{
+        //User.findByIdAndUpdate({'_id':req.body._id},(err,user2)=>{
+
+                console.log('USER 2');
+                console.log(err);
+                console.log(user2);
+                // Тут пароль!
+
+    //                 Book.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,doc)=>{
+    //     if(err) return res.status(400).send(err);
+    //     res.json({
+    //         success:true,
+    //         doc
+    //     })
+    // })
+
+        if(err) return res.status(400).send(err);
+
+        // user.comparePassword(req.body.password,(err,isMatch)=>{
+
+        //     if(!isMatch) return res.json({
+        //         isAuth:false,
+        //         success:false,
+        //         message:'Неверный пароль'
+        //     });
+
+        // user.save((err,doc)=>{
+
+        //         console.log('USER 3');
+        //         console.log(err);
+        //         console.log(doc);
+
+        //     //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+        //     if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
+        //         res.status(200).json({
+        //         success:true,
+        //         user:doc
+        //     })
+        // })
+
+        // user.comparePassword(req.body.password,(err,isMatch)=>{
+        //         console.log('USER 3');
+        //         console.log(err);
+        //         console.log(isMatch);
+
+        //     if(!isMatch) return res.json({
+        //         isAuth:false,
+        //         message:'Неверный пароль'
+        //     });
+        // })
+
+                user.save((err,doc)=>{
+
+                        console.log('USER 3');
+                console.log(err);
+                console.log(doc);
+
+                    //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+                    if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
+                        res.status(200).json({
+                        success:true,
+                        user:doc
+                        })
+                    })
+
+        // res.json({
+        //     success:false,
+        //     message:'test',
+        //     doc
+        // })
+
+        //})
+    })
+})
+
+// Изменение пароля юзера.
+app.post('/api/userChangePassword2',(req,res)=>{
+        const user = new User(req.body);
+        const gen = new Gen(req.body);
+
+        console.log('USER');
+        console.log(req.body);
+        console.log(user);
+
+        // User.findOne({'_id':req.body._id},(err,user2)=>{
+
+        //         console.log('USER 2');
+        //         console.log(err);
+        //         console.log(user2);
+        //         // Тут пароль!
+
+        // if(err) return res.status(400).send(err);
+
+        //         user.save((err,doc)=>{
+
+        //                 console.log('USER 3');
+        //         console.log(err);
+        //         console.log(doc);
+
+        //             //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+        //             if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
+        //                 res.status(200).json({
+        //                 success:true,
+        //                 user:doc
+        //                 })
+        //             })
+
+        //    !!!
+
+                //         user.save((err,doc)=>{
+
+                //         console.log('USER 3');
+                // console.log(err);
+                // console.log(doc);
+
+                //     //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+                //     if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
+                //         res.status(200).json({
+                //         success:true,
+                //         user:doc
+                //         })
+                //     })
+
+            User.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,doc)=>{
+                        console.log('USER 1');
+                        console.log(req.body);
+                        console.log(doc);
+
+                    // user.save((err,doc)=>{
+
+                    //     console.log('USER 3');
+                    //     console.log(doc);
+                    //     console.log(err);
+
+                    // //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+                    // if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
+                    //     res.status(200).json({
+                    //     success:true,
+                    //     user:doc
+                    //     })
+                    // })
+
+        if(err) return res.status(400).send(err);
+        res.json({
+            success:true,
+            doc
+        })
+    
+    })
+})
+
+// Изменение пароля юзера.
+app.post('/api/userChangePassword',(req,res)=>{
+        const user = new User(req.body);
+        const gen = new Gen(req.body);
+
+        console.log('USER');
+        console.log(req.body);
+        console.log(user);
+
+        User.findOne({'_id':req.body._id},(err,user2)=>{
+
+                console.log('USER 2');
+                console.log(err);
+                console.log(user2);
+                // Тут пароль!
+        if(err) return res.status(400).send(err);
+
+                    // Пример с вложенностью работает!!!
+            //         User.findByIdAndUpdate(req.body._id,req.body,{new:true},(err,doc)=>{
+            //             console.log('USER 1');
+            //             console.log(req.body);
+            //             console.log(doc);
+
+            //         // user.save((err,doc)=>{
+
+            //         //     console.log('USER 3');
+            //         //     console.log(doc);
+            //         //     console.log(err);
+
+            //         // //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+            //         // if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
+            //         //     res.status(200).json({
+            //         //     success:true,
+            //         //     user:doc
+            //         //     })
+            //         // })
+
+            //     if(err) return res.status(400).send(err);
+            //     res.json({
+            //         success:true,
+            //         doc
+            //     })
+            
+            // })
+
+                // Сперва удаляем пользователя
+                let id = req.body._id;
+
+                User.findByIdAndRemove(id,(err,doc)=>{
+                    if(err) return res.status(400).send(err);
+                    if(req.body.newPassword !== req.body.doublePassword) return res.json({isAuth:false, success:false, message: 'Пароль не изменён, так как новый пароль повторен неправильно' });
+                    if(req.body.newPassword.length < 6) return res.json({isAuth:false, success:false, message: 'Пароль не изменён, так как новый пароль короче шести символов' });
+                    //res.json(true)
+
+                            // user.comparePassword(req.body.password,(err,isMatch)=>{
+                            //     if(!isMatch) return res.json({
+                            //         isAuth:false,
+                            //         message:'Неверный пароль'
+                            //     });
+
+                            //     user.generateToken((err,user)=>{
+                            //         if(err) return res.status(400).send(err);
+                            //         res.cookie('auth',user.token).json({
+                            //             isAuth:true,
+                            //             id:user._id,
+                            //             email:user.email
+                            //         })
+                            //     })
+                            // })
+
+                        // Далее перерегистрируем
+                        Gen.findOne({'genId':req.body.genId},(err,gen)=>{
+                        //console.log(user);
+                        console.log('HI2');
+                        console.log(user);
+                        // Меняем пароль для сохранения перед криптованием.
+                        user.password = req.body.newPassword;
+
+                        if(gen) { 
+                            user.save((err,doc)=>{
+
+                                console.log('HI 3');
+                                console.log(doc);
+                                //if(user.genId === gen.genId) { messageAdditional = 'Пользователь с таким GenId уже зарегестрирован' }; //return res.json({isAuth:false, success:false, message: 'Пользователь с таким GenId уже зарегестрирован'});
+                                if(err) return res.json({isAuth:false, success:false, message: 'Пользователь с такой почтой или GenId уже зарегестрирован' }); //"E11000 duplicate key error collection: genomus.users index: genId_1 dup key: { : "111010" }"
+                                //if(req.body.newPassword !== req.body.doublePassword) return res.json({isAuth:false, success:false, message: 'Пароль не изменён, так как новый пароль повторен неправильно' });
+                                //if(req.body.newPassword.length < 6) return res.json({isAuth:false, success:false, message: 'Пароль не изменён, так как новый пароль короче шести символов' });
+
+                                    res.status(200).json({
+                                    success:true,
+                                    user:doc
+                                    })
+                                })
+
+                        } else {
+                            return res.json({isAuth:false, success:false, message:'Такого GenId нет в базе данных'})
+                        }
+                    })
+
+
+                })
+    })
+})
+
 
 app.post('/api/login',(req,res)=>{
     User.findOne({'email':req.body.email},(err,user)=>{

@@ -27,6 +27,13 @@ export default function(state={},action){
                 // register:action.payload.isAuth,
                 // user:action.payload.isAuth
             }
+        case 'USER_CHANGE_PASSWORD':
+            return {
+                ...state,
+                register:action.payload, // success
+                // register:action.payload.isAuth,
+                // user:action.payload.isAuth
+            }
         case 'UPDATE_USER':
             return {
                 ...state,
