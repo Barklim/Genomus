@@ -61,7 +61,7 @@ cd client
 ### workflow
 
 	git add .
-	git commit -m '0.1.4 version'
+	git commit -m '0.1.5 version'
 	git push
 	git push heroku
 
