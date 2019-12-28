@@ -79,3 +79,8 @@ Thanks to all the maintainers and contributors who worked so hard on this releas
 - There is no such GenId in the database;
 - A user with such mail or GenId is already registered;
 - Changed qrcode Api to qrcode generator (qrcode.react);
+
+ ## 0.1.5 (December 28, 2019)
+
+- The problem with changing the password has been fixed.
+- When changing the password, the user always becomes normal.

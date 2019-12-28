@@ -828,7 +828,7 @@ app.post('/api/userChangePassword1',(req,res)=>{
 
                 user.save((err,doc)=>{
 
-                        console.log('USER 3');
+                console.log('USER 3');
                 console.log(err);
                 console.log(doc);
 
@@ -940,6 +940,9 @@ app.post('/api/userChangePassword',(req,res)=>{
                 console.log('USER 2');
                 console.log(err);
                 console.log(user2);
+                console.log(req.body);
+                if(user2.token !== req.body.token) return res.json({isAuth:false, success:false, message: 'Пароль не изменён, так как токен на сервере отличается от токена в базе' });
+                //if(req.body.newPassword !== req.body.doublePassword) return res.json({isAuth:false, success:false, message: 'Пароль не изменён, так как новый пароль повторен неправильно' });
                 // Тут пароль!
         if(err) return res.status(400).send(err);
 

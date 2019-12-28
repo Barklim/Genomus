@@ -16,8 +16,14 @@ class UserPassword extends PureComponent {
         doublePassword:'',
         genId:this.props.user.login.genId,
         role: 1,
-        error:''
+        error:'',
+        token: ''
     }
+
+        // возвращает куки с указанным name,
+        // или undefined, если ничего не найдено
+        //function getCookie(name) {
+        //submitForm = (e) =>
 
     // handleInputEmail = (event) => {
     //     this.setState({email:event.target.value})
@@ -86,7 +92,7 @@ class UserPassword extends PureComponent {
                 })
              console.log(request);
 
-            //this.props.history.push('/login')
+            this.props.history.push('/login')
         }
     }
 
@@ -97,6 +103,14 @@ class UserPassword extends PureComponent {
         console.log(this.props)
         console.log(this.state)
 
+        this.getCookie = (name) => {
+          let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+          ));
+          return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+        var currentToken = this.getCookie('auth');
+
         this.props.dispatch(userChangePassword({
             _id:this.state._id,
 
@@ -105,6 +119,7 @@ class UserPassword extends PureComponent {
             newPassword:this.state.newPassword,
             doublePassword:this.state.doublePassword,
             genId:this.state.genId,
+            token:currentToken
             //genId:this.state.password,
         },this.props.user.users));
         
