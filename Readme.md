@@ -12,7 +12,7 @@
 
 ## User info
 
-Это приложение представляет из себя...
+Приложение для проверки генетической совместимости.
 
 За изменениями можете следить здесь [changelog](https://github.com/Barklim/Genomus/blob/master/CHANGELOG.md),[ru - версия]( https://github.com/Barklim/Genomus/blob/master/CHANGELOG_RU.md).
 
