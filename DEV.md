@@ -61,7 +61,7 @@ cd client
 ### workflow
 
 	git add .
-	git commit -m '0.1.5 fix readme'
+	git commit -m 'test commit'
 	git push
 	git push heroku
 
@@ -71,6 +71,7 @@ cd client
 
 ## TОDО
 
+adbobe phonegap
 ! qr картинка должна генериться
 ! Добавить возможность делать пароли и сделать их посложнее (8 знаков, буквы+цифры). (на странице профиля)
 ! Выслать пароль на почту
