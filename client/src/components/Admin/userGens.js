@@ -15,6 +15,14 @@ class UserGens extends Component {
         }
     }
 
+    // renderQr = (value) =>  (//=== true ? false;
+    //     value === true ? false
+    //     )
+    // renderQr = value === true ? true : false
+    renderQr = (value) => (
+        value ?  "✔" : "✘"
+    )
+
     showUserGens = (user) => (
         user.userGens ? 
             user.userGens.map(item => (
@@ -54,13 +62,13 @@ class UserGens extends Component {
                     <td>{item.rule_27}</td>
                     <td>{item.rule_28}</td>
                     <td>{item.rule_29}</td>
+                    <td>{this.renderQr(item.templateQr)}</td>
                 </tr>
             ))
         :null
     )
 
     render() {
-        console.log(this.props);
         let user = this.props.user;
         return (
             <div className="user_posts">
@@ -99,6 +107,7 @@ class UserGens extends Component {
                             <th>28</th>
                             <th>29</th>
                             <th>30</th>
+                            <th>Qr</th>
                         </tr>
                     </thead>
                     <tbody>

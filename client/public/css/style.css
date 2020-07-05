@@ -176,6 +176,18 @@ header .navItem span {
     margin-top: 20px;
 }
 
+.rl_container .form_element_checkbox {
+    display: inline-block;
+    /*height: 40px;*/
+}
+/*.rl_container input*/
+input.element_checkbox {
+  display: block;
+  height: 20px;
+  /*margin: 4px 20px;*/
+  margin: 0px 20px -2px 20px;
+}
+
 
 .rl_container h2 {
     font-size: 33px;

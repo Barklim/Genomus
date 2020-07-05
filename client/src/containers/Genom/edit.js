@@ -38,6 +38,7 @@ class EditGen extends PureComponent {
             rule_27:'',
             rule_28:'',
             rule_29:'',
+            templateQr:false,
             genId:''
         }
     }
@@ -48,6 +49,14 @@ class EditGen extends PureComponent {
             ...this.state.formdata
         }
         newFormdata[name] = event.target.value
+
+        if ( name === 'templateQr' ) {
+            if ( this.state.formdata.templateQr === true ) {
+                 newFormdata[name] = false
+            } else {
+                newFormdata[name] = true
+            }
+        } 
 
         this.setState({
             formdata:newFormdata
@@ -76,6 +85,10 @@ class EditGen extends PureComponent {
 
     componentWillReceiveProps(nextProps){
         let gen = nextProps.gens.gen;
+
+        console.log('HIHIH')
+        console.log(gen)
+
         this.setState({
             formdata:{
                 _id:gen._id,
@@ -109,6 +122,7 @@ class EditGen extends PureComponent {
                 rule_27:gen.rule_27,
                 rule_28:gen.rule_28,
                 rule_29:gen.rule_29,
+                templateQr:gen.templateQr,
                 genId:gen.genId
             }
         })
@@ -151,6 +165,17 @@ class EditGen extends PureComponent {
                             placeholder="Enter genId"
                             value={this.state.formdata.genId}
                             onChange={(event)=>this.handleInput(event,'genId')}
+                        />
+                    </div>
+
+                    <h3 className="form_element_checkbox"> QR-code, выдан на руки </h3>
+
+                    <div className="form_element form_element_checkbox">
+                        <input
+                            type="checkbox"
+                            checked={this.state.formdata.templateQr}
+                            className="element_checkbox"
+                            onChange={(event)=>this.handleInput(event,'templateQr')}
                         />
                     </div>
 

@@ -61,7 +61,7 @@ cd client
 ### workflow
 
 	git add .
-	git commit -m 'test commit'
+	git commit -m 'Generation of a mark on the issuance of results'
 	git push
 	git push heroku
 

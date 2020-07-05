@@ -132,7 +132,11 @@ const genSchema = mongoose.Schema({
     rule_29:{
         type:Number,
         default:2
-    }
+    },
+    templateQr:{
+        type:Boolean,
+        default:false
+    },
 },{timestamps:true})
 
 const Gen = mongoose.model('Gen',genSchema )

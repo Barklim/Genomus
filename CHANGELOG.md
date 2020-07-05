@@ -84,3 +84,8 @@ Thanks to all the maintainers and contributors who worked so hard on this releas
 
 - The problem with changing the password has been fixed.
 - When changing the password, the user always becomes normal.
+
+ ## 1.0.1 (July 5, 2020)
+
+- Generation of a mark on the issuance of results
+- Generating a code entry note from a form.
