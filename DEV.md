@@ -28,7 +28,7 @@
 ## Hold start
 
 ### `run base`
-// d:
+d:
 In c:/Program Files/MongoDB/server/4.0/bin
 
 	mongod
