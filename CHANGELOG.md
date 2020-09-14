@@ -1,4 +1,9 @@
- ## 0.1.0 (April 28, 2019)
+## 0.1.1 (September 13, 2020)
+
+add internationalisation with i18n
+add Matherial ui
+
+## 0.1.0 (April 28, 2019)
 
 G-app App 0.1 brings some exciting new features including support for [Hooks](https://hooks-intro.html)!
 

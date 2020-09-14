@@ -19,33 +19,71 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
 //var testOfUndef = user.login.id;
 //console.log(user.login);
 //console.log(this.props.user);
+
+    const t = {
+        ru: {
+            home: 'Домой',
+            profile: 'Анкета',
+            comp: 'Совместимость',
+            users: 'Пользователи',
+            login: 'Войти',
+            reg: 'Регистрация',
+            gens: 'Гены',
+            mutation: 'Добавить мутацию',
+            logout: 'Выйти',
+            about: 'О проекте'
+        },
+        en: {
+            home: 'Home',
+            profile: 'Profile',
+            comp: 'Compatibility',
+            users: 'Users',
+            login: 'Login',
+            reg: 'Registration',
+            gens: 'Gens',
+            mutation: 'Add mutation',
+            logout: 'Logout',
+            about: 'About'
+        }
+    };
+
+    let homeText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.home : t.en.home;
+    let profileText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.profile : t.en.profile;
+    let compText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.comp : t.en.comp;
+    let usersText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.users : t.en.users;
+    let loginText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.login : t.en.login;
+    let regText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.reg : t.en.reg;
+    let gensText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.gens : t.en.gens;
+    let mutationText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.mutation : t.en.mutation;
+    let logoutText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.logout : t.en.logout;
+    let aboutText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.about : t.en.about;
         
     const items = [
         {
             type:'navItem',
             icon:'home',
-            text:'Домой',
+            text:homeText,
             link:'/',
             restricted:false
         },
         {
             type:'navItem',
             icon:'user-circle',
-            text:'Анкета',
+            text:profileText,
             link:'/user/user',
             restricted:true
         },
         {
             type:'navItem',
             icon:'venus-mars',
-            text:'Совместимость',
+            text:compText,
             link:'/user/compat',
             restricted:true
         },
         {
             type:'navItem',
             icon:'address-card',
-            text:'Пользователи',
+            text:usersText,
             link:'/user/register',
             restricted:true,
             exclude_for_user: true
@@ -53,7 +91,7 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
         {
             type:'navItem',
             icon:'angle-right',
-            text:'Войти',
+            text:loginText,
             link:'/login',
             restricted:false,
             exclude:true,
@@ -62,7 +100,7 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
         {
             type:'navItem',
             icon:'envelope-open',
-            text:'Регистрация',
+            text:regText,
             link:'/user/registerScreen',
             restricted:false,
             exclude:true,
@@ -79,7 +117,7 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
         {
             type:'navItem',
             icon:'edit',
-            text:'Гены',
+            text:gensText,
             link:'/user/user-gens',
             restricted:true,
             exclude_for_user: true
@@ -95,7 +133,7 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
         {
             type:'navItem',
             icon:'plus-circle',
-            text:'Добавить мутацию',
+            text:mutationText,
             link:'/gen/add',
             restricted:true,
             exclude_for_user: true
@@ -103,14 +141,14 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
         {
             type:'navItem',
             icon:'share-square',
-            text:'Выйти',
+            text:logoutText,
             link:'/user/logout',
             restricted:true,
         },
         {
             type:'navItem',
             icon:'question-circle',
-            text:'О проекте',
+            text:aboutText,
             link:'/about',
             restricted:false,
         }

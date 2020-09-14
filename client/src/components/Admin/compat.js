@@ -9,10 +9,13 @@ import BookItem from '../../widgetsUI/book_item';
 class Compat extends PureComponent {
     constructor(props) {
     super(props);
+
+    let messageText = localStorage.getItem('genomusLang') === 'ru' ? 'ожидание ⏰' : 'waiting ⏰';
+
     this.state = {
         otherGenId:'',
         ownerId:this.props.user.login.genId,
-        message:'ожидание ⏰',
+        message:messageText,
         showFlaw:'',
         delay: 300,
         result: "No result",
@@ -156,19 +159,22 @@ class Compat extends PureComponent {
         console.log(this.state);
         console.log(this.props);
 
+        let placeHolderText = localStorage.getItem('genomusLang') === 'ru' ? 'Введите Genid' : 'Enter Genid';
+        let troubleText = localStorage.getItem('genomusLang') === 'ru' ? 'проблема ✘' : 'problem ✘';
+
         return (
             <div className="user_container">
                 <div className="nfo">
                     <div className="rl_container article">
                         <form onSubmit={this.submitForm}>
                             <div>
-                            <span>Проверьте совместимость:</span>
+                            <span>{i18n.t('compatPage_span1')}</span>
                             </div>
 
                             <div className="form_element">
                                 <input 
                                     type='text' 
-                                    placeholder='Введите Genid'
+                                    placeholder=placeHolderText
                                     value={this.state.otherGenId}
                                     onChange={this.handleInputId}
                                 />
@@ -181,14 +187,14 @@ class Compat extends PureComponent {
                                 >Проверка
                             </button>
 
-                            <div className={this.state.message === 'проблема ✘' ? 'trouble':'okey'}>
+                            <div className={this.state.message === troubleText ? 'trouble':'okey'}>
                                 {this.state.message}
                             </div>
 
                             {
                                 this.state.showFlaw === true ? 
                                     <div className="warning-msg">
-                                        ⚠ GenId должен быть шестизначным! 
+                                        {i18n.t('compatPage_span2')} 
                                     </div>
                                 :null
                             }
@@ -196,7 +202,7 @@ class Compat extends PureComponent {
                             {
                                 this.state.messageInfo !== '' ? 
                                     <div className="warning-msg">
-                                        <span>Уточнение:<br/></span>
+                                        <span>{i18n.t('compatPage_span3')}<br/></span>
                                         Проблема с {this.state.messageInfo}
                                     </div>
                                 :null

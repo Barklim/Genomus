@@ -9,6 +9,8 @@ import ReduxThunk from 'redux-thunk';
 import reducers from './reducers'; 
 import Routes from './routes';
 
+import './i18n';
+
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware,ReduxThunk)(createStore)
 
 ReactDOM.render(
