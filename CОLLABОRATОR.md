@@ -82,3 +82,5 @@
 ### P.S.
 Существуют процедуры по аудиту по безопасности приложений, которые проводят специалисты в этой сфере.
 Личный пентест проводится по курсу (https://coursehunter.net/course/pentest-praktika-testirovaniya-na-proniknovenie-chast-1)
+Безопасность приложения по курсу (https://coursehunter.net/course/prodvinutye-patterny-bezopasnosti-react)
+Проверка безопасности (https://suay.ru/?p=3219)
