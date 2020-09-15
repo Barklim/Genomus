@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -100,8 +101,12 @@ class EditBook extends PureComponent {
         console.log(this.state);
         console.log(this.state.formdata);
         console.log(this.state.formdata.allowCheck);
+
         let messageAllowCheck;
-        messageAllowCheck = this.state.formdata.allowCheck ? 'Вы разрешили проверять совместимость' : 'Вы запретили проверять совместимость!';
+        let messageAllowCheckRu = this.state.formdata.allowCheck ? 'Вы разрешили проверять совместимость' : 'Вы запретили проверять совместимость!';
+        let messageAllowCheckEn = this.state.formdata.allowCheck ? 'You are allowed to check compatibility' : 'You have forbidden to check compatibility!';
+        messageAllowCheck = localStorage.getItem('genomusLang') === 'ru' ? messageAllowCheckRu : messageAllowCheckEn;
+
         let doMessage = function () {
             alert(messageAllowCheck);
         };
@@ -144,20 +149,20 @@ class EditBook extends PureComponent {
             <div className="rl_container article">
 
                 <form onSubmit={this.submitForm}>
-                    <h2>Настройки</h2>
+                    <h2>{i18n.t('settingsPage_p1')}</h2>
 
                     <div className="profile_table">
                     <table>
                         <thead>
                             <tr>
-                                <td>Разрешать проверять совместимость</td>
+                                <td>{i18n.t('settingsPage_p2')}</td>
                                 <th>
                                     <div>
                                         <input
                                             className="profile_checkbox"
                                             type="checkbox"
-                                            checked={this.state.formdata.allowCheck}
-                                            onChange={(event)=>this.handleInput(event,'allowCheck')}
+                                            checked={this.state.formdata.allowCompat}
+                                            onChange={(event)=>this.handleInput(event,'allowCompat')}
                                         />
                                     </div>
                                 </th>
@@ -166,7 +171,7 @@ class EditBook extends PureComponent {
                     </table>
                     </div>
 
-                    <button onClick={this.handleClick.bind(null, this.props)} type="submit">Принять</button>
+                    <button onClick={this.handleClick.bind(null, this.props)} type="submit">{i18n.t('settingsPage_p3')}</button>
 
                 </form>
             </div>

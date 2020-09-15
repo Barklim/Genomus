@@ -91,7 +91,10 @@ class AddBook extends Component {
 
     handleClick = (props) => {
         let messageAllowCheck;
-        messageAllowCheck = this.state.formdata.allowCheck ? 'Вы разрешили проверять совместимость' : 'Вы запретили проверять совместимость!';
+        let messageAllowCheckRu = this.state.formdata.allowCheck ? 'Вы разрешили проверять совместимость' : 'Вы запретили проверять совместимость!';
+        let messageAllowCheckEn = this.state.formdata.allowCheck ? 'You are allowed to check compatibility' : 'You have forbidden to check compatibility!';
+        messageAllowCheck = localStorage.getItem('genomusLang') === 'ru' ? messageAllowCheckRu : messageAllowCheckEn;
+
         let doMessage = function () {
             alert(messageAllowCheck);
             props.history.push('/user/compat');
@@ -121,8 +124,8 @@ class AddBook extends Component {
                                         <input
                                             className="profile_checkbox"
                                             type="checkbox"
-                                            checked={this.state.allowCheck}
-                                            onChange={(event)=>this.handleInput(event,'allowCheck')}
+                                            checked={this.state.allowCompat}
+                                            onChange={(event)=>this.handleInput(event,'allowCompat')}
                                         />
                                     </div>
                                 </th>

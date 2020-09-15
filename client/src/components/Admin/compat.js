@@ -143,7 +143,7 @@ class Compat extends PureComponent {
             // console.log(this.state);
             // console.log(this.props.user.login.genId);
             // console.log(this.state.otherGenId);
-            // this.props.dispatch(userCompatGens(this.props.user.login.genId, this.state.otherGenId))
+            this.props.dispatch(userCompatGens(this.props.user.login.genId, this.state.otherGenId))
 
             this.props.dispatch(getBookCompat(this.state.otherGenId))
         } 
