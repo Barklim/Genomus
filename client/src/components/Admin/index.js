@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -19,10 +20,6 @@ class User extends Component {
 
     componentWillReceiveProps(nextProps){
 
-        /*if ( nextProps.user.userPosts.length === 0 ) {*/
-        console.log('componentWillReceiveProps');
-        console.log(nextProps);
-        //console.log(nextProps.user.userPosts.length);
         if ( nextProps.user.userPosts === undefined ) {
             this.setState({visible: true}); 
             this.setState({
@@ -64,7 +61,7 @@ class User extends Component {
                         `/user/edit-post/${item._id}`
                     }>
                     <button type="submit">
-                        Настройки 
+                        {i18n.t('userUserPage_p1')}
                     </button>
 
                     </Link>
@@ -78,7 +75,7 @@ class User extends Component {
             
                 <Link to={`/user/add`}>        
                     <div className={this.state.visible}>
-                        <button type="submit">Настройки</button>
+                        <button type="submit">{i18n.t('userUserPage_p1')}</button>
                     </div>
                 </Link>
         :null
@@ -109,7 +106,7 @@ class User extends Component {
 
                 <Link to={`/user/profile`}>
                     <div>
-                    <button type="submit">Генетический профиль</button>
+                    <button type="submit">{i18n.t('userUserPage_p2')}</button>
                     </div>
                 </Link>
 
@@ -118,7 +115,7 @@ class User extends Component {
                 {this.showUserConfig(user)}
 
                 <Link to={`/user/userPassword`}>
-                    <button type="submit">Изменить пароль</button>
+                    <button type="submit">{i18n.t('userUserPage_p3')}</button>
                 </Link>
     
                 </div>

@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getUserGens } from '../../actions';
@@ -72,7 +73,7 @@ class UserGens extends Component {
         let user = this.props.user;
         return (
             <div className="user_posts">
-                <h4>Все мутации (кликните на genId):</h4>
+                <h4>{i18n.t('userGensPage_p1')}</h4>
                 <table>
                     <thead>
                         <tr>

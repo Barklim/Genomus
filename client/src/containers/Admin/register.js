@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { getUsers, userRegister } from '../../actions';
@@ -95,15 +96,19 @@ class Register extends PureComponent {
 
     render() {
         let user = this.props.user;
+        let emailText = localStorage.getItem('genomusLang') === 'ru' ? 'Ввести Email' : 'Enter email';
+        let pasText = localStorage.getItem('genomusLang') === 'ru' ? 'Ввести genId' : 'Enter genId';
+        let roleText = localStorage.getItem('genomusLang') === 'ru' ? 'Ввести Role' : 'Enter role';
+
         return (
             <div className="rl_container">
                 <form onSubmit={this.submitForm}>
-                    <h2>Создать пользователя</h2>
+                    <h2>{i18n.t('addUserPage_p1')}</h2>
 
                     <div className="form_element">
                         <input
                             type="email"
-                            placeholder="Ввести Email"
+                            placeholder={emailText}
                             value={this.state.email}
                             onChange={this.handleInputEmail}
                          />
@@ -112,7 +117,7 @@ class Register extends PureComponent {
                     <div className="form_element">
                         <input
                             type="string"
-                            placeholder="Ввести genId"
+                            placeholder={pasText}
                             value={this.state.password}
                             onChange={this.handleInputPassword}
                          />
@@ -121,20 +126,20 @@ class Register extends PureComponent {
                     <div className="form_element">
                         <input
                             type="number"
-                            placeholder="Ввести Role"
+                            placeholder={roleText}
                             value={this.state.role}
                             onChange={this.handleInputRole}
                          />
                     </div>
 
-                    <button type="submit">Добавить</button>
+                    <button type="submit">{i18n.t('addUserPage_p2')}</button>
                     <div className="error">
                         {this.state.error}
                     </div>
 
                 </form>
                 <div className="current_users">
-                    <h4>Текущие юзеры (кликните по genId):</h4>
+                    <h4>{i18n.t('addUserPage_p3')}</h4>
                     <table>
                         <thead>
                             <tr>

@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -108,13 +109,13 @@ class AddBook extends Component {
         return (
             <div className="rl_container article">
                 <form onSubmit={this.submitForm}>
-                    <h2>Настройки</h2>
+                    <h2>{i18n.t('settingsPage_p1')}</h2>
                     
                     <div className="profile_table">
                     <table>
                         <thead>
                             <tr>
-                                <td>Разрешать проверять совместимость</td>
+                                <td>{i18n.t('settingsPage_p2')}</td>
                                 <th>
                                     <div>
                                         <input
@@ -130,7 +131,7 @@ class AddBook extends Component {
                     </table>
                     </div>
 
-                    <button onClick={this.handleClick.bind(null, this.props)} type="submit">Сохранить</button>
+                    <button onClick={this.handleClick.bind(null, this.props)} type="submit">{i18n.t('settingsPage_p3')}</button>
                 </form>
             </div>
         );

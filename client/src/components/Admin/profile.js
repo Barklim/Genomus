@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getProfileGen } from '../../actions';
@@ -9,6 +10,8 @@ class Profile extends Component {
     }
 
     componentWillReceiveProps(nextProps){
+
+        let NAText = localStorage.getItem('genomusLang') === 'ru' ? 'н / д' : 'n / a';
 
         if( nextProps.user.profileGen[0] === undefined ){
             
@@ -31,7 +34,7 @@ class Profile extends Component {
               //   profileGen1 = 'н/д';
               //   break;
               default:
-                nextProps.user.profileGen[0].rule_0 = 'н/д';
+                nextProps.user.profileGen[0].rule_0 = NAText;
                 break;
             }
 
@@ -46,7 +49,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_1 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_1 = 'н/д';
+                nextProps.user.profileGen[0].rule_1 = NAText;
                 break;
             }
 
@@ -61,7 +64,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_2 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_2 = 'н/д';
+                nextProps.user.profileGen[0].rule_2 = NAText;
                 break;
             }
 
@@ -76,7 +79,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_3 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_3 = 'н/д';
+                nextProps.user.profileGen[0].rule_3 = NAText;
                 break;
             }
 
@@ -91,7 +94,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_4 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_4 = 'н/д';
+                nextProps.user.profileGen[0].rule_4 = NAText;
                 break;
             }
 
@@ -106,7 +109,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_5 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_5 = 'н/д';
+                nextProps.user.profileGen[0].rule_5 = NAText;
                 break;
             }
 
@@ -121,7 +124,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_6 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_6 = 'н/д';
+                nextProps.user.profileGen[0].rule_6 = NAText;
                 break;
             }
 
@@ -136,7 +139,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_7 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_7 = 'н/д';
+                nextProps.user.profileGen[0].rule_7 = NAText;
                 break;
             }
 
@@ -151,7 +154,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_8 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_8 = 'н/д';
+                nextProps.user.profileGen[0].rule_8 = NAText;
                 break;
             }
 
@@ -166,7 +169,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_9 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_9 = 'н/д';
+                nextProps.user.profileGen[0].rule_9 = NAText;
                 break;
             }
 
@@ -181,7 +184,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_10 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_10 = 'н/д';
+                nextProps.user.profileGen[0].rule_10 = NAText;
                 break;
             }
 
@@ -196,7 +199,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_11 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_11 = 'н/д';
+                nextProps.user.profileGen[0].rule_11 = NAText;
                 break;
             }
 
@@ -211,7 +214,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_12 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_12 = 'н/д';
+                nextProps.user.profileGen[0].rule_12 = NAText;
                 break;
             }
 
@@ -226,7 +229,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_13 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_13 = 'н/д';
+                nextProps.user.profileGen[0].rule_13 = NAText;
                 break;
             }
 
@@ -241,7 +244,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_14 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_14 = 'н/д';
+                nextProps.user.profileGen[0].rule_14 = NAText;
                 break;
             }
 
@@ -256,7 +259,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_15 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_15 = 'н/д';
+                nextProps.user.profileGen[0].rule_15 = NAText;
                 break;
             }
 
@@ -271,7 +274,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_16 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_16 = 'н/д';
+                nextProps.user.profileGen[0].rule_16 = NAText;
                 break;
             }
 
@@ -286,7 +289,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_17 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_17 = 'н/д';
+                nextProps.user.profileGen[0].rule_17 = NAText;
                 break;
             }
 
@@ -301,7 +304,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_18 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_18 = 'н/д';
+                nextProps.user.profileGen[0].rule_18 = NAText;
                 break;
             }
 
@@ -316,7 +319,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_19 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_19 = 'н/д';
+                nextProps.user.profileGen[0].rule_19 = NAText;
                 break;
             }
 
@@ -331,7 +334,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_20 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_20 = 'н/д';
+                nextProps.user.profileGen[0].rule_20 = NAText;
                 break;
             }
 
@@ -346,7 +349,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_21 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_21 = 'н/д';
+                nextProps.user.profileGen[0].rule_21 = NAText;
                 break;
             }
 
@@ -361,7 +364,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_22 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_22 = 'н/д';
+                nextProps.user.profileGen[0].rule_22 = NAText;
                 break;
             }
 
@@ -376,7 +379,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_23 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_23 = 'н/д';
+                nextProps.user.profileGen[0].rule_23 = NAText;
                 break;
             }
 
@@ -391,7 +394,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_24 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_24 = 'н/д';
+                nextProps.user.profileGen[0].rule_24 = NAText;
                 break;
             }
 
@@ -406,7 +409,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_25 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_25 = 'н/д';
+                nextProps.user.profileGen[0].rule_25 = NAText;
                 break;
             }
 
@@ -421,7 +424,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_26 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_26 = 'н/д';
+                nextProps.user.profileGen[0].rule_26 = NAText;
                 break;
             }
 
@@ -436,7 +439,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_27 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_27 = 'н/д';
+                nextProps.user.profileGen[0].rule_27 = NAText;
                 break;
             }
 
@@ -451,7 +454,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_28 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_28 = 'н/д';
+                nextProps.user.profileGen[0].rule_28 = NAText;
                 break;
             }
 
@@ -466,7 +469,7 @@ class Profile extends Component {
                 nextProps.user.profileGen[0].rule_29 = 2;
                 break;
               default:
-                nextProps.user.profileGen[0].rule_29 = 'н/д';
+                nextProps.user.profileGen[0].rule_29 = NAText;
                 break;
             }
 
@@ -553,7 +556,7 @@ class Profile extends Component {
         //console.log(user)
         // user ?
         data ?
-            <p>Информация отсутствует в базе данных.</p>
+            <p>{i18n.t('profilePage_p1')}</p>
         : null
     )
 
@@ -565,8 +568,8 @@ class Profile extends Component {
 
                     <tr>
                         <td>Num</td>
-                        <td class='fixCell'>Значение</td>
-                        <td>Название</td>
+                        <td class='fixCell'>{i18n.t('profilePage_p2')}</td>
+                        <td>{i18n.t('profilePage_p9')}</td>
                     </tr>
 
                     <tr>
@@ -776,19 +779,19 @@ class Profile extends Component {
 
         <div className="user_container">
             <div className="nfo">
-                <h2>Данные о Ваших генах:</h2>
+                <h2>{i18n.t('profilePage_p3')}</h2>
     
                 <div>
-                    <span> Замечание:</span>
+                    <span>{i18n.t('profilePage_p4')}</span>
                 </div>
-                <p>Значение н/д, означает нет данных. Ожидайте, в ближайшем времени поле будет заполено администратором</p>
-                <p>Наличие у Вас и Вашего партнёра одинаковой мутации ведёт к высокой вероятности наследования ребёнком врождённого заболевания.</p>
+                <p>{i18n.t('profilePage_p5')}</p>
+                <p>{i18n.t('profilePage_p6')}</p>
 
                 <div>
-                    <span>Ваши результаты:</span>
+                    <span>{i18n.t('profilePage_p7')}</span>
                 </div>
 
-                <h4>Таблица мутаций:</h4>
+                <h4>{i18n.t('profilePage_p8')}</h4>
                 <table>
                     {this.showUserPosts(user)}
                 </table>

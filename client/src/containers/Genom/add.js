@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addGen, clearNewGen } from '../../actions'
@@ -55,7 +56,7 @@ class AddGen extends Component {
     showNewGen = (gen) => (
         gen.post ?
             <div className="conf_link">
-                Вы создали новую мутацию {this.state.formdata.genId}!! 
+                {i18n.t('addGenPage_p8')} {this.state.formdata.genId}!! 
             </div>
         :null
     )
@@ -83,9 +84,9 @@ class AddGen extends Component {
         return (
             <div className="rl_container article">
                 <form onSubmit={this.submitForm}>
-                    <h2>Создать мутацию</h2>
+                    <h2>{i18n.t('addGenPage_p1')}</h2>
 
-                    <h3>Генокод: GenId</h3>
+                    <h3>{i18n.t('addGenPage_p2')}</h3>
 
                     <div className="form_element">
                         <input
@@ -96,7 +97,7 @@ class AddGen extends Component {
                         />
                     </div>
 
-                    <h3>Мутации:</h3>
+                    <h3>{i18n.t('addGenPage_p3')}</h3>
 
                     <h3>1 : CFTR: 3944delGT  </h3>
 
@@ -428,7 +429,7 @@ class AddGen extends Component {
                         />
                     </div>
 
-                    <button type="submit">Добавить</button>
+                    <button type="submit">{i18n.t('addGenPage_p4')}</button>
 
                     {
                         this.props.gens.newgen ? 
@@ -436,9 +437,9 @@ class AddGen extends Component {
                         :null
                     }
 
-                    <h2>Памятка:</h2>
-                    <h5>0 - мутация/ген"не плохой"</h5>
-                    <h5>1 - мутация/ген "плохой"</h5>
+                    <h2>{i18n.t('addGenPage_p5')}</h2>
+                    <h5>{i18n.t('addGenPage_p6')}</h5>
+                    <h5>{i18n.t('addGenPage_p7')}</h5>
                 
                 </form>
             </div>

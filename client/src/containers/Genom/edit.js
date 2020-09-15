@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -155,9 +156,9 @@ class EditGen extends PureComponent {
                 }
 
                 <form onSubmit={this.submitForm}>
-                    <h2>Редактировать</h2>
+                    <h2>{i18n.t('editGenPage_p1')}</h2>
 
-                    <h3>Генокод: GenId</h3>
+                    <h3>{i18n.t('editGenPage_p2')}</h3>
 
                     <div className="form_element">
                         <input
@@ -168,7 +169,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3 className="form_element_checkbox"> QR-code, выдан на руки </h3>
+                    <h3 className="form_element_checkbox">{i18n.t('editGenPage_p3')}</h3>
 
                     <div className="form_element form_element_checkbox">
                         <input
@@ -179,7 +180,7 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <h3>Мутации:</h3>
+                    <h3>{i18n.t('editGenPage_p4')}</h3>
 
                     <h3>1 : CFTR: 3944delGT  </h3>
 
@@ -511,13 +512,13 @@ class EditGen extends PureComponent {
                         />
                     </div>
 
-                    <button type="submit">Править</button>
+                    <button type="submit">{i18n.t('editGenPage_p5')}</button>
 
                     <div className="delete_post">
                         <div className="button"
                             onClick={this.deletePost}
                         >
-                            Удалить
+                            {i18n.t('editGenPage_p6')}
                         </div>
                     </div>
                 </form>

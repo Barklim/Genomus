@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { userRegisterScreen } from '../../actions';
@@ -63,7 +64,8 @@ class RegisterScreen extends PureComponent {
                 //error:'Ошибка,попробуйте еще.'
             //error: nextProps.user.register.message
             })
-            alert('Вы успешно зарегестрировались! \nВойдите пожалуйста в приложение');
+            let alertText = localStorage.getItem('genomusLang') === 'ru' ? 'Вы успешно зарегестрировались! \n Войдите пожалуйста в приложение' : 'You have successfully registered! \n Please enter the application';
+            alert(alertText);
             this.props.history.push('/login');
         }
     }
@@ -87,16 +89,19 @@ class RegisterScreen extends PureComponent {
     render() {
         //let user = this.props.user;
         // console.log(this.props);
+        let emailText = localStorage.getItem('genomusLang') === 'ru' ? 'Введите email' : 'Enter your email';
+        let pasText = localStorage.getItem('genomusLang') === 'ru' ? 'Введите genId' : 'Enter your genId';
+
         return (
             <div className="rl_container">
                 <form onSubmit={this.submitForm}>
-                    <h2> Регистрация</h2>
-                    <h5>Введите настоящие данные</h5>
+                    <h2>{i18n.t('regPage_p1')}</h2>
+                    <h5>{i18n.t('regPage_p2')}</h5>
 
                     <div className="form_element">
                         <input
                             type="email"
-                            placeholder="Введите Email"
+                            placeholder={emailText}
                             value={this.state.email}
                             onChange={this.handleInputEmail}
                          />
@@ -105,13 +110,13 @@ class RegisterScreen extends PureComponent {
                     <div className="form_element">
                         <input
                             type="password"
-                            placeholder="Введите genId"
+                            placeholder={pasText}
                             value={this.state.password}
                             onChange={this.handleInputPassword}
                          />
                     </div>
 
-                    <button type="submit">Выполнить</button>
+                    <button type="submit">{i18n.t('regPage_p3')}</button>
                     <div className="error">
                         {this.state.error}
                     </div>

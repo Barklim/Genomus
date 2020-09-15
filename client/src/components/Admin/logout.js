@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React from 'react';
 import axios from 'axios';
 
@@ -14,7 +15,7 @@ const Logout = (props) => {
     return (
         <div className="logout_container">
             <h1>
-                Увидимся позже!
+                {i18n.t('logoutPage')}
             </h1>
         </div>
     );

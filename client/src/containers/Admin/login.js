@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions';
@@ -55,16 +56,19 @@ class Login extends Component {
     }
 
     render() {
+        let emailText = localStorage.getItem('genomusLang') === 'ru' ? 'Введите email' : 'Enter your email';
+        let pasText = localStorage.getItem('genomusLang') === 'ru' ? 'Введите genId' : 'Enter your genId';
         let user = this.props.user;
+
         return (
             <div className="rl_container">
                 <form onSubmit={this.submitForm}>
-                    <h2>Войти:</h2>
+                    <h2>{i18n.t('loginPage_p1')}</h2>
 
                     <div className="form_element">
                         <input 
                             type="email"
-                            placeholder="Введите email"
+                            placeholder={emailText}
                             value={this.state.email}
                             onChange={this.handleInputEmail}
                         />
@@ -73,13 +77,13 @@ class Login extends Component {
                     <div className="form_element">
                         <input 
                             type="password"
-                            placeholder="Введите genId"
+                            placeholder={pasText}
                             value={this.state.password}
                             onChange={this.handleInputPassword}
                         />
                     </div>
 
-                    <button type="submit">Войти</button>
+                    <button type="submit">{i18n.t('loginPage_p2')}</button>
 
                     <div className="error">
                     {
@@ -90,7 +94,7 @@ class Login extends Component {
                     </div>
 
                     <Link to={`/user/registerScreen`} >
-                        <button type="">Регистрация</button>
+                        <button type="">{i18n.t('loginPage_p3')}</button>
                     </Link>
 
                 </form>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getAllow, getBookCompat, userCompatGens } from '../../actions'; // getUserGen, getOtherGen
 import QrReader from "react-qr-reader";
 import { Link } from 'react-router-dom';
+import i18n from "i18next";
 
 import BookItem from '../../widgetsUI/book_item';
 
@@ -65,6 +66,10 @@ class Compat extends PureComponent {
 
     componentWillReceiveProps(nextProps){
 
+        let messageText = localStorage.getItem('genomusLang') === 'ru' ? 'ожидание ⏰' : 'waiting ⏰';
+        let problemText = localStorage.getItem('genomusLang') === 'ru' ? 'проблема ✘' : 'problem ✘';
+        let goodText = localStorage.getItem('genomusLang') === 'ru' ? 'все хорошо ✔' : 'things are good ✔';
+
         // console.log("MEXT");
         // console.log(nextProps);
         // console.log(nextProps.user.userCompatGens);
@@ -87,11 +92,11 @@ class Compat extends PureComponent {
             this.setState({allowMessage: true})
         } else {
             this.setState({allowMessage: false})
-            this.setState({message:'ожидание ⏰'})
+            this.setState({message:messageText})
         }
 
         if(nextProps.user.allow === undefined || nextProps.user.userCompatGens === undefined ){ // nextProps.user.otherGen === undefined ||
-            this.setState({message:'ожидание ⏰'})
+            this.setState({message:messageText})
         } else {
 
         // console.log("MEXT2");
@@ -101,16 +106,16 @@ class Compat extends PureComponent {
             if ( nextProps.user.userCompatGens.message === 'bad' ) // п0иск пр0блемы
             {
                 if (this.state.allowCheck === true) {
-                    this.setState({message:'проблема ✘'})
+                    this.setState({message:problemText})
                 }
             } else {
                 if (this.state.allowCheck === true) {
-                    this.setState({message:'все хорошо ✔'})  
+                    this.setState({message:goodText})  
                 }
             }
 
             if ( nextProps.user.userCompatGens.message === 'check' )  {
-                this.setState({message:'ожидание ⏰'})
+                this.setState({message:messageText})
             }
         }
     }
@@ -122,8 +127,10 @@ class Compat extends PureComponent {
     handleCheckup(e) {
         e.preventDefault();
 
+        let messageText = localStorage.getItem('genomusLang') === 'ru' ? 'ожидание ⏰' : 'waiting ⏰';
+
         this.setState({result: 'No result' })
-        this.setState({message:'ожидание ⏰'})
+        this.setState({message:messageText})
         this.setState({showFlaw:''}); 
         if (this.state.otherGenId.length !== 6 ) { 
             this.setState({showFlaw:true});
@@ -132,18 +139,18 @@ class Compat extends PureComponent {
         if ( this.state.otherGenId.length === 6 ) {
             this.props.dispatch(getAllow(this.state.otherGenId))
 
-            console.log("ATTEMTIM !!!");
-            console.log(this.state);
-            console.log(this.props.user.login.genId);
-            console.log(this.state.otherGenId);
-            this.props.dispatch(userCompatGens(this.props.user.login.genId, this.state.otherGenId))
+            // console.log("ATTEMTIM !!!");
+            // console.log(this.state);
+            // console.log(this.props.user.login.genId);
+            // console.log(this.state.otherGenId);
+            // this.props.dispatch(userCompatGens(this.props.user.login.genId, this.state.otherGenId))
 
             this.props.dispatch(getBookCompat(this.state.otherGenId))
         } 
 
-        console.log("handleCheckup");
-        console.log(this.state);
-        console.log(this.props);
+        // console.log("handleCheckup");
+        // console.log(this.state);
+        // console.log(this.props);
     }
     btnError(err) {
         console.error(err);
@@ -155,9 +162,9 @@ class Compat extends PureComponent {
 
     render() {
         let user = this.props.user;
-        console.log("remder");
-        console.log(this.state);
-        console.log(this.props);
+        // console.log("remder");
+        // console.log(this.state);
+        // console.log(this.props);
 
         let placeHolderText = localStorage.getItem('genomusLang') === 'ru' ? 'Введите Genid' : 'Enter Genid';
         let troubleText = localStorage.getItem('genomusLang') === 'ru' ? 'проблема ✘' : 'problem ✘';
@@ -174,7 +181,7 @@ class Compat extends PureComponent {
                             <div className="form_element">
                                 <input 
                                     type='text' 
-                                    placeholder=placeHolderText
+                                    placeholder={placeHolderText}
                                     value={this.state.otherGenId}
                                     onChange={this.handleInputId}
                                 />
@@ -184,7 +191,7 @@ class Compat extends PureComponent {
                                 type="submit"
                                 onClick={(e) => this.handleCheckup(e)}
                                 onError={this.btnError}
-                                >Проверка
+                                >{i18n.t('compatPage_span4')}
                             </button>
 
                             <div className={this.state.message === troubleText ? 'trouble':'okey'}>
@@ -203,7 +210,7 @@ class Compat extends PureComponent {
                                 this.state.messageInfo !== '' ? 
                                     <div className="warning-msg">
                                         <span>{i18n.t('compatPage_span3')}<br/></span>
-                                        Проблема с {this.state.messageInfo}
+                                        {i18n.t('compatPage_span2')} {this.state.messageInfo}
                                     </div>
                                 :null
                             }

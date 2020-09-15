@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { userChangePassword } from '../../actions';
@@ -128,15 +129,19 @@ class UserPassword extends PureComponent {
     render() {
         //let user = this.props.user;
         // console.log(this.props);
+        let oldPasText = localStorage.getItem('genomusLang') === 'ru' ? 'Старый пароль' : 'Old Password';
+        let newPasText = localStorage.getItem('genomusLang') === 'ru' ? 'Новый пароль' : 'New password';
+        let confirmText = localStorage.getItem('genomusLang') === 'ru' ? 'Повторите пароль' : 'Confirm password';
+
         return (
             <div className="rl_container">
                 <form onSubmit={this.submitForm}>
-                    <h2>Пароль</h2>
+                    <h2>{i18n.t('changePasPage_p1')}</h2>
 
                     <div className="form_element">
                         <input
                             type="password"
-                            placeholder="Старый пароль"
+                            placeholder={oldPasText}
                             value={this.state.password}
                             onChange={this.handleInputPassword}
                          />
@@ -145,7 +150,7 @@ class UserPassword extends PureComponent {
                     <div className="form_element">
                         <input
                             type="password"
-                            placeholder="Новый пароль"
+                            placeholder={newPasText}
                             value={this.state.newPassword}
                             onChange={this.handleInputNewPassword}
                          />
@@ -154,20 +159,20 @@ class UserPassword extends PureComponent {
                     <div className="form_element">
                         <input
                             type="password"
-                            placeholder="Повторите пароль"
+                            placeholder={confirmText}
                             value={this.state.doublePassword}
                             onChange={this.handleInputDoublePassword}
                          />
                     </div>
 
-                    <button type="submit">Измените пароль</button>
+                    <button type="submit">{i18n.t('changePasPage_p2')}</button>
                     <div className="error">
                         {this.state.error}
                     </div>
 
-                    <h5>Когда вы в первый раз заходите</h5>
-                    <h5>в приложение, вашим паролем </h5>
-                    <h5>является ваш GenId</h5>
+                    <h5>{i18n.t('changePasPage_p3')}</h5>
+                    <h5>{i18n.t('changePasPage_p4')}</h5>
+                    <h5>{i18n.t('changePasPage_p5')}</h5>
 
                 </form>
             </div>

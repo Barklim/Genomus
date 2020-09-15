@@ -1,3 +1,4 @@
+import i18n from "i18next";
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -72,8 +73,8 @@ class EditGenom extends PureComponent {
              {
                     users.updateUser ? 
                         <div className="edit_confirm">
-                            юзер обновлен , <Link to={`/user/register`}>
-                                Кликните сюда, чтобы посмотреть
+                            {i18n.t('editUsersPage_p4')} , <Link to={`/user/register`}>
+                                {i18n.t('editUsersPage_p5')}
                             </Link>
                         </div>
                     :null
@@ -81,14 +82,14 @@ class EditGenom extends PureComponent {
                 {
                     users.userDeleted ? 
                         <div className="red_tag">
-                            Пользователь удалён
+                            {i18n.t('editUsersPage_p6')}
                             {this.redirectUser()}
                         </div>
                     :null
                 }
             
                 <form onSubmit={this.submitForm}>
-                    <h2>Редактировать</h2>
+                    <h2>{i18n.t('editUsersPage_p1')}</h2>
 
                     <p>GenId:</p>
 
@@ -101,13 +102,13 @@ class EditGenom extends PureComponent {
                         />
                     </div>
 
-                    <button type="submit">Править</button>
+                    <button type="submit">{i18n.t('editUsersPage_p2')}</button>
 
                     <div className="delete_post">
                         <div className="button"
                             onClick={this.deleteUser}
                         >
-                            Удалить
+                            {i18n.t('editUsersPage_p3')}
                         </div>
                     </div>
                 </form>
