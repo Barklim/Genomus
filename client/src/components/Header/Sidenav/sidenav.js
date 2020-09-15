@@ -74,7 +74,7 @@ const Nav = (props) => {
     console.log(state)
     i18n.changeLanguage(event.currentTarget.value);
     localStorage.setItem('genomusLang', event.currentTarget.value);
-    // window.location.reload()
+    window.location.reload()
 
     setState({
       ...state,
