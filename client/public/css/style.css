@@ -666,3 +666,24 @@ margin-right: 10px;  */
   text-overflow: ellipsis;
   max-width: 10vw;
 }
+
+.githubLink {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+}
+
+.logoIgem {
+  width: 30px;
+}
+.logoGithub {
+  width: 25px;
+  padding-left: 10px;
+}
+.version {
+    display: inline-block;
+    /* height: 100%; */
+    float: right;
+    top: 8px;
+    position: relative;
+}

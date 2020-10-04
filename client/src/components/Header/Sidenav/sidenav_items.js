@@ -2,23 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
+import logo from './logo.png';
+import igem from './igem4.png';
+import versionObj from './../../../utils/version.js';
 
 const SidenavItems = ({user}) => {
-
-//componentWillMount() {
-//    this.props.dispatch(getUserRoleTest(${user}))
-//}
-
-/*
-let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
-            .then(response =>{
-                //sconsole.log(user.login.id);
-                response.data.role
-            })
-*/
-//var testOfUndef = user.login.id;
-//console.log(user.login);
-//console.log(this.props.user);
 
     const t = {
         ru: {
@@ -31,7 +19,8 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
             gens: 'Гены',
             mutation: 'Добавить мутацию',
             logout: 'Выйти',
-            about: 'О проекте'
+            about: 'О проекте',
+            version: 'Версия'
         },
         en: {
             home: 'Home',
@@ -40,12 +29,16 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
             users: 'Users',
             login: 'Login',
             reg: 'Registration',
-            gens: 'Gens',
+            gens: 'Genes',
             mutation: 'Add mutation',
             logout: 'Logout',
-            about: 'About'
+            about: 'About',
+            version: 'Version'
         }
     };
+
+    const ruChangelog = 'https://github.com/Barklim/Genomus/blob/master/CHANGELOG_RU.md';
+    const enChangelog = 'https://github.com/Barklim/Genomus/blob/master/CHANGELOG.md';
 
     let homeText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.home : t.en.home;
     let profileText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.profile : t.en.profile;
@@ -57,6 +50,8 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
     let mutationText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.mutation : t.en.mutation;
     let logoutText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.logout : t.en.logout;
     let aboutText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.about : t.en.about;
+    let versionText = localStorage.getItem('genomusLang') === 'ru' ? t.ru.version : t.en.version;
+    let versionLink = localStorage.getItem('genomusLang') === 'ru' ? ruChangelog : enChangelog;
         
     const items = [
         {
@@ -163,28 +158,10 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
         </div>
     )
 
-/*
     const showItems = () => (
         user.login ?
             items.map((item,i)=>{
                 if(user.login.isAuth) {
-                    return !item.exclude ?
-                        element(item,i)
-                    :null
-                } else { 
-                    return !item.restricted ?
-                        element(item,i)
-                    :null
-                }
-            })
-        :null
-    )
-    */
-    const showItems = () => (
-        user.login ?
-            items.map((item,i)=>{
-                if(user.login.isAuth) {
-                    //console.log(user.login.role);
                     if (user.login.role === 0) {
                         return !item.exclude ?
                             element(item,i)
@@ -205,6 +182,32 @@ let response = axios.get(`/api/getUser?id=5bdff2418f4ec721b41264e0`)
     return (
         <div>
             {showItems()}
+            <div className='navItem githubLink'>
+                <a href='https://2020.igem.org/Team:Moscow-Russia/Attributions'>
+                    <img 
+                        alt='logoIgem' 
+                        src={igem} 
+                        className="logoIgem"
+                    />
+                </a>
+                <a href='https://github.com/Barklim/Genomus'>
+                    <img 
+                        alt='logoGithub' 
+                        src={logo} 
+                        className="logoGithub"
+                    />
+                </a>
+                <span>
+                    <a 
+                        href={versionLink}
+                        className="version"
+                    >
+                        <div > 
+                            {versionText} {versionObj.versionApp}
+                        </div>
+                    </a>
+                </span>
+            </div>
         </div>
     );
 };
@@ -216,4 +219,3 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(SidenavItems)
-

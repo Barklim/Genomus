@@ -51,7 +51,7 @@ class About extends Component {
                             <img 
                                 alt='robots' 
                                 src={`https://www.denso-wave.com/imageupd/3217/14078_contents4.jpg`} 
-                                className="qr"
+                                className='qr'
                             />
                         :null
                     }

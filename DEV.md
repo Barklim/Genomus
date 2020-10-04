@@ -61,7 +61,7 @@ cd client
 ### workflow
 
 	git add .
-	git commit -m 'Generation of a mark on the issuance of results'
+	git commit -m '0.1.2 add versions in side-menu'
 	git push
 	git push heroku
 
@@ -71,7 +71,10 @@ cd client
 
 ## TОDО
 
-добавить pwa, logo, проверить работает ли обновление.
+добавить pwa, проверить работает ли обновление.
+logo
+шафл chagelog.md
+
 Перейти на новую монго базу! (Выгрузить как то базу и перезалить)
   how export mongo heroku
 сделать тестовых юзеров геному на тестовой базе с таблицей
@@ -280,6 +283,9 @@ https://www.shutterstock.com/ru/search?searchterm=helix&search_source=base_searc
 https://www.flaticon.com/search?word=helix
 https://dribbble.com/search?q=helix
 https://pixabay.com/images/search/helix/
+
+image stock
+https://www.subpng.com/free-png/www.html
 
 
 tinder-clone-nodeJS:

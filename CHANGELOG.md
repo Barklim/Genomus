@@ -1,8 +1,3 @@
-## 0.1.1 (September 13, 2020)
-
-add internationalisation with i18n
-add Matherial ui
-
 ## 0.1.0 (April 28, 2019)
 
 G-app App 0.1 brings some exciting new features including support for [Hooks](https://hooks-intro.html)!
@@ -90,7 +85,16 @@ Thanks to all the maintainers and contributors who worked so hard on this releas
 - The problem with changing the password has been fixed.
 - When changing the password, the user always becomes normal.
 
- ## 1.0.1 (July 5, 2020)
+ ## 0.0.1 (July 5, 2020)
 
 - Generation of a mark on the issuance of results
 - Generating a code entry note from a form.
+
+ ## 0.1.1 (September 13, 2020)
+
+ - add internationalisation with i18n
+ - add Matherial ui
+
+ ## 0.1.2 (October 5, 2020)
+
+ - add versions in menu.
