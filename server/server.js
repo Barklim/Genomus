@@ -1134,13 +1134,6 @@ if(process.env.NODE_ENV === 'production'){
     })
 }
 
-
-// const HOST = process.env.HOST || '0.0.0.0';
-// const port = process.env.PORT|| 80;
-// app.listen(port,()=>{
-//     console.log(`SERVER RUNNNING`)
-// })
-
 const port = process.env.PORT || 3001;
 app.listen(port,()=>{
     console.log(`SERVER RUNNNING`)
