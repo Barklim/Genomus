@@ -256,20 +256,21 @@ delete:
 
 генерад0р
 https://www.the-qrcode-generator.com/
-..
+
 Animated page transitions with React Router 4, ReactTransitionGroup and Animated
 https://hackernoon.com/animated-page-transitions-with-react-router-4-reacttransitiongroup-and-animated-1ca17bd97a1a
-..
+
 Простая валидация форм в ReactJS
 https://www.kanby.ru/prostaya-validacziya-form-v-reactjs.html
-..
+
 https://reactjsexample.com/a-very-lightweight-accordion-component-in-react/
+
 
 дизайн
 https://marvelapp.com/9c0hia0/screen/46760961
 https://marvelapp.com/e65532e/screen/46464508
 https://drive.google.com/file/d/1PpX83RbzdgUNcgSlR2xbVNetDpssY8qO/view
-..
+
 // dna helix
 https://ru.dreamstime.com/%D1%81%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D1%8B%D0%B5-%D1%84%D0%BE%D1%82%D0%BE-%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA-%D0%BD%D0%B0-%D0%BC%D0%B5-%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE-image37389233
 https://ru.depositphotos.com/254163956/stock-illustration-dna-helix-symbol-or-sign.html
@@ -280,12 +281,13 @@ https://www.flaticon.com/search?word=helix
 https://dribbble.com/search?q=helix
 https://pixabay.com/images/search/helix/
 
+
 tinder-clone-nodeJS:
 tinder clone backend written with nodeJS
 https://coursehunters.net/course/samyy-polnyy-react-fullstack-kurs
 dattimg-app 
 https://www.flaticon.com/free-icons/chemical
-..
+
 https://alkanyx.com/item/118/Binder---React-Native-Dating-App-Template
 
 курсы:
@@ -295,29 +297,29 @@ https://coursehunters.net/course/kurs-po-react-js-material-ui
 
 Docs:
 https://nodejs.org/en/
-..
+
 Express
 https://expressjs.com/en/advanced/best-practice-security.html
 https://ru.lipsum.com/
-..
+
 express
 https://expressjs.com/en/advanced/best-practice-security.html
-..
+
 m0mg0
 https://docs.mongodb.com/manual/reference/method/db.collection.findOne/
-..
+
 lib
 https://material.io/develop/
 
 глянудь:
 redux-saga 
 styled
-..
+ 
 выб0рки
 https://metanit.com/nosql/mongodb/2.4.php
-..
+ 
 сделать webview
-..
+ 
 диппы
 https://atomiks.github.io/tippyjs/
 
