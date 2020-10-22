@@ -198,7 +198,7 @@ const SidenavItems = ({user}) => {
                         className="logoGithub"
                     />
                 </a>
-                <a href="mailto:kliment.barkalov@gmail.com">
+                <a href="mailto:igem.rsmu@gmail.com">
                     <img 
                         alt='mailTo' 
                         src={mail} 
