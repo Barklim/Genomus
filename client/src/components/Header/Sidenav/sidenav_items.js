@@ -4,6 +4,7 @@ import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
 import logo from './logo.png';
 import igem from './igem4.png';
+import mail from './mail1.png';
 import versionObj from './../../../utils/version.js';
 
 const SidenavItems = ({user}) => {
@@ -197,6 +198,14 @@ const SidenavItems = ({user}) => {
                         className="logoGithub"
                     />
                 </a>
+                <a href="mailto:kliment.barkalov@gmail.com">
+                    <img 
+                        alt='mailTo' 
+                        src={mail} 
+                        className="mail"
+                    />
+                </a>
+
                 <span>
                     <a 
                         href={versionLink}

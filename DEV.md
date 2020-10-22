@@ -61,7 +61,7 @@ cd client
 ### workflow
 
 	git add .
-	git commit -m '0.1.2 add versions in side-menu'
+	git commit -m '0.1.3 add gmail icon'
 	git push
 	git push heroku
 
@@ -70,6 +70,8 @@ cd client
 	npm info express version
 
 ## TОDО
+
+Клик по варианту страницы в сайд меню должен закрывать меню
 
 добавить pwa, проверить работает ли обновление.
 logo
@@ -85,7 +87,6 @@ logo
   loader
 в genomusTemplater добавить возможность отправлять отзыв (логин нужен)
 genomusTemplater и курс минина совмещать
-д0бавидь ссылку на git уг0л0к
 все файлы после разкомментирования писать как name.js -> name.del.js
 гугл аналитику
 карта сайта

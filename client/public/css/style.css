@@ -677,8 +677,17 @@ margin-right: 10px;  */
   width: 30px;
 }
 .logoGithub {
+    width: 22px;
+    padding-left: 8px;
+    padding-right: 10px;
+    /*position: relative;*/
+    /*bottom: 3px;*/
+}
+.mail {
   width: 25px;
-  padding-left: 10px;
+  border-radius: 4px;
+  position: relative;
+  bottom: 2px;
 }
 .version {
     display: inline-block;
