@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
 import Nav from './Sidenav/sidenav';
+import logo from './logo.png';
 
 class Header extends Component {
 
@@ -33,7 +34,12 @@ class Header extends Component {
                 />
 
                 <Link to="/user/user" className="logo">
-                        Genomus  ⚤
+                        Genomus                      
+                        <img 
+                            alt='logo' 
+                            src={logo} 
+                            className="logoImg"
+                        />
                 </Link>
        
             </header>

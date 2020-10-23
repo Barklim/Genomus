@@ -696,3 +696,9 @@ margin-right: 10px;  */
     top: 8px;
     position: relative;
 }
+.logoImg {
+    width: 29px;
+    position: relative;
+    top: 4px;
+    padding-left: 6px;
+}

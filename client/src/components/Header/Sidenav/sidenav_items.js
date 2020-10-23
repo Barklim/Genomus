@@ -7,7 +7,9 @@ import igem from './igem4.png';
 import mail from './mail1.png';
 import versionObj from './../../../utils/version.js';
 
-const SidenavItems = ({user}) => {
+const SidenavItems = (props) => {
+
+    const user = props.user;
 
     const t = {
         ru: {
@@ -150,9 +152,14 @@ const SidenavItems = ({user}) => {
         }
     ]
 
+    function handleClick(e) {
+        // e.preventDefault();
+        props.hideNavFunc(true);
+    }
+
     const element = (item,i) => (
         <div key={i} className={item.type}>
-            <NavLink to={item.link}>
+            <NavLink to={item.link} onClick={handleClick}>
                 <FontAwesome name={item.icon}/>
                 {item.text}
             </NavLink>

@@ -68,10 +68,10 @@ const Nav = (props) => {
   const handleChange = (event) => {
     const name = event.target.name;
 
-    console.log('TEST')
-    console.log(event.currentTarget.value)
-    console.log(event.target)
-    console.log(state)
+    // console.log('TEST')
+    // console.log(event.currentTarget.value)
+    // console.log(event.target)
+    // console.log(state)
     i18n.changeLanguage(event.currentTarget.value);
     localStorage.setItem('genomusLang', event.currentTarget.value);
     window.location.reload()
@@ -115,7 +115,7 @@ const Nav = (props) => {
               >Русский</option>
             </Select>
           </FormControl>
-           <SidenavItems/>
+          <SidenavItems test={'test'} hideNavFunc={props.onHideNav} />
         </SideNav>
     );
 };

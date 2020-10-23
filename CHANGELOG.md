@@ -1,3 +1,9 @@
+## 0.1.3 (October 23, 2020)
+
+ - improve ux of sidebar.
+ - add logo in header
+
+
 ## 0.1.2 (October 5, 2020)
 
  - add versions in menu.
