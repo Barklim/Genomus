@@ -1,3 +1,8 @@
+## 0.1.4 (October 24, 2020)
+
+ - PWA added.
+
+
 ## 0.1.3 (October 23, 2020)
 
  - improve ux of sidebar.
