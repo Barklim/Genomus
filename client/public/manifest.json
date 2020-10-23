@@ -1,15 +1,32 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+    "start_url": "https://genomus.herokuapp.com/",
+    "description": "none description",
+    "name": "Genomus - dating app",
+    "short_name": "Genomus",
+    "display": "standalone",
+    "orientation": "any",
+    "lang": "Russian",
+    "scope": "/",
+    "icons": [
+      {
+        "src": "favicon.ico",
+        "sizes": "32x32 24x24 16x16",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "images/logo512.png",
+        "sizes": "190x190 150x150 144x144 88x88 64x64 48x48 44x44 50x50",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "images/logo512.png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "images/logo512.png",
+        "sizes": "144x144"
+      }
+    ],
+    "theme_color": "#0495a8",
+    "background_color": "#0495a8"
 }

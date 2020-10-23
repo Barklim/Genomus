@@ -20,6 +20,27 @@ app.use(cookieParser());
 
 app.use(express.static('client/build'))
 
+var helmet = require('helmet');
+app.use(helmet());
+app.disable('x-powered-by');
+
+
+/* Don't work */
+var session = require('cookie-session');
+// var expiryDate = new Date( Date.now() + 60 * 60 * 1000 ); // 1 hour
+var expiryDate = new Date( Date.now() + 60 ); // 1 hour
+app.use(session({
+  name: 'session',
+  keys: ['key1', 'key2'],
+  cookie: { secure: true,
+            httpOnly: true,
+            domain: 'genomus.herokuapp.com',
+            path: 'foo/bar',
+            expires: expiryDate
+          }
+  })
+);
+
 // GET //
 app.get('/api/auth',auth,(req,res)=>{
     res.json({
