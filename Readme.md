@@ -12,11 +12,14 @@
 
 ## User info
 
-Приложение для проверки генетической совместимости.
+Application for checking genetic compatibility.
 
-За изменениями можете следить здесь [changelog](https://github.com/Barklim/Genomus/blob/master/CHANGELOG.md),[ru - версия]( https://github.com/Barklim/Genomus/blob/master/CHANGELOG_RU.md).
+Test version of the application for testing, debugging and presentation [DEMO](https://genomus.t.herokuapp.com/), 
+[repo of demo app](https://github.com/Barklim/GenomusT).
 
-Инфрмация для по безопасности приложении [administrators](https://github.com/Barklim/Genomus/blob/master/CОLLABОRATОR.md).
+You can follow the changes here [changelog](https://github.com/Barklim/Genomus/blob/master/CHANGELOG.md), [ru - версия]( https://github.com/Barklim/Genomus/blob/master/CHANGELOG_RU.md).
+
+Application safety information [administrators](https://github.com/Barklim/Genomus/blob/master/CОLLABОRATОR.md).
 
 ## Sending Feedback
 
