@@ -2,7 +2,8 @@
 
 const CACHE = "pwabuilder-offline";
 
-if ('function' === typeof importScripts) {
+// if ('function' === typeof importScripts) {
+if ('undefined' === typeof window) {
 
 	// importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 	importScripts('workbox-sw.js');
