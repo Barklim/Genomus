@@ -91,11 +91,11 @@ Mobile Iphone X (375x812) (landscape phones, 576px and up)
 
 1: Login
 
-![GitHub_Logo](/i/phone/1.login.png =375x812)
+![](/i/phone/1.login.png =375x812)
 
 2: Registration
 
-![GitHub_Logo](/i/phone/2.reg.png)
+![](/i/phone/2.reg.png){ width=40% }
 
 3: About
 
