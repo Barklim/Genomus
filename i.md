@@ -105,7 +105,7 @@ alt="" width="375" height="812" />
 
 <img
 src="https://github.com/Barklim/Genomus/raw/master/i/phone/3.about.png"
-alt="" width="375" height="812" />
+alt="" width="375" />
 
 4: Sidebar
 
@@ -123,7 +123,7 @@ alt="" width="375" height="812" />
 
 <img
 src="https://github.com/Barklim/Genomus/raw/master/i/phone/6.userProfile.png"
-alt="" width="375" height="812" />
+alt="" width="375" />
 
 7: User Settings
 
