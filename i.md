@@ -91,7 +91,10 @@ Mobile Iphone X (375x812) (landscape phones, 576px and up)
 
 1: Login
 
-![](/i/phone/1.login.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/1.login.png"
+alt="" width="375" height="812" 
+></img>
 
 2: Registration
 
