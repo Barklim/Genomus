@@ -97,44 +97,66 @@ alt="" width="375" height="812" />
 
 2: Registration
 
-![](/i/phone/2.reg.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/2.reg.png"
+alt="" width="375" height="812" />
 
 3: About
 
-![](/i/phone/3.about.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/3.about.png"
+alt="" width="375" height="812" />
 
 4: Sidebar
 
-![GitHub_Logo](/i/phone/4.sidebar.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/4.sidebar.png"
+alt="" width="375" height="812" />
 
 5: User
 
-![GitHub_Logo](/i/phone/5.user.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/5.user.png"
+alt="" width="375" height="812" />
 
 6: User Profile
 
-![GitHub_Logo](/i/phone/6.userProfile.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/6.userProfile.png"
+alt="" width="375" height="812" />
 
 7: User Settings
 
-![GitHub_Logo](/i/phone/7.userSettings.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/7.userSettings.png"
+alt="" width="375" height="812" />
 
 8: Change Password
 
-![GitHub_Logo](/i/phone/8.changePas.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/8.changePas.png"
+alt="" width="375" height="812" />
 
 9: Sidebar when authentikated
 
-![GitHub_Logo](/i/phone/9.authRegSidebar.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/9.authRegSidebar.png"
+alt="" width="375" height="812" />
 
 10: Compatibility
 
-![GitHub_Logo](/i/phone/10.compat.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/10.compat.png"
+alt="" width="375" height="812" />
 
 11: Authenticated about page
 
-![GitHub_Logo](/i/phone/11.authAbout.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/11.authAbout.png"
+alt="" width="375" height="812" />
 
 12: Authenticated admin sidebar
 
-![GitHub_Logo](/i/phone/12.authAdminSidebar.png)
+<img
+src="https://github.com/Barklim/Genomus/raw/master/i/phone/12.authAdminSidebar.png"
+alt="" width="375" height="812" />
