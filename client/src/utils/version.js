@@ -1,5 +1,5 @@
 const versionObj = {
-	versionApp: '0.1.51'
+	versionApp: '0.1.4'
 }
 
 export default versionObj

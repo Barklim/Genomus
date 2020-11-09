@@ -22,13 +22,10 @@ class Login extends Component {
     }
 
     componentWillMount() {
-        console.log('test')
-        console.log(this.props)
-        console.log(this.state)
         if (this.props.user.register !== undefined ) {
             if(this.props.user.register.user !== undefined) {
-                this.setState({email: this.props.user.register.user.email}); 
-                this.setState({password: this.props.user.register.user.genId});
+                // this.setState({email: this.props.user.register.user.email}); 
+                // this.setState({password: this.props.user.register.user.genId});
             }
         }
     }
