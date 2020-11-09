@@ -91,15 +91,15 @@ Mobile Iphone X (375x812) (landscape phones, 576px and up)
 
 1: Login
 
-![](/i/phone/1.login.png =375x812)
+![](/i/phone/1.login.png)
 
 2: Registration
 
-![](/i/phone/2.reg.png){ width=40% }
+![](/i/phone/2.reg.png)
 
 3: About
 
-![](/i/phone/3.about.png){:height="375px"}
+![](/i/phone/3.about.png)
 
 4: Sidebar
 
