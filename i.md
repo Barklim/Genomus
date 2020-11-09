@@ -99,7 +99,7 @@ Mobile Iphone X (375x812) (landscape phones, 576px and up)
 
 3: About
 
-![GitHub_Logo](/i/phone/3.about.png)
+![](/i/phone/3.about.png){:height="375px"}
 
 4: Sidebar
 
