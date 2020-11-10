@@ -6,6 +6,7 @@
     "display": "standalone",
     "orientation": "any",
     "lang": "Russian",
+    "content_security_policy": "script-src 'self' 'sha256-WOdSzz11/3cpqOdrm89LBL2UPwEU9EhbDtMy2OciEhs='",
     "scope": "/",
     "icons": [
       {
