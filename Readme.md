@@ -17,9 +17,6 @@ Application for checking genetic compatibility.
 Test version of the application for testing, debugging and presentation [DEMO](https://genomus.t.herokuapp.com/), 
 [repo of demo app](https://github.com/Barklim/GenomusT).
 
-Test user for testing
-001449 001449@mail.ru
-
 ### Test users
 
 |         |      login        | password  | gen1  | gen2  |
