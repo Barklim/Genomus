@@ -19,12 +19,12 @@ Test version of the application for testing, debugging and presentation [DEMO](h
 
 ### Test users
 
-|         |      login        | password  | gen1  | gen2  |
-| :-----: | :---------------: | :-------: | :---: | :---: |
-|    1    | 001011@gmail.com  |    34     |   0   |   0   |
-|    2    | 001012@gmail.com  |    33     |   0   |   1   |
-|    3    | 001013@gmail.com  |    23     |   1   |   0   |
-|    4    | 001014@gmail.com  |    35     |   1   |   1   |
+|         |      login        | password  | gen1  | gen2  | ...n  |
+| :-----: | :---------------: | :-------: | :---: | :---: | :---: | 
+|    1    | 001011@gmail.com  |    34     |   0   |   0   |   0   |
+|    2    | 001012@gmail.com  |    33     |   0   |   1   |   0   |
+|    3    | 001013@gmail.com  |    23     |   1   |   0   |   0   |
+|    4    | 001014@gmail.com  |    35     |   1   |   1   |   0   |
 
 Please don't change password
 
